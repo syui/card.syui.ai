@@ -1,11 +1,11 @@
 module.exports = {
-	chainWebpack: config => {
-		config
-			.plugin('html')
-			.tap(args => {
-				args[0].title = "syui.ai";
-				return args;
-			})
+	devServer: {
+		proxy: {
+			"^/api*": {
+				target: "https://api.syui.ai",
+				pathRewrite: { "^/api": "" },
+			}
+		}
 	},
 	publicPath: "/",
 	configureWebpack: {
