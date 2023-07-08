@@ -370,6 +370,7 @@
 		"p": "唯一の剣",
 		"file": "/card/yui_142",
 		"ten_skill": true,
+		"ten": "YUI",
 		"img": "",
 		"src": "yui_142"
 	},
