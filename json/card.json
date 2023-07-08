@@ -314,16 +314,6 @@
 	},
 	{
 		"id": 31,
-		"h": "ロゴ",
-		"h_en": "logo",
-		"p": "瞳, 輪, 文字",
-		"file": "/card/icon_8",
-		"ten_skill": false,
-		"img": "bafkreigwpzwt2jxkmfejd7d4dr7dvumoxdvmoe6yq2lmhwyqkg2jbwzabq",
-		"src": "icon_8"
-	},
-	{
-		"id": 32,
 		"h": "I",
 		"h_en": "I",
 		"p": "アイ文字のI",
@@ -331,6 +321,16 @@
 		"ten_skill": true,
 		"img": "bafkreih4cgo7lcljhsgnkttyminzw7xk55pfd54feik6bo7k3efe4n7rkq",
 		"src": "icon_9"
+	},
+	{
+		"id": 32,
+		"h": "ロゴ",
+		"h_en": "logo",
+		"p": "瞳輪と文字",
+		"file": "/card/icon_8",
+		"ten_skill": false,
+		"img": "bafkreigwpzwt2jxkmfejd7d4dr7dvumoxdvmoe6yq2lmhwyqkg2jbwzabq",
+		"src": "icon_8"
 	},
 	{
 		"id": 33,
