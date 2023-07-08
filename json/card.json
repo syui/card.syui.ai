@@ -380,8 +380,8 @@
 		"h_en": "Y",
 		"p": "アイ文字「Y」",
 		"file": "/card/icon_11",
-		"ten_skill": false,
-		"img": "",
+		"ten_skill": true,
+		"img": "bafkreidm3ycr47hw6momn6ee5hldtwaoyadvwq4vtromyrayarmhllmaze",
 		"src": "icon_11"
 	},
 	{
@@ -390,8 +390,8 @@
 		"h_en": "Z",
 		"p": "アイ文字「Z」",
 		"file": "/card/icon_12",
-		"ten_skill": false,
-		"img": "",
+		"ten_skill": true,
+		"img": "bafkreie2blmq6zc4tituicioscwgeitomnjdqrjc6dsremsowmrzhvktmu",
 		"src": "icon_12"
 	}
 ]
