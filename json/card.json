@@ -306,7 +306,7 @@
 		"id": 30,
 		"h": "A",
 		"h_en": "A",
-		"p": "アイ文字のA",
+		"p": "アイ文字「A」",
 		"file": "/card/icon_7",
 		"ten_skill": true,
 		"img": "bafkreie2ds62mlwxgjkquuporj5p5qurueweasjpxos2c74523konzzjhe",
@@ -316,7 +316,7 @@
 		"id": 31,
 		"h": "I",
 		"h_en": "I",
-		"p": "アイ文字のI",
+		"p": "アイ文字「I」",
 		"file": "/card/icon_9",
 		"ten_skill": true,
 		"img": "bafkreih4cgo7lcljhsgnkttyminzw7xk55pfd54feik6bo7k3efe4n7rkq",
@@ -357,7 +357,7 @@
 		"id": 35,
 		"h": "B",
 		"h_en": "B",
-		"p": "アイ文字のB",
+		"p": "アイ文字「B」",
 		"file": "/card/icon_10",
 		"ten_skill": false,
 		"img": "",
@@ -365,12 +365,32 @@
 	},
 	{
 		"id": 36,
-		"h": "文字",
-		"h_en": "handle",
-		"p": "アイ文字",
+		"h": "唯一",
+		"h_en": "only",
+		"p": "唯一の剣",
 		"file": "/card/yui_142",
-		"ten_skill": false,
+		"ten_skill": true,
 		"img": "",
 		"src": "yui_142"
+	},
+	{
+		"id": 37,
+		"h": "Y",
+		"h_en": "Y",
+		"p": "アイ文字「Y」",
+		"file": "/card/icon_11",
+		"ten_skill": false,
+		"img": "",
+		"src": "icon_11"
+	},
+	{
+		"id": 38,
+		"h": "Z",
+		"h_en": "Z",
+		"p": "アイ文字「Z」",
+		"file": "/card/icon_12",
+		"ten_skill": false,
+		"img": "",
+		"src": "icon_12"
 	}
 ]
