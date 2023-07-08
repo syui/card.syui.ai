@@ -362,5 +362,15 @@
 		"ten_skill": false,
 		"img": "",
 		"src": "icon_10"
+	},
+	{
+		"id": 36,
+		"h": "文字",
+		"h_en": "handle",
+		"p": "アイ文字",
+		"file": "/card/yui_142",
+		"ten_skill": false,
+		"img": "",
+		"src": "yui_142"
 	}
 ]
