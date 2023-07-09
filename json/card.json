@@ -272,7 +272,8 @@
 		"h": "絵本",
 		"p": "アイの絵本",
 		"file": "/card/icon_6",
-		"owner": null,
+		"owner": "ebikko",
+		"did": "did:plc:33ihf27ze66oz3plaxucn47t",
 		"src": "icon_6"
 	},
 	{
