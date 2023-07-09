@@ -13,7 +13,8 @@
 			<div v-if="loc.length > 1">
 			<div v-if="cards" class="bluesky-card">
 				<h3>
-					@{{ loc }}
+					<span v-if="bsky_mode === true"><a :href='"https://bsky.app/profile/" + did' target="_blank">{{ loc }}</a></span>
+					<span v-else>{{ loc }}</span>
 					<span v-for="iii in rcards.data" class="card-owner-badge">
 						<a :href="'/owner#' + iii.id" v-if="iii.owner == loc" target="_blank"><span class="icon-ai"></span></a>
 					</span>
@@ -186,13 +187,21 @@
 				<p><code>@yui.syui.ai /card -r</code></p>
 				<p>レイドバトル、手持ちで一番強いカードが選ばれます</p>
 
+				<h3>mastodon</h3>
+				<p><code><a href="https://mstdn.syui.ai/@yui" target="_blank">@yui@syui.ai</a> /card</code></p>
+				<p>mastodonからもカードを引くことができます</p>
+				<p>ユーザー名が同じの場合、カードは共通です</p>
+				<h3>activitypub mode</h3>
+				<p><code>@yui.syui.ai /card ap=false</code></p>
+				<p>bsky.socialからactivitypub modeを<code>true</code>/<code>false</code>に切り替える</p>
+
 				<h3>秘密</h3>
 				<!--
 				<p>同じ<a href="https://syui.ai/photo/bluesky.jpg">レアカード</a>を3枚集めると、いいことがあるかも</p>
-				-->
 				<p>全14種類(1~14)のカードを集めた人には、いいことがあるかも</p>
 				<p>匿名で受け取りたい郵便局を決めて <a href="https://bsky.app/profile/syui.ai">@syui</a> まで連絡してみて</p>
-				<p>ただし、すでに<a href="/owner">所有者</a>がいる場合、絵本は生成されません</p>
+				-->
+				<p>カードの<a href="/owner">所有者</a></p>
 
 				<h3>link</h3>
 				<p><a class="menu-link" href="/fa">fanart</a> <a class="menu-link" href="/ph">photo</a> <a class="menu-link" href="/te">aiten</a></p>
@@ -249,8 +258,15 @@
 				<p><code>@yui.syui.ai /card -b</code></p>
 				<p>Random match, one of the top 3 cards on hand will be chosen at random</p>
 
+				<h3>mastodon</h3>
+				<p><code><a href="https://mstdn.syui.ai/@yui" target="_blank">@yui@syui.ai</a> /card</code></p>
+				<p>support mastodon</p>
+				<h3>activitypub</h3>
+				<p><code>@yui.syui.ai /card ap=false</code></p>
+				<p>activitypub mode disable</p>
+
 				<h3>secret</h3>
-				<p><a href="https://syui.ai/photo/bluesky.jpg">card</a> / <a href="/owner">owner</a></p>
+				<p>card <a href="/owner">owner</a></p>
 
 				<h3>link</h3>
 				<p><a class="menu-link" href="/fa">fanart</a> <a class="menu-link" href="/ph">photo</a> <a class="menu-link" href="/te">aiten</a></p>
@@ -400,7 +416,9 @@ export default {
 			card_status: null,
 			cors: "https://cors.syui.ai/",
 			heroku: "https://cors-card.herokuapp.com/",
-			api_url: null
+			api_url: null,
+			bsky_mode: false,
+			did: null,
 		}
 	},
 	mounted() {
@@ -433,7 +451,9 @@ export default {
 				.then(response => { 
 				this.record = response;
 				this.id = this.record.data.find((v) => v.username == loc).id;
+				this.did = this.record.data.find((v) => v.username == loc).did;
 				this.aiten = this.record.data.find((v) => v.username == loc).aiten;
+				this.bsky_mode = this.record.data.find((v) => v.username == loc).bsky;
 				this.user_fav = this.record.data.find((v) => v.username == loc).fav;
 				let url = this.api_url + "users/" + this.id + "/card?itemsPerPage=2000";
 				axios
