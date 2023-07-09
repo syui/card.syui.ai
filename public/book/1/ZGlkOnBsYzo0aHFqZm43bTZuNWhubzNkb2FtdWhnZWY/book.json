@@ -1,0 +1,6 @@
+{
+	"root": "./",
+	"plugins": ["-sharing", "codeblock-filename","mermaid-gb3","diff"],
+	"title": "hello world! bluesky",
+	"description": "This is a bluesky ai-card example, and first rust"
+}

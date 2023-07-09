@@ -13,14 +13,32 @@
 			<div v-if="loc.length > 1">
 			<div v-if="cards" class="bluesky-card">
 				<h3>
-					@{{ loc }}
+					<span v-if="bsky_mode === true"><a :href='"https://bsky.app/profile/" + did' target="_blank">{{ loc }}</a></span>
+					<span v-else>{{ loc }}</span>
 					<span v-for="iii in rcards.data" class="card-owner-badge">
 						<a :href="'/owner#' + iii.id" v-if="iii.owner == loc" target="_blank"><span class="icon-ai"></span></a>
+					</span>
+					<span v-for="iii in rcards.data">
+						<span v-for="iiii in iii.owner" class="card-bluesky-badge">
+							<a :href="'/owner#' + iiii.user" v-if="iiii.user == loc" target="_blank">
+								<span class="icon-ai"></span>
+							</a>
+						</span>
 					</span>
 					<span v-if="this.all === true" class="card-all-badge">
 						<span class="icon-ai"></span>
 					</span>
 				</h3>
+
+				<span class="menu-right-top" v-if="cards.data.find((v) => v.card == 43)">
+					<button v-on:click="book_user = !book_user">book</button>
+				</span>
+				<div class="book-list" v-if="cards.data.find((v) => v.card == 43)" v-show="book_user">
+					<a href="/book/1/ZGlkOnBsYzo0aHFqZm43bTZuNWhubzNkb2FtdWhnZWY/index.html">
+						<img :src='"/card/card_" + 43 + ".webp"'>
+					</a>
+				</div>
+
 				<div class="card-fav" v-if="user_fav != '0'"><span class="menu-right-top"><button>✧</button></span>
 					<table class="card-fav">
 						<span class="card-fav-su">
@@ -53,16 +71,56 @@
 							</tr>
 						</thead>
 
+						<thead v-else-if="ii.status == 'third' && ii.card !== null" class="card-fav">
+							<tr class="card-status-first">
+								<span class="card-wrapper">
+									<span class="reflection">
+										<img :src='"/card/card_" + ii.card + ".webp"' class="card">
+									</span>
+									<span class="card pattern-t"></span>
+									<span class="card color-t"></span>
+									<span class="card highlight-t"></span>
+								</span>
+							</tr>
+						</thead>
+
+						<thead v-else-if="ii.status == 'yui' && ii.card !== null" class="card-fav">
+							<tr class="card-status-first">
+								<span class="card-wrapper">
+									<span class="reflection">
+										<img :src='"/card/card_" + ii.card + ".webp"' class="card">
+									</span>
+									<span class="card pattern-yui"></span>
+									<span class="card color-yui"></span>
+									<span class="card highlight-yui"></span>
+								</span>
+							</tr>
+						</thead>
+
+						<thead v-else-if="ii.status == 'fourth' && ii.card !== null" class="card-fav">
+							<tr class="card-status-first">
+								<span class="card-wrapper">
+									<span class="reflection">
+										<img :src='"/card/card_" + ii.card + ".webp"' class="card">
+									</span>
+									<span class="card pattern-f"></span>
+									<span class="card color-f"></span>
+									<span class="card highlight-f"></span>
+								</span>
+							</tr>
+						</thead>
+
 						<thead v-else-if="ii.card !== null" class="card-fav"><tr>
 								<img :src='"/card/card_" + ii.card + ".webp"'>
 							</tr>
 						</thead>
-						<tbody><tr><span v-if="ii.skill == 'critical'" class="icon-sandar"></span><span v-if="ii.skill == 'post'" class="icon-moon"></span><span v-if="ii.skill == 'luck'" class="icon-api"></span><span v-if="ii.skill == 'ten'" class="icon-power"></span><span v-if="ii.skill == 'lost'">●</span> {{ ii.cp }}</tr></tbody>
+						<tbody><tr><span v-if="ii.skill == 'critical'" class="icon-sandar"></span><span v-if="ii.skill == 'post'" class="icon-moon"></span><span v-if="ii.skill == 'luck'" class="icon-api"></span><span v-if="ii.skill == 'ten'" class="icon-power"></span><span v-if="ii.skill == 'lost'">●</span><span v-if="ii.skill == 'dragon'" class="icon-home"></span><span v-if="ii.skill == 'nyan'">▲</span><span v-if="ii.skill == 'yui'" class="icon-ai"></span> {{ ii.cp }}</tr></tbody>
 						<tbody><tr class="card-fav-status">✧ {{ ii.status }}</tr></tbody>
 						<tbody v-if="info == true"><tr>ID {{ ii.card }}</tr></tbody>
 						<tbody v-if="fav == true"><tr>CID {{ ii.id }}</tr></tbody>
 					</table>
 				</div>
+
 				<div class="card-button">
 					<button v-on:click="cardtime">new</button> <button v-on:click="sort">cp</button> <button v-on:click="sortcard">card</button> <button v-on:click="cardinfo">id</button> <button v-on:click="cardstatus">status</button> <button v-on:click="cardpremium">premium</button> <button v-on:click="cardfav">fav</button>
 				</div>
@@ -70,20 +128,24 @@
 			<table>
 				<span v-for="(ii, index) in cards.data">
 					<span v-if="ii.status == 'normal' && ii.card !== null">
-						<thead><td><img :src='"/card/card_" + ii.card + ".webp"'></td></thead>
-						<tbody><tr><span v-if="ii.skill == 'critical'" class="icon-sandar"></span><span v-if="ii.skill == 'post'" class="icon-moon"></span><span v-if="ii.skill == 'luck'" class="icon-api"></span><span v-if="ii.skill == 'ten'" class="icon-power"></span> {{ ii.cp }}</tr></tbody>
+						<thead v-if="ii.card == 43"><td><a href="/book/1/ZGlkOnBsYzo0aHFqZm43bTZuNWhubzNkb2FtdWhnZWY/index.html"><img :src='"/card/card_" + ii.card + ".webp"'></a></td></thead>
+						<thead v-else><td><img :src='"/card/card_" + ii.card + ".webp"'></td></thead>
+						<tbody><tr><span v-if="ii.skill == 'critical'" class="icon-sandar"></span><span v-if="ii.skill == 'post'" class="icon-moon"></span><span v-if="ii.skill == 'luck'" class="icon-api"></span><span v-if="ii.skill == 'ten'" class="icon-power"></span><span v-if="ii.skill == 'dragon'" class="icon-home"></span><span v-if="ii.skill == 'nyan'">▲</span><span v-if="ii.skill == 'yui'" class="icon-ai"></span> {{ ii.cp }}</tr></tbody>
 						<tbody v-if="info == true"><tr>ID {{ ii.card }}</tr></tbody>
 						<tbody v-if="fav == true"><tr>CID {{ ii.id }}</tr></tbody>
 						<tbody v-if="card_status == true"><tr>✧ {{ ii.status }}</tr></tbody>
 					</span>
 					<span v-else-if="ii.card !== null">
 						<thead><td>
-								<span class="reflection">
-								<img :src='"/card/card_" + ii.card + ".webp"'>
-							</span>
+								<span class="reflection" v-if="ii.card == 43">
+									<a href="/book/1/ZGlkOnBsYzo0aHFqZm43bTZuNWhubzNkb2FtdWhnZWY/index.html"><img :src='"/card/card_" + ii.card + ".webp"'></a>
+								</span>
+								<span class="reflection" v-else>
+									<img :src='"/card/card_" + ii.card + ".webp"'>
+								</span>
 							</td>
 						</thead>
-						<tbody><tr><span v-if="ii.skill == 'critical'" class="icon-sandar"></span><span v-if="ii.skill == 'post'" class="icon-moon"></span><span v-if="ii.skill == 'luck'" class="icon-api"></span><span v-if="ii.skill == 'ten'" class="icon-power"></span> {{ ii.cp }}</tr></tbody>
+						<tbody><tr><span v-if="ii.skill == 'critical'" class="icon-sandar"></span><span v-if="ii.skill == 'post'" class="icon-moon"></span><span v-if="ii.skill == 'luck'" class="icon-api"></span><span v-if="ii.skill == 'ten'" class="icon-power"></span><span v-if="ii.skill == 'dragon'" class="icon-home"></span><span v-if="ii.skill == 'nyan'">▲</span><span v-if="ii.skill == 'yui'" class="icon-ai"></span> {{ ii.cp }}</tr></tbody>
 						<tbody v-if="info == true"><tr>ID {{ ii.card }}</tr></tbody>
 						<tbody v-if="fav == true"><tr>CID {{ ii.id }}</tr></tbody>
 						<tbody v-if="card_status == true"><tr>✧ {{ ii.status }}</tr></tbody>
@@ -106,7 +168,7 @@
 			</form> 
 
 			<div v-if="cards" class="bluesky-card">
-				<p>user : <code>{{ user.data.username }}</code></p>
+				<p>user : <a :href='"/" + user.data.username'><code>{{ user.data.username }}</code></a></p>
 				<p>id : <code>{{ user.data.id }}</code></p>
 				<p>did : <code>{{ user.data.did }}</code></p>
 				<p>aiten : <code>{{ user.data.aiten }}</code></p>
@@ -119,6 +181,7 @@
 			</div>
 
 			<div v-if="ucard" class="bluesky-card">
+				<h3><a :href='"/" + userid'>{{ userid }}</a></h3>
 				<span v-for="u in ucard.data">
 						<img :src='"/card/card_" + u.card + ".webp"'>{{ u.cp }}
 				</span>
@@ -186,14 +249,18 @@
 				<p><code>@yui.syui.ai /card -r</code></p>
 				<p>レイドバトル、手持ちで一番強いカードが選ばれます</p>
 
-				<h3>秘密</h3>
-				<!--
-				<p>同じ<a href="https://syui.ai/photo/bluesky.jpg">レアカード</a>を3枚集めると、いいことがあるかも</p>
-				-->
-				<p>全14種類(1~14)のカードを集めた人には、いいことがあるかも</p>
-				<p>匿名で受け取りたい郵便局を決めて <a href="https://bsky.app/profile/syui.ai">@syui</a> まで連絡してみて</p>
-				<p>ただし、すでに<a href="/owner">所有者</a>がいる場合、絵本は生成されません</p>
+				<h3>mastodon</h3>
+				<p><code><a href="https://mstdn.syui.ai/@yui" target="_blank">@yui@syui.ai</a> /card</code></p>
+				<p>mastodonからもカードを引くことができます</p>
+				<p>ユーザー名が同じの場合、カードは共通です</p>
+				<h3>activitypub mode</h3>
+				<p><code>@yui.syui.ai /card ap=false</code></p>
+				<p>bsky.socialからactivitypub modeを<code>true</code>/<code>false</code>に切り替える</p>
 
+				<h3>秘密</h3>
+				<p><code>レアカード</code>を3枚集めると、いいことがあるかも</p>
+				<p>集めた人は<a href="https://bsky.app/profile/syui.ai">@syui</a>まで連絡してみて</p>
+				<p>ただし、リアルカードに変わるのは、こちらの<a href="/owner">所有者</a>がいないカードに限られます</p>
 				<h3>link</h3>
 				<p><a class="menu-link" href="/fa">fanart</a> <a class="menu-link" href="/ph">photo</a> <a class="menu-link" href="/te">aiten</a></p>
 
@@ -249,8 +316,15 @@
 				<p><code>@yui.syui.ai /card -b</code></p>
 				<p>Random match, one of the top 3 cards on hand will be chosen at random</p>
 
+				<h3>mastodon</h3>
+				<p><code><a href="https://mstdn.syui.ai/@yui" target="_blank">@yui@syui.ai</a> /card</code></p>
+				<p>support mastodon</p>
+				<h3>activitypub</h3>
+				<p><code>@yui.syui.ai /card ap=false</code></p>
+				<p>activitypub mode disable</p>
+
 				<h3>secret</h3>
-				<p><a href="https://syui.ai/photo/bluesky.jpg">card</a> / <a href="/owner">owner</a></p>
+				<p>card <a href="/owner">owner</a></p>
 
 				<h3>link</h3>
 				<p><a class="menu-link" href="/fa">fanart</a> <a class="menu-link" href="/ph">photo</a> <a class="menu-link" href="/te">aiten</a></p>
@@ -261,22 +335,101 @@
 				<div v-for="(ii, index) in rcards.data">
 					<div v-show="ii.id !== 0">
 						<div v-show="ii.id < 15" class="card-owner-one">
+							<button :id="ii.id">card : {{ ii.h }}</button>
+							<p><img :src='"/card/card_" + ii.id + ".webp"'></p>
 							<p v-if="ii.owner">owner : <a :href="'/' + ii.owner">{{ ii.owner }}</a></p>
 							<p v-if="ii.owner === null">owner : <code>none</code></p>
-							<p :id="ii.id">card : {{ ii.h }}</p>
-							<p><img :src='"/card/card_" + ii.id + ".webp"'></p>
 						</div>
 						<div v-show="ii.id == 22" class="card-owner-one">
+							<button :id="ii.id">card : {{ ii.h }}</button>
+							<span v-if='ii.owner == "none"' class="card-black">
+								<p><img :src='"/card/card_" + ii.id + ".webp"'></p>
+							</span>
+							<span v-else class="card-black">
+								<p><img :src='"/card/card_" + ii.id + ".webp"'></p>
+							</span>
 							<p v-if="ii.owner">owner : <a :href="'/' + ii.owner">{{ ii.owner }}</a></p>
 							<p v-if="ii.owner === null">owner : <code>none</code></p>
-							<p :id="ii.id">card : {{ ii.h }}</p>
+						</div>
+						<div v-show="ii.id == 25" class="card-owner-one">
+							<button :id="ii.id">card : {{ ii.h }}</button>
 							<p><img :src='"/card/card_" + ii.id + ".webp"'></p>
+							<p v-if="ii.owner">owner : <a :href="'/' + ii.owner">{{ ii.owner }}</a></p>
+							<p v-if="ii.owner === null">owner : <code>none</code></p>
 						</div>
 						<div v-show="ii.id == 26" class="card-owner-one">
+							<button :id="ii.id">card : {{ ii.h }}</button>
+							<p><img :src='"/card/card_" + ii.id + ".webp"'></p>
 							<p v-if="ii.owner">owner : <a :href="'/' + ii.owner">{{ ii.owner }}</a></p>
 							<p v-if="ii.owner === null">owner : <code>none</code></p>
-							<p :id="ii.id">card : {{ ii.h }}</p>
+						</div>
+						<div v-show="ii.id == 27" class="card-owner-one">
+							<button :id="ii.id">card : {{ ii.h }}</button>
+							<span v-if='ii.owner == "none"' class="card-black">
+								<p><img :src='"/card/card_" + ii.id + ".webp"'></p>
+							</span>
+							<span v-else class="card-black">
 							<p><img :src='"/card/card_" + ii.id + ".webp"'></p>
+							</span>
+							<p v-if="ii.owner">owner : <a :href="'/' + ii.owner">{{ ii.owner }}</a></p>
+							<p v-if="ii.owner === null">owner : <code>none</code></p>
+						</div>
+						<div v-show="ii.id == 29" class="card-owner-one">
+							<button :id="ii.id">card : {{ ii.h }}</button>
+							<span v-if='ii.owner == "none"' class="card-black">
+								<p><img :src='"/card/card_" + ii.id + ".webp"'></p>
+							</span>
+							<span v-else class="card-black">
+							<p><img :src='"/card/card_" + ii.id + ".webp"'></p>
+							</span>
+							<p v-if="ii.owner">owner : <a :href="'/' + ii.owner">{{ ii.owner }}</a></p>
+							<p v-if="ii.owner === null">owner : <code>none</code></p>
+						</div>
+						<div v-show="ii.id == 33" class="card-owner-one">
+							<button :id="ii.id">card : {{ ii.h }}</button>
+							<span v-if='ii.owner == "none"' class="card-black">
+								<p><img :src='"/card/card_" + ii.id + ".webp"'></p>
+							</span>
+							<span v-else class="card-black">
+							<p><img :src='"/card/card_" + ii.id + ".webp"'></p>
+							</span>
+							<p v-if="ii.owner">owner : <a :href="'/' + ii.owner">{{ ii.owner }}</a></p>
+							<p v-if="ii.owner === null">owner : <code>none</code></p>
+						</div>
+						<div v-show="ii.id == 36" class="card-owner-one">
+							<button :id="ii.id">card : {{ ii.h }}</button>
+							<span v-if='ii.owner == "none"' class="card-black">
+								<p><img :src='"/card/card_" + ii.id + ".webp"'></p>
+							</span>
+							<span v-else class="card-black">
+							<p><img :src='"/card/card_" + ii.id + ".webp"'></p>
+							</span>
+							<p v-if="ii.owner">owner : <a :href="'/' + ii.owner">{{ ii.owner }}</a></p>
+							<p v-if="ii.owner === null">owner : <code>none</code></p>
+						</div>
+						<div v-show="ii.id == 39" class="card-owner-one">
+							<button :id="ii.id">card : {{ ii.h }}</button>
+							<p><img :src='"/card/card_" + ii.id + ".webp"'></p>
+							<p v-if="ii.owner">owner :<span v-for="(iii, index) in ii.owner"> <a :href="'/' + iii.user">{{ iii.user }}</a>, </span></p>
+							<p v-if="ii.owner === null">owner : <code>none</code></p>
+						</div>
+						<div v-show="ii.id == 40" class="card-owner-one">
+							<button :id="ii.id">card : {{ ii.h }}</button>
+							<p><img :src='"/card/card_" + ii.id + ".webp"'></p>
+							<p v-if="ii.owner">owner :<span v-for="(iii, index) in ii.owner"> <a :href="'/' + iii.user">{{ iii.user }}</a>, </span></p>
+							<p v-if="ii.owner === null">owner : <code>none</code></p>
+						</div>
+						<div v-show="ii.id == 41" class="card-owner-one">
+							<button :id="ii.id">card : {{ ii.h }}</button>
+							<p><img :src='"/card/card_" + ii.id + ".webp"'></p>
+							<p v-if="ii.owner">owner : <a :href="'/' + ii.owner">{{ ii.owner }}</a></p>
+							<p v-if="ii.owner === null">owner : <code>none</code></p>
+						</div>
+						<div v-show="ii.id == 44" class="card-owner-one">
+							<button :id="ii.id">card : {{ ii.h }}</button>
+							<p><img :src='"/card/card_" + ii.id + ".webp"'></p>
+							<p v-if="ii.owner">owner : <a :href="'/' + ii.owner">{{ ii.owner }}</a></p>
+							<p v-if="ii.owner === null">owner : <code>none</code></p>
 						</div>
 					</div>
 				</div>
@@ -333,8 +486,8 @@
 
 		<div v-if="loc === 'pr'">
 			<p>お気に入りのカードを1枚だけ登録できます</p>
-			<p>カードの数字は個人ページの <button>fav</button> で確認します。</p>
-			<p>syuiの場合は<code><a href="https://card.syui.ai/syui">card.syui.ai/syui</a></code>です。</p>
+			<p>数字はカード一覧の <button>fav</button> で確認します。</p>
+			<p><img src="/img/docs_fav.jpg"></p>
 			<p>もとに戻すときは <code>0</code> を指定します。</p>
 			<h3>/fav b</h3>
 			<p><code>/fav b</code>でバトルできます。</p>
@@ -397,10 +550,13 @@ export default {
 			fav: null,
 			card_fav: null,
 			user_fav: null,
+			book_user: null,
 			card_status: null,
 			cors: "https://cors.syui.ai/",
 			heroku: "https://cors-card.herokuapp.com/",
-			api_url: null
+			api_url: null,
+			bsky_mode: false,
+			did: null,
 		}
 	},
 	mounted() {
@@ -428,14 +584,16 @@ export default {
 				.get("/json/photo.json")
 				.then(response => (this.photos = response));
 		} else {
-			let url = this.api_url + "users?itemsPerPage=2000";
+			let url = this.api_url + "users?itemsPerPage=3000";
 			axios.get(url,{ crossdomain: true })
 				.then(response => { 
 				this.record = response;
 				this.id = this.record.data.find((v) => v.username == loc).id;
+				this.did = this.record.data.find((v) => v.username == loc).did;
 				this.aiten = this.record.data.find((v) => v.username == loc).aiten;
+				this.bsky_mode = this.record.data.find((v) => v.username == loc).bsky;
 				this.user_fav = this.record.data.find((v) => v.username == loc).fav;
-				let url = this.api_url + "users/" + this.id + "/card?itemsPerPage=2000";
+				let url = this.api_url + "users/" + this.id + "/card?itemsPerPage=3000";
 				axios
 					.get("/json/card.json")
 					.then(response => (this.rcards = response));
@@ -451,7 +609,6 @@ export default {
 																break;
 															}
 													}
-
 							});
 					}
 			})
@@ -459,7 +616,7 @@ export default {
 		}},
 		methods: {
 			submit() {
-				let url = this.api_url + "users/" + this.id + "/card?itemsPerPage=2000";
+				let url = this.api_url + "users/" + this.id + "/card?itemsPerPage=3000";
 				axios
 					.get(url,{ crossdomain: true })
 					.then(response => (this.cards = response));
@@ -517,7 +674,7 @@ export default {
 			cardfav(){
 				this.info = false;
 				this.fav = true;
-					this.card_status = false;
+				this.card_status = false;
 			},
 			cardstatus(){
 				this.cards = {};
@@ -528,6 +685,17 @@ export default {
 					this.info = false;
 					this.fav = false;
 					this.card_status = true;
+			},
+			cardbook(){
+				return this.cards.data.sort((a,b) => {
+					this.premium = true;
+					if (a.card == 43 && a.status == "book") {
+						this.cards.data = this.cards.data.slice().reverse();
+					} else {
+						a.url = null;
+						a.card = null;
+					}
+				});
 			},
 			cardpremium(){
 				return this.cards.data.sort((a,b) => {
@@ -668,6 +836,11 @@ footer {
 
 span.card-owner-badge a {
 	color: #abae00;
+	padding:0 5px;
+}
+span.card-bluesky-badge a {
+	color: #0db2ff;
+	padding:0 5px;
 }
 span.card-all-badge {
 	color: #ff7c00;
@@ -695,6 +868,7 @@ blockquote {
 
 .menu-right-top {
 	float: right;
+	padding:0px 0px 0px 5px;
 }
 
 span.menu-right-top a.menu-link span.icon-ai {
@@ -771,6 +945,87 @@ span.card-wrapper:hover > span.color-s {
 }
 
 span.card-wrapper:hover > span.highlight-s {
+  background-repeat: no-repeat;
+}
+
+span.pattern-t {
+  background: repeating-radial-gradient(circle at -150% -25%, #c71585, #777 3px, #ffff00 3px);
+  background-position: 50% 50%;
+  background-size: 120% 120%;
+  mix-blend-mode: color-dodge;
+  opacity: 0.3;
+}
+
+span.color-t {
+  background: linear-gradient(115deg, transparent 20%, #c71585 30%, transparent 48% 52%, #c71585 70%, transparent);
+  background-position: 50% 50%;
+  background-size: 200% 200%;
+  mix-blend-mode: overlay;
+}
+
+span.card-wrapper:hover > span.pattern-t {
+  background-position: calc(50% + (var(--ratio-x) * -50%)) calc(50% + (var(--ratio-y) * -50%));
+}
+
+span.card-wrapper:hover > span.color-t {
+  background-position: calc(50% + (var(--ratio-x) * -50%)) calc(50% + (var(--ratio-y) * -50%));
+}
+
+span.card-wrapper:hover > span.highlight-t {
+  background-repeat: no-repeat;
+}
+
+span.pattern-yui {
+  background: repeating-radial-gradient(circle at -150% -25%, #ffff00, #000 3px, #ffff00 3px);
+  background-position: 50% 50%;
+  background-size: 120% 120%;
+  mix-blend-mode: color-dodge;
+  opacity: 0.3;
+}
+
+span.color-yui {
+  background: linear-gradient(115deg, transparent 20%, #ffff00 30%, transparent 48% 52%, #ffff00 70%, transparent);
+  background-position: 50% 50%;
+  background-size: 200% 200%;
+  mix-blend-mode: overlay;
+}
+
+span.card-wrapper:hover > span.pattern-yui {
+  background-position: calc(50% + (var(--ratio-x) * -50%)) calc(50% + (var(--ratio-y) * -50%));
+}
+
+span.card-wrapper:hover > span.color-yui {
+  background-position: calc(50% + (var(--ratio-x) * -50%)) calc(50% + (var(--ratio-y) * -50%));
+}
+
+span.card-wrapper:hover > span.highlight-yui {
+  background-repeat: no-repeat;
+}
+
+span.pattern-f {
+  background: repeating-radial-gradient(circle at -150% -25%, #000, #32cd32 3px, #1e90ff 3px);
+  background-position: 50% 50%;
+  background-size: 120% 120%;
+  mix-blend-mode: color-dodge;
+  opacity: 0.3;
+}
+
+span.color-f {
+  background: linear-gradient(115deg, transparent 20%, #00ffff 30%, transparent 48% 52%, #40e0d0 70%, transparent);
+  background-position: 50% 50%;
+  background-size: 200% 200%;
+  mix-blend-mode: overlay;
+}
+
+span.card-wrapper:hover > span.pattern-f {
+  background-position: calc(50% + (var(--ratio-x) * -50%)) calc(50% + (var(--ratio-y) * -50%));
+}
+
+span.card-wrapper:hover > span.color-f {
+  background-position: calc(50% + (var(--ratio-x) * -50%)) calc(50% + (var(--ratio-y) * -50%));
+}
+
+span.card-wrapper:hover > span.highlight-yui {
   background-repeat: no-repeat;
 }
 
@@ -862,6 +1117,30 @@ span.reflection:after {
     padding: 20px;
 }
 
+span.card-black p {
+	width: fit-content;
+	background: #000;
+}
+
+span.card-black p img {
+	opacity: 0.7;
+}
+
+.book-list {
+	background-color:#fff;
+	margin-bottom: 30px;
+	padding:10px 50px 10px 50px;
+}
+
+.book-list a img {
+	width:150px;
+}
+
+thead.card-fav tr img {
+    border-radius: 30px;
+    padding: 20px;
+}
+
 @media screen and (max-width:1000px) { 
 	.card-button {
 		float: none;
@@ -882,6 +1161,9 @@ span.reflection:after {
 		font-size: 15px;
 		padding: 10px 15px;
 		background-color: #fff;
+	}
+	.book-list {
+		text-align: center;
 	}
 }
 

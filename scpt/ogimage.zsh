@@ -11,7 +11,7 @@ mkdir -p $dir
 mkdir -p $static
 n=`cat $json|jq "length"`
 n=`expr $n - 1`
-n=38
+n=47
 
 for ((i=0;i<=$n;i++))
 do
