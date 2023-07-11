@@ -394,5 +394,23 @@
 		"ten_skill": true,
 		"img": "bafkreie2blmq6zc4tituicioscwgeitomnjdqrjc6dsremsowmrzhvktmu",
 		"src": "icon_12"
+	},
+	{
+		"id": 39,
+		"h": "タマゴ",
+		"h_en": "egg",
+		"p": "ドラゴンのタマゴ",
+		"file": "/card/icon_13",
+		"ten_skill": false,
+		"src": "icon_13"
+	},
+	{
+		"id": 40,
+		"h": "青空",
+		"h_en": "bluesky",
+		"p": "hello world! blueskyの表紙",
+		"file": "/card/yui_144",
+		"ten_skill": false,
+		"src": "yui_144"
 	}
 ]
