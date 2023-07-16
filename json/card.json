@@ -264,7 +264,8 @@
 		"h": "文字",
 		"p": "アイ文字の「S」",
 		"file": "/card/icon_5",
-		"owner": null,
+		"owner": "shino3",
+		"did" : "did:plc:rpwpuzu2yyiuufm3232d7pm5",
 		"src": "icon_5"
 	},
 	{
