@@ -422,5 +422,14 @@
 		"file": "/card/icon_14",
 		"ten_skill": false,
 		"src": "icon_14"
+	},
+	{
+		"id": 42,
+		"h": "nyan",
+		"h_en": "nyan",
+		"p": "アイ・ニャン",
+		"file": "/card/icon_15",
+		"ten_skill": false,
+		"src": "icon_15"
 	}
 ]
