@@ -416,12 +416,12 @@
 	},
 	{
 		"id": 41,
-		"h": "象徴",
+		"h": "認証",
 		"h_en": "badge",
 		"p": "バッジ・アイ",
 		"file": "/card/icon_14",
-		"owner": null,
-		"did": null,
+		"owner": "hirok1n",
+		"did": "did:plc:5x2zuagnxcxtcluyhtvv5p6c",
 		"ten_skill": false,
 		"src": "icon_14"
 	},
@@ -440,7 +440,17 @@
 		"h_en": "hello world! bluesky",
 		"p": "技術書",
 		"file": "/card/book_1",
+		"owner": ["",""],
 		"ten_skill": false,
 		"src": "book_1"
+	},
+	{
+		"id": 44,
+		"h": "宇宙",
+		"h_en": "universe",
+		"p": "無限の可能性",
+		"file": "/card/yui_144",
+		"ten_skill": false,
+		"src": "yui_144"
 	}
 ]
