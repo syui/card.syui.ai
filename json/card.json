@@ -416,10 +416,12 @@
 	},
 	{
 		"id": 41,
-		"h": "バッジ",
+		"h": "象徴",
 		"h_en": "badge",
 		"p": "バッジ・アイ",
 		"file": "/card/icon_14",
+		"owner": null,
+		"did": null,
 		"ten_skill": false,
 		"src": "icon_14"
 	},
