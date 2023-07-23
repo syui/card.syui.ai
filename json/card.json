@@ -431,5 +431,14 @@
 		"file": "/card/icon_15",
 		"ten_skill": false,
 		"src": "icon_15"
+	},
+	{
+		"id": 43,
+		"h": "hello world! bluesky",
+		"h_en": "hello world! bluesky",
+		"p": "技術書",
+		"file": "/card/book_1",
+		"ten_skill": false,
+		"src": "book_1"
 	}
 ]
