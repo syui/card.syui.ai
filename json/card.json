@@ -402,6 +402,7 @@
 		"h_en": "bluesky",
 		"p": "hello world! blueskyの表紙",
 		"file": "/card/yui_143",
+		"owner": [],
 		"ten_skill": false,
 		"src": "yui_143"
 	},
@@ -411,6 +412,7 @@
 		"h_en": "dragon egg",
 		"p": "ドライ、タマゴの姿",
 		"file": "/card/icon_13",
+		"owner": [],
 		"ten_skill": false,
 		"src": "icon_13"
 	},
@@ -440,7 +442,7 @@
 		"h_en": "hello world! bluesky",
 		"p": "技術書",
 		"file": "/card/book_1",
-		"owner": ["",""],
+		"owner": ["nkoz","baiser","kawaiirailroads","tangure","yukotan","rubycherry936","ebikko","hirok1n","b35","aetos","k16em","boxman","telteltel","henoya","uguh","aki3","lv489","makamin"],
 		"ten_skill": false,
 		"src": "book_1"
 	},
@@ -450,6 +452,7 @@
 		"h_en": "universe",
 		"p": "無限の可能性",
 		"file": "/card/yui_144",
+		"owner": null,
 		"ten_skill": false,
 		"src": "yui_144"
 	}
