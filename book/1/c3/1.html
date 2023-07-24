@@ -434,13 +434,6 @@ cargo init
     &#x2514;&#x2500;&#x2500; main.rs
 </code></pre>
 <p>&#x3053;&#x308C;&#x3089;&#x306E;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306F;&#x81EA;&#x5206;&#x3067;&#x4F5C;&#x6210;&#x3057;&#x3066;&#x3082;&#x3044;&#x3044;&#x3057;&#x3001;<code>init</code>&#x3067;&#x4F5C;&#x6210;&#x3057;&#x3066;&#x3082;&#x3044;&#x3044;&#x3067;&#x3059;&#x3002;</p>
-<p>&#x3061;&#x306A;&#x307F;&#x306B;&#x3001;&#x30B3;&#x30F3;&#x30D4;&#x30E5;&#x30FC;&#x30BF;&#x4E0A;&#x3067;&#x306F;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x3082;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306A;&#x306E;&#x3067;&#x3059;&#x3002;&#x3053;&#x306E;&#x8A71;&#x306F;&#x9762;&#x5012;&#x306A;&#x306E;&#x3067;&#x7701;&#x7565;&#x3057;&#x307E;&#x3059;&#x3002;</p>
-<h4 id="editor">editor</h4>
-<p>&#x6B21;&#x306B;&#x30D7;&#x30ED;&#x30B0;&#x30E9;&#x30E0;&#x306E;&#x4E2D;&#x8EAB;&#x3092;&#x78BA;&#x8A8D;&#x3057;&#x3066;&#x307F;&#x307E;&#x3059;&#x3002;</p>
-<p>&#x78BA;&#x8A8D;&#x3059;&#x308B;&#x306B;&#x306F;&#x3001;editor(&#x30A8;&#x30C7;&#x30A3;&#x30BF;)&#x3092;&#x4F7F;&#x7528;&#x3057;&#x307E;&#x3059;&#x3002;&#x79C1;&#x306F;<code>vim</code>&#x3092;&#x4F7F;&#x3044;&#x307E;&#x3059;&#x304C;&#x3001;<a href="https://visualstudio.microsoft.com" target="_blank">visual studio</a>&#x304C;&#x30AA;&#x30B9;&#x30B9;&#x30E1;&#x304B;&#x306A;&#x3002;</p>
-<pre><code class="lang-sh">brew install vim
-vim src/main.rs
-</code></pre>
 <div><p class="code-filename">Cargo.toml</p></div>
 <pre><code class="lang-toml"><span class="hljs-section">[package]</span>
 <span class="hljs-attr">name</span> = <span class="hljs-string">&quot;rust&quot;</span>
@@ -450,6 +443,18 @@ vim src/main.rs
 <span class="hljs-comment"># See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html</span>
 <span class="hljs-section">
 [dependencies]</span>
+</code></pre>
+<div><p class="code-filename">src/main.rs</p></div>
+<pre><code class="lang-rust"><span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
+    <span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;Hello, world!&quot;</span>);
+}
+</code></pre>
+<p>&#x3061;&#x306A;&#x307F;&#x306B;&#x3001;&#x30B3;&#x30F3;&#x30D4;&#x30E5;&#x30FC;&#x30BF;&#x4E0A;&#x3067;&#x306F;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x3082;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306A;&#x306E;&#x3067;&#x3059;&#x3002;&#x3053;&#x306E;&#x8A71;&#x306F;&#x9762;&#x5012;&#x306A;&#x306E;&#x3067;&#x7701;&#x7565;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<h4 id="editor">editor</h4>
+<p>&#x6B21;&#x306B;&#x30D7;&#x30ED;&#x30B0;&#x30E9;&#x30E0;&#x306E;&#x4E2D;&#x8EAB;&#x3092;&#x78BA;&#x8A8D;&#x3057;&#x3066;&#x307F;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x78BA;&#x8A8D;&#x3059;&#x308B;&#x306B;&#x306F;&#x3001;editor(&#x30A8;&#x30C7;&#x30A3;&#x30BF;)&#x3092;&#x4F7F;&#x7528;&#x3057;&#x307E;&#x3059;&#x3002;&#x79C1;&#x306F;<code>vim</code>&#x3092;&#x4F7F;&#x3044;&#x307E;&#x3059;&#x304C;&#x3001;<a href="https://visualstudio.microsoft.com" target="_blank">visual studio</a>&#x304C;&#x30AA;&#x30B9;&#x30B9;&#x30E1;&#x304B;&#x306A;&#x3002;</p>
+<pre><code class="lang-sh">brew install vim
+vim src/main.rs
 </code></pre>
 <div><p class="code-filename">src/main.rs</p></div>
 <pre><code class="lang-rust"><span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
@@ -514,7 +519,7 @@ Hello, world!
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"hello world","level":"1.5.1","depth":2,"next":{"title":"seahorse","level":"1.5.2","depth":2,"path":"c3/2.md","ref":"c3/2.md","articles":[]},"previous":{"title":"part 3","level":"1.5","depth":1,"path":"c3/README.md","ref":"c3/README.md","articles":[{"title":"hello world","level":"1.5.1","depth":2,"path":"c3/1.md","ref":"c3/1.md","articles":[]},{"title":"seahorse","level":"1.5.2","depth":2,"path":"c3/2.md","ref":"c3/2.md","articles":[]},{"title":"reqwest","level":"1.5.3","depth":2,"path":"c3/3.md","ref":"c3/3.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-sharing","codeblock-filename","mermaid-gb3","diff"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"codeblock-filename":{},"mermaid-gb3":{},"diff":{"type":"markdown","method":"diffChars","options":{}},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"hello world! bluesky","gitbook":"*","description":"This is a bluesky ai-card example, and first rust"},"file":{"path":"c3/1.md","mtime":"2023-07-23T23:22:37.571Z","type":"markdown"},"gitbook":{"version":"3.3.6","time":"2023-07-23T23:22:49.523Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"hello world","level":"1.5.1","depth":2,"next":{"title":"seahorse","level":"1.5.2","depth":2,"path":"c3/2.md","ref":"c3/2.md","articles":[]},"previous":{"title":"part 3","level":"1.5","depth":1,"path":"c3/README.md","ref":"c3/README.md","articles":[{"title":"hello world","level":"1.5.1","depth":2,"path":"c3/1.md","ref":"c3/1.md","articles":[]},{"title":"seahorse","level":"1.5.2","depth":2,"path":"c3/2.md","ref":"c3/2.md","articles":[]},{"title":"reqwest","level":"1.5.3","depth":2,"path":"c3/3.md","ref":"c3/3.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-sharing","codeblock-filename","mermaid-gb3","diff"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"codeblock-filename":{},"mermaid-gb3":{},"diff":{"type":"markdown","method":"diffChars","options":{}},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"hello world! bluesky","gitbook":"*","description":"This is a bluesky ai-card example, and first rust"},"file":{"path":"c3/1.md","mtime":"2023-07-24T10:43:41.702Z","type":"markdown"},"gitbook":{"version":"3.3.6","time":"2023-07-24T11:07:35.155Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

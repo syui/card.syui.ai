@@ -425,16 +425,58 @@
                                 <h3 id="base64">base64</h3>
 <p>&#x6B21;&#x306F;&#x3001;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;&#x3067;&#x6307;&#x5B9A;&#x3057;&#x305F;&#x6587;&#x5B57;&#x3092;<a href="https://uma0317.github.io/rust-cookbook-ja/encoding/strings.html" target="_blank">base64</a>&#x306B;&#x5909;&#x63DB;&#x3057;&#x3066;<code>mention</code>&#x3059;&#x308B;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x66F8;&#x304D;&#x307E;&#x3059;&#x3002;</p>
 <p>&#x3053;&#x308C;&#x3067;&#x30D7;&#x30ED;&#x30B0;&#x30E9;&#x30E0;&#x306E;&#x5B8C;&#x6210;&#x3067;&#x3059;&#x3002;</p>
-<pre><code class="lang-sh"><span class="hljs-comment"># &#x81EA;&#x5206;&#x306E;did&#x3092;base64&#x306B;mention&#x3057;&#x3066;&#x304F;&#x308C;&#x308B;</span>
-$ ai m yui.syui.ai <span class="hljs-_">-e</span>
-@yui.syui.ai /egg ZGlkOnBsYzo0aHFqZm43bTZuNWhubzNkb2FtdWhnZWY=
+<p>&#x307E;&#x305A;&#x306F;<code>base64</code>&#x306E;&#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;&#x3092;&#x8FFD;&#x52A0;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<div><p class="code-filename">Cargo.toml</p></div>
+<pre><code class="lang-toml"><span class="hljs-section">[package]</span>
+<span class="hljs-attr">name</span> = <span class="hljs-string">&quot;ai&quot;</span>
+<span class="hljs-attr">version</span> = <span class="hljs-string">&quot;0.1.0&quot;</span>
+<span class="hljs-attr">edition</span> = <span class="hljs-string">&quot;2021&quot;</span>
+<span class="hljs-section">
+[dependencies]</span>
+<span class="hljs-attr">seahorse</span> = <span class="hljs-string">&quot;*&quot;</span>
+<span class="hljs-attr">reqwest</span> = { version = <span class="hljs-string">&quot;*&quot;</span>, features = [<span class="hljs-string">&quot;blocking&quot;</span>, <span class="hljs-string">&quot;json&quot;</span>] }
+<span class="hljs-attr">tokio</span> = { version = <span class="hljs-string">&quot;1&quot;</span>, features = [<span class="hljs-string">&quot;full&quot;</span>] }
+<span class="hljs-attr">serde_derive</span> = <span class="hljs-string">&quot;1.0&quot;</span>
+<span class="hljs-attr">serde_json</span> = <span class="hljs-string">&quot;1.0&quot;</span>
+<span class="hljs-attr">serde</span> = <span class="hljs-string">&quot;*&quot;</span>
+<span class="hljs-attr">config</span> = { git = <span class="hljs-string">&quot;https://github.com/mehcode/config-rs&quot;</span>, branch = <span class="hljs-string">&quot;master&quot;</span> }
+<span class="hljs-attr">shellexpand</span> = <span class="hljs-string">&quot;*&quot;</span>
+<span class="hljs-attr">toml</span> = <span class="hljs-string">&quot;*&quot;</span>
+<span class="hljs-attr">iso8601-timestamp</span> = <span class="hljs-string">&quot;0.2.10&quot;</span>
+<span class="hljs-attr">base64</span> = <span class="hljs-string">&quot;*&quot;</span>
+</code></pre>
+<p>&#x305D;&#x3057;&#x3066;&#x3001;<code>src/main.rs</code>&#x306E;mention&#x306E;&#x3068;&#x3053;&#x308D;&#x306B;<code>did</code>&#x3092;base64&#x306B;&#x5909;&#x63DB;&#x3059;&#x308B;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x66F8;&#x3044;&#x3066;&#x3044;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x3053;&#x308C;&#x3089;&#x306F;&#x30B5;&#x30D6;&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;&#x306B;&#x8A2D;&#x5B9A;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x8981;&#x70B9;&#x3092;&#x307E;&#x3068;&#x3081;&#x308B;&#x3068;&#x3053;&#x3093;&#x306A;&#x611F;&#x3058;&#x3067;&#x3059;&#x3002;</p>
+<div><p class="code-filename">example</p></div>
+<pre><code class="lang-rust">.command(
+        Command::new(<span class="hljs-string">&quot;mention&quot;</span>)
+        .alias(<span class="hljs-string">&quot;m&quot;</span>)
+        .action(c_mention)
+        .flag(
+            Flag::new(<span class="hljs-string">&quot;base&quot;</span>, FlagType::<span class="hljs-built_in">String</span>)
+            .description(<span class="hljs-string">&quot;base flag\n\t\t\t$ ai m syui.bsky.social -p text -b 123&quot;</span>)
+            .alias(<span class="hljs-string">&quot;b&quot;</span>),
+            )
+        .flag(
+            Flag::new(<span class="hljs-string">&quot;egg&quot;</span>, FlagType::Bool)
+            .description(<span class="hljs-string">&quot;egg flag\n\t\t\t$ ai m syui.bsky.social -e&quot;</span>)
+            .alias(<span class="hljs-string">&quot;e&quot;</span>),
+            )
 
-<span class="hljs-comment"># base64&#x306B;&#x5909;&#x63DB;&#x3059;&#x308B;&#x6587;&#x5B57;&#x5217;&#x3092;&#x6307;&#x5B9A;&#x3057;&#x3066;mention&#x3059;&#x308B;</span>
+<span class="hljs-keyword">let</span> did = token_toml(&amp;<span class="hljs-string">&quot;did&quot;</span>);
+<span class="hljs-keyword">let</span> body = <span class="hljs-string">&quot;/egg &quot;</span>.to_owned() + &amp;encode(did.as_bytes());
+</code></pre>
+<p><code>-b</code>&#x3067;&#x5909;&#x63DB;&#x3059;&#x308B;&#x6587;&#x5B57;&#x5217;&#x3092;&#x6307;&#x5B9A;&#x3067;&#x304D;&#x308B;&#x3088;&#x3046;&#x306B;&#x3057;&#x307E;&#x3059;&#x3002;&#x5FC5;&#x305A;<code>-b &quot;foo bar&quot;</code>&#x3068;&#x3044;&#x3046;&#x3088;&#x3046;&#x306B;&#x30C0;&#x30D6;&#x30EB;&#x30AF;&#x30AA;&#x30FC;&#x30C6;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x3067;&#x56F2;&#x3063;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;<code>-e</code>&#x3067;<code>did</code>&#x3092;&#x53D6;&#x3063;&#x3066;&#x304D;&#x3066;&#x81EA;&#x52D5;&#x5909;&#x63DB;&#x3057;&#x3066;mention&#x3059;&#x308B;&#x3088;&#x3046;&#x306B;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-sh"><span class="hljs-comment"># &#x6307;&#x5B9A;&#x3057;&#x3066;&#x305F;&#x6587;&#x5B57;&#x5217;&#x3092;base64&#x306B;&#x3057;&#x3066;mention&#x3059;&#x308B;</span>
 $ ai m yui.syui.ai -b <span class="hljs-string">&quot;did:plc:4hqjfn7m6n5hno3doamuhgef&quot;</span>
 @yui.syui.ai /egg ZGlkOnBsYzo0aHFqZm43bTZuNWhubzNkb2FtdWhnZWY=
+
+<span class="hljs-comment"># &#x81EA;&#x5206;&#x306E;did&#x3092;base64&#x306B;&#x3057;&#x3066;mention&#x3059;&#x308B;</span>
+$ ai m yui.syui.ai <span class="hljs-_">-e</span>
+@yui.syui.ai /egg ZGlkOnBsYzo0aHFqZm43bTZuNWhubzNkb2FtdWhnZWY=
 </code></pre>
-<pre><code class="lang-sh">./target/debug/ai
-</code></pre>
+<p>&#x3067;&#x306F;&#x3001;&#x5168;&#x90E8;&#x306E;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x66F8;&#x3044;&#x3066;&#x3044;&#x304D;&#x307E;&#x3059;&#x3002;</p>
 <div><p class="code-filename">src/main.rs</p></div>
 <pre><code class="lang-rust"><span class="hljs-keyword">pub</span> <span class="hljs-keyword">mod</span> data;
 <span class="hljs-keyword">pub</span> <span class="hljs-keyword">mod</span> mention;
@@ -621,6 +663,7 @@ async <span class="hljs-function"><span class="hljs-keyword">fn</span> <span cla
 </code></pre>
 <pre><code class="lang-sh">cargo build
 </code></pre>
+<p>&#x3067;&#x304D;&#x307E;&#x3057;&#x305F;&#x3002;</p>
 <pre><code class="lang-sh"><span class="hljs-comment"># binary&#x3092;$PATH&#x306B;&#x7F6E;&#x304F;</span>
 $ <span class="hljs-built_in">echo</span> <span class="hljs-variable">$PATH</span>|tr : <span class="hljs-string">&apos;\n&apos;</span>
 /usr/bin
@@ -638,6 +681,10 @@ Commands:
         l, login   :
         p, profile :
         m, mention :
+</code></pre>
+<p><code>rust</code>&#x3067;&#x306F;&#x3053;&#x3093;&#x306A;&#x611F;&#x3058;&#x3067;&#x81EA;&#x5206;&#x306E;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3092;&#x4F5C;&#x3063;&#x3066;&#x904A;&#x3093;&#x3067;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</p>
+<pre><code class="lang-sh">&#x81EA;&#x5206;&#x306E;did&#x3092;base64&#x306B;&#x3057;&#x3066;mention&#x3059;&#x308B;&#x30B3;&#x30DE;&#x30F3;&#x30C9;
+ai m yui.syui.ai <span class="hljs-_">-e</span>
 </code></pre>
 
                                 
@@ -682,7 +729,7 @@ Commands:
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"base64","level":"1.6.4","depth":2,"next":{"title":"end","level":"1.7","depth":1,"path":"end/README.md","ref":"end/README.md","articles":[]},"previous":{"title":"mention","level":"1.6.3","depth":2,"path":"c4/2.md","ref":"c4/2.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","codeblock-filename","mermaid-gb3","diff"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"codeblock-filename":{},"mermaid-gb3":{},"diff":{"type":"markdown","method":"diffChars","options":{}},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"hello world! bluesky","gitbook":"*","description":"This is a bluesky ai-card example, and first rust"},"file":{"path":"c4/3.md","mtime":"2023-07-23T11:28:50.095Z","type":"markdown"},"gitbook":{"version":"3.3.6","time":"2023-07-23T23:22:49.523Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"base64","level":"1.6.4","depth":2,"next":{"title":"end","level":"1.7","depth":1,"path":"end/README.md","ref":"end/README.md","articles":[]},"previous":{"title":"mention","level":"1.6.3","depth":2,"path":"c4/2.md","ref":"c4/2.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","codeblock-filename","mermaid-gb3","diff"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"codeblock-filename":{},"mermaid-gb3":{},"diff":{"type":"markdown","method":"diffChars","options":{}},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"hello world! bluesky","gitbook":"*","description":"This is a bluesky ai-card example, and first rust"},"file":{"path":"c4/3.md","mtime":"2023-07-24T11:07:30.530Z","type":"markdown"},"gitbook":{"version":"3.3.6","time":"2023-07-24T11:07:35.155Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
