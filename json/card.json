@@ -414,8 +414,11 @@
       },
 						{
         "user": "yukotan"
-      }
-    ],
+						},
+						{
+							"user": "hollow"
+						}
+				],
     "ten_skill": false,
     "src": "yui_143"
   },
