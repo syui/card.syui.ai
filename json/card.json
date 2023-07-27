@@ -1,459 +1,534 @@
 [
-	{
-		"id": 0,
-		"h": "世界",
-		"p": "ようこそ",
-		"p_en": "hello world",
-		"h_en": "world",
-		"file": "/card/card_0",
-		"owner": "ai",
-		"did": "did:plc:4hqjfn7m6n5hno3doamuhgef",
-		"img": "bafkreigvcjc46qtelpc4wsg7fwf6qktbi6a23ouqiupth2r37zhrn7wbza",
-		"src": "yui_0"
-	},
-	{
-		"id": 1,
-		"h": "夢幻",
-		"p": "夢の実現",
-		"h_en": "yume-maboroshi",
-		"file": "/card/card_1",
-		"owner": "telteltel",
-		"did": "did:plc:qjp6exfcyenr22yucr5nomyi",
-		"img": "bafkreigkev4ls7hs73rlfeiiwg7uz67zzzd7ikrice2bll2rc6a3vtn7f4",
-		"ten": "EMY",
-		"src": "yui_100"
-	},
-	{
-		"id": 2,
-		"h": "光彩",
-		"h_en": "kousai",
-		"p": "絶好調の兆し",
-		"file": "/card/card_2",
-		"owner": "ma8",
-		"did": "did:plc:s4vvu2hmagegff4z3wpy4xxp",
-		"img": "bafkreigtrweoi6q3nhiizkmfaxms5dyovk45fn4enkf4luivlmgjtbnuli",
-		"ten": "KOS",
-		"src": "yui_109"
-	},
-	{
-		"id": 3,
-		"h": "中性子",
-		"h_en": "neutron",
-		"p": "小さいもの",
-		"file": "/card/card_3",
-		"owner": "ichinoshin",
-		"did": "did:plc:dipbatun3kmwogwdligz2tjq",
-		"img": "bafkreieddtetzrvbaa337pdujzpoj64qin5ry3tuv55ewr7hrk4rj2bcde",
-		"ten": "CHI",
-		"src": "yui_88"
-	},
-	{
-		"id": 4,
-		"h": "太陽",
-		"h_en": "sun",
-		"p": "燃え上がる熱意",
-		"file": "/card/card_4",
-		"owner": "dala00",
-		"did": "did:plc:oiqqfxzl7bj2gbngt3vtjupm",
-		"img": "bafkreig3td4r66i3boiowe6dywefapuigyksntwh4uqtb5dtzf5zc4dqny",
-		"ten": "AIT",
-		"src": "yui_59"
-	},
-	{
-		"id": 5,
-		"h": "夜空",
-		"h_en": "yo-sora",
-		"p": "静けさ",
-		"file": "/card/card_5",
-		"owner": "omi",
-		"did": "did:plc:j5cxpczcvzajlxhfuq7abivp",
-		"img": "bafkreihdjp6uxz5z3ax6pp3i2lnpcbviprq6ohny2u7yvkrno6wwc5kcea",
-		"ten": "OYZ",
-		"src": "yui_112"
-	},
-	{
-		"id": 6,
-		"h": "雪",
-		"h_en": "snow",
-		"p": "真っ白な心",
-		"file": "/card/card_6",
-		"owner": "six",
-		"did": "did:plc:bv5un6di5t7xoapwmeie4k5r",
-		"img": "bafkreia3yajq5hks5txhflctlwcue54sqe7lasfig57eimz6xbixdtxyka",
-		"ten":"IKY",
-		"src": "yui_15"
-	},
-	{
-		"id": 7,
-		"h": "雷",
-		"h_en": "lightning",
-		"p": "怒り",
-		"file": "/card/card_7",
-		"owner": "cheebow",
-		"did": "did:plc:3jcfppic3dgrk73b7jefnvug",
-		"img": "bafkreicfhqwesbpgwaao4s5wtuz376obkud573myagyfrcyccifgsl2ala",
-		"ten":"AKM",
-		"src": "yui_30"
-	},
-	{
-		"id": 8,
-		"h": "超究",
-		"h_en": "cho-kyu",
-		"p": "失うものと得るもの",
-		"file": "/card/card_8",
-		"owner": "suzuzzz",
-		"did": "did:plc:engniy5paenub2a736hyj3r2",
-		"img": "bafkreiebwoj7z2lel5vig6psl6ab52zwgjlevsjczanutuwznlb36mpmhe",
-		"ten":"KUY",
-		"src": "yui_108"
-	},
-	{
-		"id": 9,
-		"h": "剣",
-		"h_en": "circle",
-		"p": "輪っか",
-		"file": "/card/card_9",
-		"owner": "ntkg",
-		"did": "did:plc:5dsd4tgqlshofqzhwz2fxel3",
-		"img": "bafkreifnftlfzt7kkwags4ye4mkcozyv6gg24ur47grku76kzgcceiv3jm",
-		"ten":"AW",
-		"src": "yui_103"
-	},
-	{
-		"id": 10,
-		"h": "破壊",
-		"h_en": "destruction",
-		"p": "破壊と再生",
-		"file": "/card/card_10",
-		"owner": "fuuri",
-		"did": "did:plc:drwx7i5ffvb2jduluynqsnpv",
-		"img": "bafkreibhcurxpbesoozxzmssjlyt2tpkrilssunxxuzhvemy4arccjzu5e",
-		"ten":"AHK",
-		"src": "yui_87"
-	},
-	{
-		"id": 11,
-		"h": "地球",
-		"h_en": "earth",
-		"p": "風とともに",
-		"file": "/card/card_11",
-		"owner": "amanatsu-mikan",
-		"did": "did:plc:dppvzotf533qrogibmvl3mt3",
-		"img": "bafkreibc4hfltabfx6d255gypdi27cihlbqutwmy2me23cft5hadu56qme",
-		"ten":"IKT",
-		"src": "yui_78"
-	},
-	{
-		"id": 12,
-		"h": "天ノ川",
-		"h_en": "milky",
-		"p": "世界の広さ",
-		"file": "/card/card_12",
-		"owner": "hal8",
-		"did": "did:plc:gyf62w3ufjn4roer7wcxzfhk",
-		"img": "bafkreigxa3ett7qoxnundqzghxayxo5nsqdvktr7urooborporn52bt374",
-		"ten":"AAM",
-		"src": "yui_115"
-	},
-	{
-		"id": 13,
-		"h": "創造",
-		"h_en": "creation",
-		"p": "始まりと終わり",
-		"file": "/card/card_13",
-		"owner": "syui",
-		"did": "did:plc:uqzpqmrjnptsxezjx4xuh2mn",
-		"img": "bafkreif7elbdbrbjvwnypy47zxuvdg3qln5npaksskld4bhd6armvjmyy4",
-		"ten":"OSZ",
-		"src": "yui_89"
-	},
-	{
-		"id": 14,
-		"h": "超新星",
-		"h_en": "supernova",
-		"p": "衝撃の予感",
-		"file": "/card/card_14",
-		"owner": "nikolat",
-		"did" : "did:plc:656uaefudfh7ll6leflsi4xo",
-		"img": "bafkreig7qapoudilekw6bxfkj3in3owjhh2v23rx7abbgnszvkxi5dqbly",
-		"ten":"CHO",
-		"src": "yui_123"
-	},
-	{
-		"id": 15,
-		"h": "機械",
-		"p": "時と空間",
-		"file": "/card/card_15",
-		"owner": null,
-		"src": "yui_131"
-	},
-	{
-		"id": 16,
-		"h": "サポート",
-		"p": "ようこそ",
-		"file": "/card/icon_1",
-		"owner": null,
-		"src": "icon_1"
-	},
-	{
-		"id": 17,
-		"h": "天体",
-		"p": "事象の地平線",
-		"file": "/card/card_17",
-		"owner": null,
-		"src": "yui_132"
-	},
-	{
-		"id": 18,
-		"h": "バッジ",
-		"p": "キラキラ",
-		"file": "/card/icon_2",
-		"owner": null,
-		"src": "icon_2"
-	},
-	{
-		"id": 19,
-		"h": "アイ",
-		"p": "月見唯",
-		"file": "/card/yui_133",
-		"owner": null,
-		"src": "yui_133"
-	},
-	{
-		"id": 20,
-		"h": "アイ",
-		"p": "ゼン・モード",
-		"file": "/card/yui_134",
-		"owner": null,
-		"src": "yui_134"
-	},
-	{
-		"id": 21,
-		"h": "アイ",
-		"p": "ソード",
-		"file": "/card/yui_135",
-		"owner": null,
-		"src": "yui_135"
-	},
-	{
-		"id": 22,
-		"h": "存在",
-		"p": "存在の花",
-		"file": "/card/yui_136",
-		"owner": null,
-		"src": "yui_136"
-	},
-	{
-		"id": 23,
-		"h": "レイド",
-		"p": "ボス",
-		"file": "/card/icon_3",
-		"owner": null,
-		"src": "icon_3"
-	},
-	{
-		"id": 24,
-		"h": "レイド",
-		"p": "ボスの勝利",
-		"file": "/card/icon_4",
-		"owner": null,
-		"src": "icon_4"
-	},
-	{
-		"id": 25,
-		"h": "文字",
-		"p": "アイ文字の「S」",
-		"file": "/card/icon_5",
-		"owner": "shino3",
-		"did" : "did:plc:rpwpuzu2yyiuufm3232d7pm5",
-		"src": "icon_5"
-	},
-	{
-		"id": 26,
-		"h": "絵本",
-		"p": "アイの絵本",
-		"file": "/card/icon_6",
-		"owner": "ebikko",
-		"did": "did:plc:33ihf27ze66oz3plaxucn47t",
-		"src": "icon_6"
-	},
-	{
-		"id": 27,
-		"h": "天地",
-		"p": "天変地異",
-		"file": "/card/card_27",
-		"owner": null,
-		"src": "yui_137"
-	},
-	{
-		"id": 28,
-		"h": "自然",
-		"p": "状態",
-		"file": "/card/card_28",
-		"owner": null,
-		"src": "yui_138"
-	},
-	{
-		"id": 29,
-		"h": "重力",
-		"h_en": "gravity",
-		"p": "引き寄せる",
-		"file": "/card/card_29",
-		"img": "bafkreiemcucjk2hkjlnigqdm3cwnkirquhrffpzvj7m7tzbr5igp2xxsbe",
-		"ten": "OUY",
-		"ten_skill": true,
-		"src": "yui_120"
-	},
-	{
-		"id": 30,
-		"h": "A",
-		"h_en": "A",
-		"p": "アイ文字「A」",
-		"file": "/card/icon_7",
-		"ten_skill": true,
-		"img": "bafkreie2ds62mlwxgjkquuporj5p5qurueweasjpxos2c74523konzzjhe",
-		"src": "icon_7"
-	},
-	{
-		"id": 31,
-		"h": "I",
-		"h_en": "I",
-		"p": "アイ文字「I」",
-		"file": "/card/icon_9",
-		"ten_skill": true,
-		"img": "bafkreih4cgo7lcljhsgnkttyminzw7xk55pfd54feik6bo7k3efe4n7rkq",
-		"src": "icon_9"
-	},
-	{
-		"id": 32,
-		"h": "ロゴ",
-		"h_en": "logo",
-		"p": "瞳輪と文字",
-		"file": "/card/icon_8",
-		"ten_skill": false,
-		"img": "bafkreigwpzwt2jxkmfejd7d4dr7dvumoxdvmoe6yq2lmhwyqkg2jbwzabq",
-		"src": "icon_8"
-	},
-	{
-		"id": 33,
-		"h": "開闢",
-		"h_en": "transform",
-		"p": "黒髪から金髪へ変化",
-		"file": "/card/yui_140",
-		"ten_skill": true,
-		"ten": "AIK",
-		"img": "bafkreictejwme6kjn4u46xiwacxhpv2or5qc7y2l2maaycjsfdfvqrkosy",
-		"src": "yui_140"
-	},
-	{
-		"id": 34,
-		"h": "漫画",
-		"h_en": "manga",
-		"p": "漫画1巻の表紙",
-		"file": "/card/yui_141",
-		"ten_skill": false,
-		"img": "",
-		"src": "yui_141"
-	},
-	{
-		"id": 35,
-		"h": "B",
-		"h_en": "B",
-		"p": "アイ文字「B」",
-		"file": "/card/icon_10",
-		"ten_skill": false,
-		"img": "",
-		"src": "icon_10"
-	},
-	{
-		"id": 36,
-		"h": "唯一",
-		"h_en": "only",
-		"p": "唯一の剣",
-		"file": "/card/yui_142",
-		"ten_skill": true,
-		"ten": "YUI",
-		"img": "bafkreicibjuzb44bh4unvz2e5s3fapybb62jxb2dogkzhxiuxns5evdsbe",
-		"src": "yui_142"
-	},
-	{
-		"id": 37,
-		"h": "Y",
-		"h_en": "Y",
-		"p": "アイ文字「Y」",
-		"file": "/card/icon_11",
-		"ten_skill": true,
-		"img": "bafkreidm3ycr47hw6momn6ee5hldtwaoyadvwq4vtromyrayarmhllmaze",
-		"src": "icon_11"
-	},
-	{
-		"id": 38,
-		"h": "Z",
-		"h_en": "Z",
-		"p": "アイ文字「Z」",
-		"file": "/card/icon_12",
-		"ten_skill": true,
-		"img": "bafkreie2blmq6zc4tituicioscwgeitomnjdqrjc6dsremsowmrzhvktmu",
-		"src": "icon_12"
-	},
-	{
-		"id": 39,
-		"h": "青空",
-		"h_en": "bluesky",
-		"p": "hello world! blueskyの表紙",
-		"file": "/card/yui_143",
-		"owner": ["hirok1n","henoya"],
-		"ten_skill": false,
-		"src": "yui_143"
-	},
-	{
-		"id": 40,
-		"h": "龍卵",
-		"h_en": "dragon egg",
-		"p": "ドライ、タマゴの姿",
-		"file": "/card/icon_13",
-		"owner": ["ebikko","b35"],
-		"ten_skill": false,
-		"src": "icon_13"
-	},
-	{
-		"id": 41,
-		"h": "認証",
-		"h_en": "badge",
-		"p": "バッジ・アイ",
-		"file": "/card/icon_14",
-		"owner": "hirok1n",
-		"did": "did:plc:5x2zuagnxcxtcluyhtvv5p6c",
-		"ten_skill": false,
-		"src": "icon_14"
-	},
-	{
-		"id": 42,
-		"h": "nyan",
-		"h_en": "nyan",
-		"p": "アイ・ニャン",
-		"file": "/card/icon_15",
-		"ten_skill": false,
-		"src": "icon_15"
-	},
-	{
-		"id": 43,
-		"h": "hello world! bluesky",
-		"h_en": "hello world! bluesky",
-		"p": "技術書",
-		"file": "/card/book_1",
-		"owner": ["nkoz","baiser","kawaiirailroads","tangure","yukotan","rubycherry936","ebikko","hirok1n","b35","aetos","k16em","boxman","telteltel","henoya","uguh","aki3","lv489","makamin","objectx","yutacar"],
-		"ten_skill": false,
-		"src": "book_1"
-	},
-	{
-		"id": 44,
-		"h": "宇宙",
-		"h_en": "universe",
-		"p": "無限の可能性",
-		"file": "/card/yui_144",
-		"owner": null,
-		"ten_skill": false,
-		"src": "yui_144"
-	}
+  {
+    "id": 0,
+    "h": "世界",
+    "p": "ようこそ",
+    "p_en": "hello world",
+    "h_en": "world",
+    "file": "/card/card_0",
+    "owner": "ai",
+    "did": "did:plc:4hqjfn7m6n5hno3doamuhgef",
+    "img": "bafkreigvcjc46qtelpc4wsg7fwf6qktbi6a23ouqiupth2r37zhrn7wbza",
+    "src": "yui_0"
+  },
+  {
+    "id": 1,
+    "h": "夢幻",
+    "p": "夢の実現",
+    "h_en": "yume-maboroshi",
+    "file": "/card/card_1",
+    "owner": "telteltel",
+    "did": "did:plc:qjp6exfcyenr22yucr5nomyi",
+    "img": "bafkreigkev4ls7hs73rlfeiiwg7uz67zzzd7ikrice2bll2rc6a3vtn7f4",
+    "ten": "EMY",
+    "src": "yui_100"
+  },
+  {
+    "id": 2,
+    "h": "光彩",
+    "h_en": "kousai",
+    "p": "絶好調の兆し",
+    "file": "/card/card_2",
+    "owner": "ma8",
+    "did": "did:plc:s4vvu2hmagegff4z3wpy4xxp",
+    "img": "bafkreigtrweoi6q3nhiizkmfaxms5dyovk45fn4enkf4luivlmgjtbnuli",
+    "ten": "KOS",
+    "src": "yui_109"
+  },
+  {
+    "id": 3,
+    "h": "中性子",
+    "h_en": "neutron",
+    "p": "小さいもの",
+    "file": "/card/card_3",
+    "owner": "ichinoshin",
+    "did": "did:plc:dipbatun3kmwogwdligz2tjq",
+    "img": "bafkreieddtetzrvbaa337pdujzpoj64qin5ry3tuv55ewr7hrk4rj2bcde",
+    "ten": "CHI",
+    "src": "yui_88"
+  },
+  {
+    "id": 4,
+    "h": "太陽",
+    "h_en": "sun",
+    "p": "燃え上がる熱意",
+    "file": "/card/card_4",
+    "owner": "dala00",
+    "did": "did:plc:oiqqfxzl7bj2gbngt3vtjupm",
+    "img": "bafkreig3td4r66i3boiowe6dywefapuigyksntwh4uqtb5dtzf5zc4dqny",
+    "ten": "AIT",
+    "src": "yui_59"
+  },
+  {
+    "id": 5,
+    "h": "夜空",
+    "h_en": "yo-sora",
+    "p": "静けさ",
+    "file": "/card/card_5",
+    "owner": "omi",
+    "did": "did:plc:j5cxpczcvzajlxhfuq7abivp",
+    "img": "bafkreihdjp6uxz5z3ax6pp3i2lnpcbviprq6ohny2u7yvkrno6wwc5kcea",
+    "ten": "OYZ",
+    "src": "yui_112"
+  },
+  {
+    "id": 6,
+    "h": "雪",
+    "h_en": "snow",
+    "p": "真っ白な心",
+    "file": "/card/card_6",
+    "owner": "six",
+    "did": "did:plc:bv5un6di5t7xoapwmeie4k5r",
+    "img": "bafkreia3yajq5hks5txhflctlwcue54sqe7lasfig57eimz6xbixdtxyka",
+    "ten": "IKY",
+    "src": "yui_15"
+  },
+  {
+    "id": 7,
+    "h": "雷",
+    "h_en": "lightning",
+    "p": "怒り",
+    "file": "/card/card_7",
+    "owner": "cheebow",
+    "did": "did:plc:3jcfppic3dgrk73b7jefnvug",
+    "img": "bafkreicfhqwesbpgwaao4s5wtuz376obkud573myagyfrcyccifgsl2ala",
+    "ten": "AKM",
+    "src": "yui_30"
+  },
+  {
+    "id": 8,
+    "h": "超究",
+    "h_en": "cho-kyu",
+    "p": "失うものと得るもの",
+    "file": "/card/card_8",
+    "owner": "suzuzzz",
+    "did": "did:plc:engniy5paenub2a736hyj3r2",
+    "img": "bafkreiebwoj7z2lel5vig6psl6ab52zwgjlevsjczanutuwznlb36mpmhe",
+    "ten": "KUY",
+    "src": "yui_108"
+  },
+  {
+    "id": 9,
+    "h": "剣",
+    "h_en": "circle",
+    "p": "輪っか",
+    "file": "/card/card_9",
+    "owner": "ntkg",
+    "did": "did:plc:5dsd4tgqlshofqzhwz2fxel3",
+    "img": "bafkreifnftlfzt7kkwags4ye4mkcozyv6gg24ur47grku76kzgcceiv3jm",
+    "ten": "AW",
+    "src": "yui_103"
+  },
+  {
+    "id": 10,
+    "h": "破壊",
+    "h_en": "destruction",
+    "p": "破壊と再生",
+    "file": "/card/card_10",
+    "owner": "fuuri",
+    "did": "did:plc:drwx7i5ffvb2jduluynqsnpv",
+    "img": "bafkreibhcurxpbesoozxzmssjlyt2tpkrilssunxxuzhvemy4arccjzu5e",
+    "ten": "AHK",
+    "src": "yui_87"
+  },
+  {
+    "id": 11,
+    "h": "地球",
+    "h_en": "earth",
+    "p": "風とともに",
+    "file": "/card/card_11",
+    "owner": "amanatsu-mikan",
+    "did": "did:plc:dppvzotf533qrogibmvl3mt3",
+    "img": "bafkreibc4hfltabfx6d255gypdi27cihlbqutwmy2me23cft5hadu56qme",
+    "ten": "IKT",
+    "src": "yui_78"
+  },
+  {
+    "id": 12,
+    "h": "天ノ川",
+    "h_en": "milky",
+    "p": "世界の広さ",
+    "file": "/card/card_12",
+    "owner": "hal8",
+    "did": "did:plc:gyf62w3ufjn4roer7wcxzfhk",
+    "img": "bafkreigxa3ett7qoxnundqzghxayxo5nsqdvktr7urooborporn52bt374",
+    "ten": "AAM",
+    "src": "yui_115"
+  },
+  {
+    "id": 13,
+    "h": "創造",
+    "h_en": "creation",
+    "p": "始まりと終わり",
+    "file": "/card/card_13",
+    "owner": "syui",
+    "did": "did:plc:uqzpqmrjnptsxezjx4xuh2mn",
+    "img": "bafkreif7elbdbrbjvwnypy47zxuvdg3qln5npaksskld4bhd6armvjmyy4",
+    "ten": "OSZ",
+    "src": "yui_89"
+  },
+  {
+    "id": 14,
+    "h": "超新星",
+    "h_en": "supernova",
+    "p": "衝撃の予感",
+    "file": "/card/card_14",
+    "owner": "nikolat",
+    "did": "did:plc:656uaefudfh7ll6leflsi4xo",
+    "img": "bafkreig7qapoudilekw6bxfkj3in3owjhh2v23rx7abbgnszvkxi5dqbly",
+    "ten": "CHO",
+    "src": "yui_123"
+  },
+  {
+    "id": 15,
+    "h": "機械",
+    "p": "時と空間",
+    "file": "/card/card_15",
+    "owner": null,
+    "src": "yui_131"
+  },
+  {
+    "id": 16,
+    "h": "サポート",
+    "p": "ようこそ",
+    "file": "/card/icon_1",
+    "owner": null,
+    "src": "icon_1"
+  },
+  {
+    "id": 17,
+    "h": "天体",
+    "p": "事象の地平線",
+    "file": "/card/card_17",
+    "owner": null,
+    "src": "yui_132"
+  },
+  {
+    "id": 18,
+    "h": "バッジ",
+    "p": "キラキラ",
+    "file": "/card/icon_2",
+    "owner": null,
+    "src": "icon_2"
+  },
+  {
+    "id": 19,
+    "h": "アイ",
+    "p": "月見唯",
+    "file": "/card/yui_133",
+    "owner": null,
+    "src": "yui_133"
+  },
+  {
+    "id": 20,
+    "h": "アイ",
+    "p": "ゼン・モード",
+    "file": "/card/yui_134",
+    "owner": null,
+    "src": "yui_134"
+  },
+  {
+    "id": 21,
+    "h": "アイ",
+    "p": "ソード",
+    "file": "/card/yui_135",
+    "owner": null,
+    "src": "yui_135"
+  },
+  {
+    "id": 22,
+    "h": "存在",
+    "p": "存在の花",
+    "file": "/card/yui_136",
+    "owner": null,
+    "src": "yui_136"
+  },
+  {
+    "id": 23,
+    "h": "レイド",
+    "p": "ボス",
+    "file": "/card/icon_3",
+    "owner": null,
+    "src": "icon_3"
+  },
+  {
+    "id": 24,
+    "h": "レイド",
+    "p": "ボスの勝利",
+    "file": "/card/icon_4",
+    "owner": null,
+    "src": "icon_4"
+  },
+  {
+    "id": 25,
+    "h": "文字",
+    "p": "アイ文字の「S」",
+    "file": "/card/icon_5",
+    "owner": "shino3",
+    "did": "did:plc:rpwpuzu2yyiuufm3232d7pm5",
+    "src": "icon_5"
+  },
+  {
+    "id": 26,
+    "h": "絵本",
+    "p": "アイの絵本",
+    "file": "/card/icon_6",
+    "owner": "ebikko",
+    "did": "did:plc:33ihf27ze66oz3plaxucn47t",
+    "src": "icon_6"
+  },
+  {
+    "id": 27,
+    "h": "天地",
+    "p": "天変地異",
+    "file": "/card/card_27",
+    "owner": null,
+    "src": "yui_137"
+  },
+  {
+    "id": 28,
+    "h": "自然",
+    "p": "状態",
+    "file": "/card/card_28",
+    "owner": null,
+    "src": "yui_138"
+  },
+  {
+    "id": 29,
+    "h": "重力",
+    "h_en": "gravity",
+    "p": "引き寄せる",
+    "file": "/card/card_29",
+    "img": "bafkreiemcucjk2hkjlnigqdm3cwnkirquhrffpzvj7m7tzbr5igp2xxsbe",
+    "ten": "OUY",
+    "ten_skill": true,
+    "src": "yui_120"
+  },
+  {
+    "id": 30,
+    "h": "A",
+    "h_en": "A",
+    "p": "アイ文字「A」",
+    "file": "/card/icon_7",
+    "ten_skill": true,
+    "img": "bafkreie2ds62mlwxgjkquuporj5p5qurueweasjpxos2c74523konzzjhe",
+    "src": "icon_7"
+  },
+  {
+    "id": 31,
+    "h": "I",
+    "h_en": "I",
+    "p": "アイ文字「I」",
+    "file": "/card/icon_9",
+    "ten_skill": true,
+    "img": "bafkreih4cgo7lcljhsgnkttyminzw7xk55pfd54feik6bo7k3efe4n7rkq",
+    "src": "icon_9"
+  },
+  {
+    "id": 32,
+    "h": "ロゴ",
+    "h_en": "logo",
+    "p": "瞳輪と文字",
+    "file": "/card/icon_8",
+    "ten_skill": false,
+    "img": "bafkreigwpzwt2jxkmfejd7d4dr7dvumoxdvmoe6yq2lmhwyqkg2jbwzabq",
+    "src": "icon_8"
+  },
+  {
+    "id": 33,
+    "h": "開闢",
+    "h_en": "transform",
+    "p": "黒髪から金髪へ変化",
+    "file": "/card/yui_140",
+    "ten_skill": true,
+    "ten": "AIK",
+    "img": "bafkreictejwme6kjn4u46xiwacxhpv2or5qc7y2l2maaycjsfdfvqrkosy",
+    "src": "yui_140"
+  },
+  {
+    "id": 34,
+    "h": "漫画",
+    "h_en": "manga",
+    "p": "漫画1巻の表紙",
+    "file": "/card/yui_141",
+    "ten_skill": false,
+    "img": "",
+    "src": "yui_141"
+  },
+  {
+    "id": 35,
+    "h": "B",
+    "h_en": "B",
+    "p": "アイ文字「B」",
+    "file": "/card/icon_10",
+    "ten_skill": false,
+    "img": "",
+    "src": "icon_10"
+  },
+  {
+    "id": 36,
+    "h": "唯一",
+    "h_en": "only",
+    "p": "唯一の剣",
+    "file": "/card/yui_142",
+    "ten_skill": true,
+    "ten": "YUI",
+    "img": "bafkreicibjuzb44bh4unvz2e5s3fapybb62jxb2dogkzhxiuxns5evdsbe",
+    "src": "yui_142"
+  },
+  {
+    "id": 37,
+    "h": "Y",
+    "h_en": "Y",
+    "p": "アイ文字「Y」",
+    "file": "/card/icon_11",
+    "ten_skill": true,
+    "img": "bafkreidm3ycr47hw6momn6ee5hldtwaoyadvwq4vtromyrayarmhllmaze",
+    "src": "icon_11"
+  },
+  {
+    "id": 38,
+    "h": "Z",
+    "h_en": "Z",
+    "p": "アイ文字「Z」",
+    "file": "/card/icon_12",
+    "ten_skill": true,
+    "img": "bafkreie2blmq6zc4tituicioscwgeitomnjdqrjc6dsremsowmrzhvktmu",
+    "src": "icon_12"
+  },
+  {
+    "id": 39,
+    "h": "青空",
+    "h_en": "bluesky",
+    "p": "hello world! blueskyの表紙",
+    "file": "/card/yui_143",
+    "owner": [
+      {
+        "user": "hirok1n"
+      },
+      {
+        "user": "henoya"
+      }
+    ],
+    "ten_skill": false,
+    "src": "yui_143"
+  },
+  {
+    "id": 40,
+    "h": "龍卵",
+    "h_en": "dragon egg",
+    "p": "ドライ、タマゴの姿",
+    "file": "/card/icon_13",
+    "owner": [
+      {
+        "user": "ebikko"
+      },
+      {
+        "user": "b35"
+      }
+    ],
+    "ten_skill": false,
+    "src": "icon_13"
+  },
+  {
+    "id": 41,
+    "h": "認証",
+    "h_en": "badge",
+    "p": "バッジ・アイ",
+    "file": "/card/icon_14",
+    "owner": "hirok1n",
+    "did": "did:plc:5x2zuagnxcxtcluyhtvv5p6c",
+    "ten_skill": false,
+    "src": "icon_14"
+  },
+  {
+    "id": 42,
+    "h": "nyan",
+    "h_en": "nyan",
+    "p": "アイ・ニャン",
+    "file": "/card/icon_15",
+    "ten_skill": false,
+    "src": "icon_15"
+  },
+  {
+    "id": 43,
+    "h": "hello world! bluesky",
+    "h_en": "hello world! bluesky",
+    "p": "技術書",
+    "file": "/card/book_1",
+    "book_owner": [
+      {
+        "user": "nkoz"
+      },
+      {
+        "user": "baiser"
+      },
+      {
+        "user": "kawaiirailroads"
+      },
+      {
+        "user": "tangure"
+      },
+      {
+        "user": "yukotan"
+      },
+      {
+        "user": "rubycherry936"
+      },
+      {
+        "user": "ebikko"
+      },
+      {
+        "user": "hirok1n"
+      },
+      {
+        "user": "b35"
+      },
+      {
+        "user": "aetos"
+      },
+      {
+        "user": "k16em"
+      },
+      {
+        "user": "boxman"
+      },
+      {
+        "user": "telteltel"
+      },
+      {
+        "user": "henoya"
+      },
+      {
+        "user": "uguh"
+      },
+      {
+        "user": "aki3"
+      },
+      {
+        "user": "lv489"
+      },
+      {
+        "user": "makamin"
+      },
+      {
+        "user": "objectx"
+      },
+      {
+        "user": "yutacar"
+      }
+    ],
+    "ten_skill": false,
+    "src": "book_1"
+  },
+  {
+    "id": 44,
+    "h": "宇宙",
+    "h_en": "universe",
+    "p": "無限の可能性",
+    "file": "/card/yui_144",
+    "owner": null,
+    "ten_skill": false,
+    "src": "yui_144"
+  }
 ]
