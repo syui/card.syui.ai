@@ -431,8 +431,11 @@
       },
 						{
 							"user": "telteltel"
+						},
+						{
+							"user": "boxman"
 						}
-    ],
+				],
     "ten_skill": false,
     "src": "icon_13"
   },
