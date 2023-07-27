@@ -21,7 +21,8 @@
     "did": "did:plc:qjp6exfcyenr22yucr5nomyi",
     "img": "bafkreigkev4ls7hs73rlfeiiwg7uz67zzzd7ikrice2bll2rc6a3vtn7f4",
     "ten": "EMY",
-    "src": "yui_100"
+    "src": "yui_100",
+				"version": 2
   },
   {
     "id": 2,
@@ -266,7 +267,8 @@
     "file": "/card/icon_5",
     "owner": "shino3",
     "did": "did:plc:rpwpuzu2yyiuufm3232d7pm5",
-    "src": "icon_5"
+    "src": "icon_5",
+				"version": 2
   },
   {
     "id": 26,
@@ -275,7 +277,8 @@
     "file": "/card/icon_6",
     "owner": "ebikko",
     "did": "did:plc:33ihf27ze66oz3plaxucn47t",
-    "src": "icon_6"
+    "src": "icon_6",
+				"version": 2
   },
   {
     "id": 27,
@@ -425,7 +428,10 @@
       },
       {
         "user": "b35"
-      }
+      },
+						{
+							"user": "telteltel"
+						}
     ],
     "ten_skill": false,
     "src": "icon_13"
