@@ -402,7 +402,7 @@
 		"h_en": "bluesky",
 		"p": "hello world! blueskyの表紙",
 		"file": "/card/yui_143",
-		"owner": ["hirok1n"],
+		"owner": ["hirok1n","henoya"],
 		"ten_skill": false,
 		"src": "yui_143"
 	},
@@ -412,7 +412,7 @@
 		"h_en": "dragon egg",
 		"p": "ドライ、タマゴの姿",
 		"file": "/card/icon_13",
-		"owner": null,
+		"owner": ["ebikko","b35"],
 		"ten_skill": false,
 		"src": "icon_13"
 	},
