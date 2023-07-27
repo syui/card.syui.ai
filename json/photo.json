@@ -182,5 +182,13 @@
     "img": "https://cdn.bsky.social/imgproxy/dyldhIBswLBfPSlJahvbW6vlknTvSHgvrEINID_Isrc/rs:fit:1000:1000:1:0/plain/bafkreiejvwm5z2zxuy5ax243wtx7va5tty65rtj5m56yslrhxjcq7zmpyy@jpeg",
     "created_at": "2023-07-27T16:08:09+09:00",
     "did": "did:plc:uqzpqmrjnptsxezjx4xuh2mn"
+  },
+  {
+    "add": "syui.ai",
+    "link": "https://bsky.app/profile/baiser.blue/post/3k3icut6pzo2i",
+    "author": "baiser.blue",
+    "img": "https://cdn.bsky.social/imgproxy/2SNbnqvBDp5TWPZaJqJJSRjtB5GrgchCvEsmgyICGck/rs:fit:1000:1000:1:0/plain/bafkreifhwepoui3xkeo6tlx3xzgzkxwbjhqeuzhrreclrmjrbrdgenm3n4@jpeg",
+    "created_at": "2023-07-27T16:09:11+09:00",
+    "did": "did:plc:uqzpqmrjnptsxezjx4xuh2mn"
   }
 ]
