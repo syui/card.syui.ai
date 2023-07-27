@@ -222,5 +222,13 @@
     "img": "https://cdn.bsky.social/imgproxy/UN-msF76HNCSBnvH72TD1S7EuNGtFUU27jGqSqBo0NY/rs:fit:1000:1000:1:0/plain/bafkreifrobmetfctpfoc3dnrjsgqwbgoy5txhfqzy6l4xjjyhhtuqypo64@jpeg",
     "created_at": "2023-07-28T00:04:55+09:00",
     "did": "did:plc:uqzpqmrjnptsxezjx4xuh2mn"
+  },
+  {
+    "add": "syui.ai",
+    "link": "https://bsky.app/profile/aki3.bsky.social/post/3k3jbumfoj32r",
+    "author": "aki3.bsky.social",
+    "img": "https://cdn.bsky.social/imgproxy/9MuH6FVEIEoPKZN5PRZPMMEhF4hcOmYHur9mGuo8OLQ/rs:fit:1000:1000:1:0/plain/bafkreifxkkdacjqd7h4wlecqieq6l6c5sazsr26p6nc7ojlvg5ik4wbkrm@jpeg",
+    "created_at": "2023-07-28T00:56:49+09:00",
+    "did": "did:plc:uqzpqmrjnptsxezjx4xuh2mn"
   }
 ]
