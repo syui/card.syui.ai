@@ -452,6 +452,9 @@
 						},
 						{
 							"user": "rubycherry936"
+						},
+						{
+							"user": "anon5r"
 						}
 				],
     "ten_skill": false,
@@ -543,8 +546,11 @@
       },
       {
         "user": "yutacar"
-      }
-    ],
+						},
+						{
+							"user": "anon5r"
+						}
+				],
     "ten_skill": false,
     "src": "book_1"
   },
