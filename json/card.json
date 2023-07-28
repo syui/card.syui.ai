@@ -345,6 +345,7 @@
     "p": "黒髪から金髪へ変化",
     "file": "/card/yui_140",
     "ten_skill": true,
+				"owner": null,
     "ten": "AIK",
     "img": "bafkreictejwme6kjn4u46xiwacxhpv2or5qc7y2l2maaycjsfdfvqrkosy",
     "src": "yui_140"
@@ -376,6 +377,7 @@
     "p": "唯一の剣",
     "file": "/card/yui_142",
     "ten_skill": true,
+				"owner": null,
     "ten": "YUI",
     "img": "bafkreicibjuzb44bh4unvz2e5s3fapybb62jxb2dogkzhxiuxns5evdsbe",
     "src": "yui_142"
