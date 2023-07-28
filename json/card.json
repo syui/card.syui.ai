@@ -304,6 +304,7 @@
     "file": "/card/card_29",
     "img": "bafkreiemcucjk2hkjlnigqdm3cwnkirquhrffpzvj7m7tzbr5igp2xxsbe",
     "ten": "OUY",
+				"owner": null,
     "ten_skill": true,
     "src": "yui_120"
   },
