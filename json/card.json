@@ -461,6 +461,9 @@
 				},
 				{
 					"user": "anon5r"
+				},
+				{
+					"user": "k16em"
 				}
 			],
 			"ten_skill": false,
@@ -572,5 +575,25 @@
 			"owner": "baiser",
 			"ten_skill": false,
 			"src": "yui_144"
+		},
+		{
+			"id": 45,
+			"h": "音夢",
+			"h_en": "",
+			"p": "音夢",
+			"file": "/card/icon_16",
+			"owner": null,
+			"ten_skill": false,
+			"src": "icon_16"
+		},
+		{
+			"id": 46,
+			"h": "歯車",
+			"h_en": "",
+			"p": "歯車",
+			"file": "/card/icon_17",
+			"owner": null,
+			"ten_skill": false,
+			"src": "icon_17"
 		}
 ]
