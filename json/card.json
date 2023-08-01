@@ -595,5 +595,16 @@
 			"owner": null,
 			"ten_skill": false,
 			"src": "icon_17"
+		},
+		{
+			"id": 47,
+			"h": "唯一",
+			"h_en": "yui",
+			"p": "唯一の剣",
+			"file": "/card/yui_145",
+			"owner": null,
+			"ten_skill": false,
+			"src": "yui_145",
+			"img": "bafkreieh2j3nbnetmux5xaid7iefv2vfgsjwkx5bx66ce6h35rq2oebo54"
 		}
 ]
