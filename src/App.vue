@@ -33,10 +33,21 @@
 				<span class="menu-right-top" v-if="cards.data.find((v) => v.card == 43)">
 					<button v-on:click="book_user = !book_user">book</button>
 				</span>
+				<span class="menu-right-top" v-if="cards.data.find((v) => v.card >= 48 && v.card <= 59)">
+					<button v-on:click="chara_user = !chara_user">chara</button>
+				</span>
 				<div class="book-list" v-if="cards.data.find((v) => v.card == 43)" v-show="book_user">
 					<a href="/book/1/ZGlkOnBsYzo0aHFqZm43bTZuNWhubzNkb2FtdWhnZWY/index.html">
 						<img :src='"/card/card_" + 43 + ".webp"'>
 					</a>
+				</div>
+
+				<div class="book-list" v-if="cards.data.filter((v) => v.card >= 48 && v.card <= 59)" v-show="chara_user">
+					<span v-for="ii in cards.data.filter((v) => v.card >= 48 && v.card <= 59)" class="book-list">
+						<a :href="ii.url">
+							<img :src='"/card/card_" + ii.card + ".webp"'>
+						</a>
+					</span>
 				</div>
 
 				<div class="card-fav" v-if="user_fav != '0'"><span class="menu-right-top"><button>✧</button></span>
@@ -551,6 +562,7 @@ export default {
 			card_fav: null,
 			user_fav: null,
 			book_user: null,
+			chara_user: null,
 			card_status: null,
 			cors: "https://cors.syui.ai/",
 			heroku: "https://cors-card.herokuapp.com/",
@@ -686,10 +698,10 @@ export default {
 					this.fav = false;
 					this.card_status = true;
 			},
-			cardbook(){
+			cardurl(){
 				return this.cards.data.sort((a,b) => {
 					this.premium = true;
-					if (a.card == 43 && a.status == "book") {
+					if (a.url !== "https://card.syui.ai") {
 						this.cards.data = this.cards.data.slice().reverse();
 					} else {
 						a.url = null;
@@ -1139,6 +1151,10 @@ span.card-black p img {
 thead.card-fav tr img {
     border-radius: 30px;
     padding: 20px;
+}
+
+span.book-list {
+	padding:10px;
 }
 
 @media screen and (max-width:1000px) { 

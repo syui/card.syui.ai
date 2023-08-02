@@ -578,9 +578,9 @@
 		},
 		{
 			"id": 45,
-			"h": "音夢",
+			"h": "夢音",
 			"h_en": "",
-			"p": "音夢",
+			"p": "夢音",
 			"file": "/card/icon_16",
 			"owner": null,
 			"ten_skill": false,
@@ -606,5 +606,137 @@
 			"ten_skill": false,
 			"src": "yui_145",
 			"img": "bafkreieh2j3nbnetmux5xaid7iefv2vfgsjwkx5bx66ce6h35rq2oebo54"
+		},
+		{
+			"id": 48,
+			"h": "ゼン",
+			"h_en": "zen",
+			"p": "ゼン",
+			"file": "/card/chara_0",
+			"owner": null,
+			"ten_skill": false,
+			"src": "chara_0",
+			"img": "bafkreicqnlxdzd4kyyx75ievhjvni5tt642ip2ryhmc3dis5llhty6gkta"
+		},
+		{
+			"id": 49,
+			"h": "アイ",
+			"h_en": "ai",
+			"p": "アイ",
+			"file": "/card/chara_1",
+			"owner": null,
+			"ten_skill": false,
+			"src": "chara_1",
+			"img": "bafkreiccvrnft7tqru7nefzbuxwrhrvl72ouarrircrsriec7ietlilygm"
+		},
+		{
+			"id": 50,
+			"h": "ドライ",
+			"h_en": "dorai",
+			"p": "ドライ",
+			"file": "/card/chara_2",
+			"owner": null,
+			"ten_skill": false,
+			"src": "chara_2",
+			"img": "bafkreiecxosnx6s7dzrchzha342ed644dylvfblh7tfxagjdfpbglxaxma"
+		},
+		{
+			"id": 51,
+			"h": "オクカット",
+			"h_en": "octkat",
+			"p": "オクトカット・リーマン",
+			"file": "/card/chara_3",
+			"owner": null,
+			"ten_skill": false,
+			"src": "chara_3",
+			"img": "bafkreigjrzsygjfxb7bgtukyp4pcw6ucbj3ssgqvquzfgzxbd4geeaij2e"
+		},
+		{
+			"id": 52,
+			"h": "キョウスケ",
+			"h_en": "kyosuke",
+			"p": "キョウスケ",
+			"file": "/card/chara_4",
+			"owner": null,
+			"ten_skill": false,
+			"src": "chara_4",
+			"img": "bafkreihilm5lw6mqneovaegy5q6tdfe6qld4vj4nydgbn5aa4mjbjzd3ry"
+		},
+		{
+			"id": 53,
+			"h": "ポンタ",
+			"h_en": "ponta",
+			"p": "ポンタ",
+			"file": "/card/chara_5",
+			"owner": null,
+			"ten_skill": false,
+			"src": "chara_5",
+			"img": "bafkreia6kp6brd6vps67f6boewh5pwx3wklt6g5jkrprz4bsuwwb2byqvi"
+		},
+		{
+			"id": 54,
+			"h": "アイ",
+			"h_en": "ai",
+			"p": "アイ・アイモード",
+			"file": "/card/chara_6",
+			"owner": null,
+			"ten_skill": false,
+			"src": "chara_6",
+			"img": "bafkreiclp4mhxcet2ybjdpil6f4wn2fg43s72gbzwwayonvrayumjdg6j4"
+		},
+		{
+			"id": 55,
+			"h": "アイ",
+			"h_en": "ai",
+			"p": "アイ・ゼンモード",
+			"file": "/card/chara_7",
+			"owner": null,
+			"ten_skill": false,
+			"src": "chara_7",
+			"img": "bafkreiehnsbxh2jw5vg4ygozbirasa2lcvfddpglzqclubyhekkox6irwm"
+		},
+		{
+			"id": 56,
+			"h": "アイ",
+			"h_en": "ai",
+			"p": "アイ・モジモード",
+			"file": "/card/chara_8",
+			"owner": null,
+			"ten_skill": false,
+			"src": "chara_8",
+			"img": "bafkreigk5log5zq2xsdggjr4fhcxpl3ek6sfs2x242mdbml4ztx4l2n5qm"
+		},
+		{
+			"id": 57,
+			"h": "オクトカット",
+			"h_en": "octokat",
+			"p": "オクトカット・オウ",
+			"file": "/card/chara_9",
+			"owner": null,
+			"ten_skill": false,
+			"src": "chara_9",
+			"img": "bafkreidlzbyjyjg3ad4ilbsoo6vcfgrmmxu666fowh7b4qlnpqxl4zwik4"
+		},
+		{
+			"id": 58,
+			"h": "オクトカット",
+			"h_en": "octokat",
+			"p": "オクトカット・ハカセ",
+			"file": "/card/chara_10",
+			"owner": null,
+			"ten_skill": false,
+			"src": "chara_10",
+			"img": "bafkreib67uqj7ufzev7rhju3wr6c2jvmmzcl6iaj54zrtfdzafeui5aqs4"
+		},
+		{
+			"id": 59,
+			"h": "ゼウス",
+			"h_en": "octokat",
+			"p": "ゼウス1号",
+			"file": "/card/chara_11",
+			"owner": null,
+			"ten_skill": false,
+			"src": "chara_11",
+			"img": "bafkreih5vzlju4vaeo2nc5bwyjsn53rs6qepem4xpvvedsgqbz624kzgoy"
 		}
 ]
