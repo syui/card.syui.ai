@@ -606,5 +606,71 @@
 			"ten_skill": false,
 			"src": "yui_145",
 			"img": "bafkreieh2j3nbnetmux5xaid7iefv2vfgsjwkx5bx66ce6h35rq2oebo54"
+		},
+		{
+			"id": 48,
+			"h": "ゼン",
+			"h_en": "zen",
+			"p": "ゼン",
+			"file": "/card/chara_0",
+			"owner": null,
+			"ten_skill": false,
+			"src": "chara_0",
+			"img": "bafkreicqnlxdzd4kyyx75ievhjvni5tt642ip2ryhmc3dis5llhty6gkta"
+		},
+		{
+			"id": 49,
+			"h": "アイ",
+			"h_en": "ai",
+			"p": "アイ",
+			"file": "/card/chara_1",
+			"owner": null,
+			"ten_skill": false,
+			"src": "chara_1",
+			"img": "bafkreiccvrnft7tqru7nefzbuxwrhrvl72ouarrircrsriec7ietlilygm"
+		},
+		{
+			"id": 50,
+			"h": "ドライ",
+			"h_en": "dorai",
+			"p": "ドライ",
+			"file": "/card/chara_2",
+			"owner": null,
+			"ten_skill": false,
+			"src": "chara_2",
+			"img": "bafkreiecxosnx6s7dzrchzha342ed644dylvfblh7tfxagjdfpbglxaxma"
+		},
+		{
+			"id": 51,
+			"h": "オクカット・リーマン",
+			"h_en": "octkat",
+			"p": "オクトカット・リーマン",
+			"file": "/card/chara_3",
+			"owner": null,
+			"ten_skill": false,
+			"src": "chara_3",
+			"img": "bafkreigjrzsygjfxb7bgtukyp4pcw6ucbj3ssgqvquzfgzxbd4geeaij2e"
+		},
+		{
+			"id": 52,
+			"h": "キョウスケ",
+			"h_en": "kyosuke",
+			"p": "キョウスケ",
+			"file": "/card/chara_4",
+			"owner": null,
+			"ten_skill": false,
+			"src": "chara_4",
+			"img": "bafkreihilm5lw6mqneovaegy5q6tdfe6qld4vj4nydgbn5aa4mjbjzd3ry"
+		},
+		{
+			"id": 53,
+			"h": "ポンタ",
+			"h_en": "ponta",
+			"p": "ポンタ",
+			"file": "/card/chara_5",
+			"owner": null,
+			"ten_skill": false,
+			"src": "chara_5",
+			"img": "bafkreia6kp6brd6vps67f6boewh5pwx3wklt6g5jkrprz4bsuwwb2byqvi"
 		}
 ]
