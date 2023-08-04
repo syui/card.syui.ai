@@ -642,7 +642,7 @@
 		},
 		{
 			"id": 51,
-			"h": "オクカット・リーマン",
+			"h": "オクカット",
 			"h_en": "octkat",
 			"p": "オクトカット・リーマン",
 			"file": "/card/chara_3",
@@ -710,11 +710,33 @@
 			"id": 57,
 			"h": "オクトカット",
 			"h_en": "octokat",
-			"p": "オクトカット・王",
+			"p": "オクトカット・オウ",
 			"file": "/card/chara_9",
 			"owner": null,
 			"ten_skill": false,
 			"src": "chara_9",
 			"img": "bafkreidlzbyjyjg3ad4ilbsoo6vcfgrmmxu666fowh7b4qlnpqxl4zwik4"
+		},
+		{
+			"id": 58,
+			"h": "オクトカット",
+			"h_en": "octokat",
+			"p": "オクトカット・ハカセ",
+			"file": "/card/chara_10",
+			"owner": null,
+			"ten_skill": false,
+			"src": "chara_10",
+			"img": "bafkreib67uqj7ufzev7rhju3wr6c2jvmmzcl6iaj54zrtfdzafeui5aqs4"
+		},
+		{
+			"id": 59,
+			"h": "ゼウス",
+			"h_en": "octokat",
+			"p": "ゼウス1号",
+			"file": "/card/chara_11",
+			"owner": null,
+			"ten_skill": false,
+			"src": "chara_11",
+			"img": "bafkreih5vzlju4vaeo2nc5bwyjsn53rs6qepem4xpvvedsgqbz624kzgoy"
 		}
 ]
