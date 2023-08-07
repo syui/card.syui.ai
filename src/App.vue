@@ -2,10 +2,14 @@
 	<div id="app">
 		<link rel="stylesheet" href="https://syui.ai/bower_components/icomoon/css/icomoon.css" />
 		<div class="menu">
-			<a class="menu-link" href="/"><span class="icon-ai"></span></a> <a class="menu-link" href="/docs">docs</a> <a class="menu-link" href="/en">en</a> <a class="menu-link" href="/te">ten</a> <a class="menu-link" href="/pr">fav</a>
+			<a class="menu-link" href="/"><span class="icon-ai"></span></a> <a class="menu-link" href="/docs">docs</a> <a class="menu-link" href="/en">en</a>
 			<span class="menu-right-top">
 				<a class="menu-link" href="https://yui.syui.ai"><span class="icon-ai"></span></a>
 			</span>
+			<div class="menu">
+			<p><a class="menu-link" href="/m">#yui</a> <a class="menu-link" href="/bluesky">#bluesky</a></p>
+		</div>
+
 			</div>
 			<p v-if="loc === 'te'"><code><a href="https://bsky.app/profile/yui.syui.ai" target="_blank">@yui.syui.ai</a> /ten</code></p>
 			<p v-else-if="loc === 'pr'"><code><a href="https://bsky.app/profile/yui.syui.ai" target="_blank">@yui.syui.ai</a> /fav 1234567</code></p>
@@ -29,6 +33,11 @@
 						<span class="icon-ai"></span>
 					</span>
 				</h3>
+				<div class="card-all-badge-bottom" >
+					<img src="/card/badge_1.png" v-if="cards.data.find((v) => v.card == 18)">
+					<img src="/card/badge_2.png" v-if="cards.data.find((v) => v.card == 41)">
+					<img src="/card/badge_3.png" v-if="cards.data.find((v) => v.card == 45)">
+				</div>
 
 				<span class="menu-right-top" v-if="cards.data.find((v) => v.card == 43)">
 					<button v-on:click="book_user = !book_user">book</button>
@@ -133,7 +142,7 @@
 				</div>
 
 				<div class="card-button">
-					<button v-on:click="cardtime">new</button> <button v-on:click="sort">cp</button> <button v-on:click="sortcard">card</button> <button v-on:click="cardinfo">id</button> <button v-on:click="cardstatus">status</button> <button v-on:click="cardpremium">premium</button> <button v-on:click="cardfav">fav</button>
+					<button v-on:click="cardtime">new</button> <button v-on:click="sort">cp</button> <button v-on:click="sortcard">card</button> <button v-on:click="cardinfo">id</button> <button v-on:click="cardstatus">status</button> <button v-on:click="cardpremium">premium</button> <button v-on:click="cardfav">fav(cid)</button> <button v-on:click="cardskill">skill</button>
 				</div>
 				<span class="menu-right"><code><strong>ID</strong> {{ id }}</code> <code><span class="icon-power"></span> {{ aiten }}</code></span>
 			<table>
@@ -144,6 +153,7 @@
 						<tbody><tr><span v-if="ii.skill == 'critical'" class="icon-sandar"></span><span v-if="ii.skill == 'post'" class="icon-moon"></span><span v-if="ii.skill == 'luck'" class="icon-api"></span><span v-if="ii.skill == 'ten'" class="icon-power"></span><span v-if="ii.skill == 'dragon'" class="icon-home"></span><span v-if="ii.skill == 'nyan'">▲</span><span v-if="ii.skill == 'yui'" class="icon-ai"></span> {{ ii.cp }}</tr></tbody>
 						<tbody v-if="info == true"><tr>ID {{ ii.card }}</tr></tbody>
 						<tbody v-if="fav == true"><tr>CID {{ ii.id }}</tr></tbody>
+						<tbody v-if="card_skill == true"><tr>{{ ii.skill }}</tr></tbody>
 						<tbody v-if="card_status == true"><tr>✧ {{ ii.status }}</tr></tbody>
 					</span>
 					<span v-else-if="ii.card !== null">
@@ -159,6 +169,7 @@
 						<tbody><tr><span v-if="ii.skill == 'critical'" class="icon-sandar"></span><span v-if="ii.skill == 'post'" class="icon-moon"></span><span v-if="ii.skill == 'luck'" class="icon-api"></span><span v-if="ii.skill == 'ten'" class="icon-power"></span><span v-if="ii.skill == 'dragon'" class="icon-home"></span><span v-if="ii.skill == 'nyan'">▲</span><span v-if="ii.skill == 'yui'" class="icon-ai"></span> {{ ii.cp }}</tr></tbody>
 						<tbody v-if="info == true"><tr>ID {{ ii.card }}</tr></tbody>
 						<tbody v-if="fav == true"><tr>CID {{ ii.id }}</tr></tbody>
+						<tbody v-if="card_skill == true"><tr>{{ ii.skill }}</tr></tbody>
 						<tbody v-if="card_status == true"><tr>✧ {{ ii.status }}</tr></tbody>
 					</span>
 				</span>
@@ -272,10 +283,11 @@
 				<p><code>レアカード</code>を3枚集めると、いいことがあるかも</p>
 				<p>集めた人は<a href="https://bsky.app/profile/syui.ai">@syui</a>まで連絡してみて</p>
 				<p>ただし、リアルカードに変わるのは、こちらの<a href="/owner">所有者</a>がいないカードに限られます</p>
-				<h3>link</h3>
-				<p><a class="menu-link" href="/fa">fanart</a> <a class="menu-link" href="/ph">photo</a> <a class="menu-link" href="/te">aiten</a></p>
 
-			</div>
+
+		<h3>link</h3>
+		<p><a class="menu-link" href="/fa">fanart</a> <a class="menu-link" href="/ph">photo</a> <a class="menu-link" href="/te">aiten</a> <a class="menu-link" href="/pr">fav</a></p>
+	</div>
 
 		<div v-if="loc === 'en'">
 			<p>Cards can be drawn once a day</p>
@@ -338,7 +350,7 @@
 				<p>card <a href="/owner">owner</a></p>
 
 				<h3>link</h3>
-				<p><a class="menu-link" href="/fa">fanart</a> <a class="menu-link" href="/ph">photo</a> <a class="menu-link" href="/te">aiten</a></p>
+				<p><a class="menu-link" href="/fa">fanart</a> <a class="menu-link" href="/ph">photo</a> <a class="menu-link" href="/te">aiten</a> <a class="menu-link" href="/pr">fav</a></p>
 
 			</div>
 
@@ -442,6 +454,12 @@
 							<p v-if="ii.owner">owner : <a :href="'/' + ii.owner">{{ ii.owner }}</a></p>
 							<p v-if="ii.owner === null">owner : <code>none</code></p>
 						</div>
+			<div v-show="ii.id == 45" class="card-owner-one">
+							<button :id="ii.id">card : {{ ii.h }}</button>
+							<p><img :src='"/card/card_" + ii.id + ".webp"'></p>
+							<p v-if="ii.owner">owner :<span v-for="(iii, index) in ii.owner"> <a :href="'/' + iii.user">{{ iii.user }}</a>, </span></p>
+							<p v-if="ii.owner === null">owner : <code>none</code></p>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -494,7 +512,6 @@
 				</div>
 			</span>
 		</div>
-
 		<div v-if="loc === 'pr'">
 			<p>お気に入りのカードを1枚だけ登録できます</p>
 			<p>数字はカード一覧の <button>fav</button> で確認します。</p>
@@ -503,6 +520,41 @@
 			<h3>/fav b</h3>
 			<p><code>/fav b</code>でバトルできます。</p>
 			<p>1日のバトルポイントを消費します。</p>
+		</div>
+
+		<div v-if="loc === 'm'">
+			<div class="card-button">
+			</div>
+			<div v-if="memos.data"  class="memo-body">
+				<div v-for="(iii, index) in memo.concat(memos.data, memos_a.data, memos_b.data, memos_c.data, memos_d.data)" class="memo-body-content" :key="iii.updatedTs">
+					<vue-marked v-for="memo_content in iii.content.split('\n', 5)" :key="memo_content">
+						{{ memo_content }}
+					</vue-marked>
+					<p v-if="iii.content.substring(100, 120) !== ''"><a :href="'https://m.syui.ai/m/' + iii.id" target="_blank">...</a></p>
+					<p v-if="iii.updatedTs" class="memo-time">
+						<a :href="'https://m.syui.ai/m/' + iii.id" target="_blank">{{iii.updatedTs | moment(format)}}</a> / 
+						<a :href="'https://m.syui.ai/u/' + iii.creatorUsername" target="_blank">@{{ iii.creatorUsername }}</a>
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div v-if="loc === 'bluesky'">
+
+			<div class="card-button">
+			</div>
+			<div v-if="memos.data"  class="memo-body">
+				<div v-for="(iii, index) in memo.concat(memos.data, memos_a.data, memos_b.data, memos_c.data, memos_d.data)" class="memo-body-content" :key="iii.updatedTs">
+					<vue-marked v-for="memo_content in iii.content.split('\n', 5)" :key="memo_content">
+						{{ memo_content }}
+					</vue-marked>
+					<p v-if="iii.content.substring(100, 120) !== ''"><a :href="'https://m.syui.ai/m/' + iii.id" target="_blank">...</a></p>
+					<p v-if="iii.updatedTs" class="memo-time">
+						<a :href="'https://m.syui.ai/m/' + iii.id" target="_blank">{{iii.updatedTs | moment(format)}}</a> / 
+						<a :href="'https://m.syui.ai/u/' + iii.creatorUsername" target="_blank">@{{ iii.creatorUsername }}</a>
+					</p>
+				</div>
+			</div>
 		</div>
 
 		<footer>
@@ -525,6 +577,8 @@ const UPDATE = ({ x, y }) => {
 }
 
 import axios from 'axios'
+import VueMarked from 'vue-marked';
+import moment from "moment";
 var loc = window.location.pathname.split('/').slice(-1)[0];
 
 export default {
@@ -564,12 +618,28 @@ export default {
 			book_user: null,
 			chara_user: null,
 			card_status: null,
+			card_skill: null,
 			cors: "https://cors.syui.ai/",
 			heroku: "https://cors-card.herokuapp.com/",
 			api_url: null,
 			bsky_mode: false,
 			did: null,
+			memos: null,
+			memos_a: null,
+			memos_b: null,
+			memos_c: null,
+			memos_d: null,
+			memos_api: "https://m.syui.ai/api/v1",
+			memo: [],
 		}
+	},
+	components: {
+		VueMarked,
+	},
+	filters: {
+		moment: function(date) {
+			return moment.unix(date).format("YYYY.MM.DD");
+		},
 	},
 	mounted() {
 		if (window.location.host === "localhost:8080") {
@@ -595,18 +665,42 @@ export default {
 			axios
 				.get("/json/photo.json")
 				.then(response => (this.photos = response));
+		} else if (loc === 'm'){
+			let url = this.memos_api + "/memo?creatorId=1&tag=yui";
+			axios.get(url,{ crossdomain: true })
+				.then(response => (this.memos = response));
+				axios.get(this.memos_api + "/memo?creatorId=4&tag=yui",{ crossdomain: true })
+					.then(response => (this.memos_a = response));
+					axios.get(this.memos_api + "/memo?creatorId=5&tag=yui",{ crossdomain: true })
+						.then(response => (this.memos_b = response));
+						axios.get(this.memos_api + "/memo?creatorId=6&tag=yui",{ crossdomain: true })
+							.then(response => (this.memos_c = response));
+						axios.get(this.memos_api + "/memo?creatorId=7&tag=yui",{ crossdomain: true })
+							.then(response => (this.memos_d = response));
+		} else if (loc === 'bluesky'){
+			let url = this.memos_api + "/memo?creatorId=1&tag=bluesky";
+			axios.get(url,{ crossdomain: true })
+				.then(response => (this.memos = response));
+				axios.get(this.memos_api + "/memo?creatorId=4&tag={bluesky",{ crossdomain: true })
+					.then(response => (this.memos_a = response));
+					axios.get(this.memos_api + "/memo?creatorId=5&tag=bluesky",{ crossdomain: true })
+						.then(response => (this.memos_b = response));
+						axios.get(this.memos_api + "/memo?creatorId=6&tag=bluesky",{ crossdomain: true })
+							.then(response => (this.memos_c = response));
+						axios.get(this.memos_api + "/memo?creatorId=7&tag=bluesky",{ crossdomain: true })
+							.then(response => (this.memos_d = response));
 		} else {
 			let url = this.api_url + "users?itemsPerPage=3000";
 			axios.get(url,{ crossdomain: true })
 				.then(response => { 
-				this.record = response;
-				this.id = this.record.data.find((v) => v.username == loc).id;
-				this.did = this.record.data.find((v) => v.username == loc).did;
-				this.aiten = this.record.data.find((v) => v.username == loc).aiten;
-				this.bsky_mode = this.record.data.find((v) => v.username == loc).bsky;
-				this.user_fav = this.record.data.find((v) => v.username == loc).fav;
-				let url = this.api_url + "users/" + this.id + "/card?itemsPerPage=3000";
-				axios
+					this.record = response;
+					this.id = this.record.data.find((v) => v.username == loc).id;
+					this.did = this.record.data.find((v) => v.username == loc).did;
+					this.aiten = this.record.data.find((v) => v.username == loc).aiten;
+					this.bsky_mode = this.record.data.find((v) => v.username == loc).bsky;
+					this.user_fav = this.record.data.find((v) => v.username == loc).fav;
+					let url = this.api_url + "users/" + this.id + "/card?itemsPerPage=3000";
+					axios
 					.get("/json/card.json")
 					.then(response => (this.rcards = response));
 					if (loc.length > 1){
@@ -669,14 +763,22 @@ export default {
 					return b.card - a.card;
 				});
 			},
+			tagsort(){
+				this.memo.sort(function(a,b){
+					if(a.updatedTs < b.updatedTs) return -1;
+					if(a.updatedTs > b.updatedTs) return 1;
+					return 0;
+				});
+			},
 			cardinfo(){
 				this.cards = {};
 				let url = this.api_url + "users/" + this.id + "/card?itemsPerPage=2000";
 				axios
 					.get(url,{ crossdomain: true })
 					.then(response => (this.cards = response));
-					this.fav = false;
 					this.info = true;
+					this.fav = false;
+					this.card_skill = false;
 					this.card_status = false;
 			},
 			cardtime(){
@@ -686,6 +788,7 @@ export default {
 			cardfav(){
 				this.info = false;
 				this.fav = true;
+				this.card_skill = false;
 				this.card_status = false;
 			},
 			cardstatus(){
@@ -696,7 +799,19 @@ export default {
 					.then(response => (this.cards = response));
 					this.info = false;
 					this.fav = false;
+					this.card_skill = false;
 					this.card_status = true;
+			},
+			cardskill(){
+				this.cards = {};
+				let url = this.api_url + "users/" + this.id + "/card?itemsPerPage=2000";
+				axios
+					.get(url,{ crossdomain: true })
+					.then(response => (this.cards = response));
+					this.info = false;
+					this.fav = false;
+					this.card_status = false;
+					this.card_skill = true;
 			},
 			cardurl(){
 				return this.cards.data.sort((a,b) => {
@@ -857,6 +972,11 @@ span.card-bluesky-badge a {
 span.card-all-badge {
 	color: #ff7c00;
 	padding:0 5px;
+}
+
+.card-all-badge-bottom img {
+	padding: 0 7px 0 0;
+	width:25px;
 }
 
 blockquote {
@@ -1157,6 +1277,28 @@ span.book-list {
 	padding:10px;
 }
 
+.memo-body-content {
+	background-color:#fff;
+	padding: 10px 30px 10px 30px;
+	margin-bottom: 15px;
+}
+
+p.memo-time {
+    text-align: right;
+}
+
+.card-all-badge-bottom {
+    margin: 0 0 10px 0;
+}
+
+.memo-body-content p code {
+    background-color: #f1f1f1;
+				/* border: solid 2px #847e007d; */
+    padding: 4px 5px 4px 5px;
+    margin: 2px;
+    border-radius: 4px;
+}
+
 @media screen and (max-width:1000px) { 
 	.card-button {
 		float: none;
@@ -1182,5 +1324,4 @@ span.book-list {
 		text-align: center;
 	}
 }
-
 </style>

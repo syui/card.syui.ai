@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>reqwest · hello world! bluesky</title>
+        <title>timeline · hello world! bluesky</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="@gitbook-ng/gitbook 3.3.6">
@@ -69,10 +69,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../c4/" />
+    <link rel="next" href="../end/" />
     
     
-    <link rel="prev" href="2.html" />
+    <link rel="prev" href="1.html" />
     
 
     </head>
@@ -243,9 +243,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5" data-path="./">
+        <li class="chapter " data-level="1.5" data-path="../c3/">
             
-                <a href="./">
+                <a href="../c3/">
             
                     
                     part 3
@@ -257,9 +257,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.5.1" data-path="1.html">
+        <li class="chapter " data-level="1.5.1" data-path="../c3/1.html">
             
-                <a href="1.html">
+                <a href="../c3/1.html">
             
                     
                     hello world
@@ -270,9 +270,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.2" data-path="2.html">
+        <li class="chapter " data-level="1.5.2" data-path="../c3/2.html">
             
-                <a href="2.html">
+                <a href="../c3/2.html">
             
                     
                     seahorse
@@ -283,9 +283,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.5.3" data-path="3.html">
+        <li class="chapter " data-level="1.5.3" data-path="../c3/3.html">
             
-                <a href="3.html">
+                <a href="../c3/3.html">
             
                     
                     reqwest
@@ -372,9 +372,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.7" data-path="../c5/">
+        <li class="chapter " data-level="1.7" data-path="./">
             
-                <a href="../c5/">
+                <a href="./">
             
                     
                     part 5
@@ -386,9 +386,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.7.1" data-path="../c5/1.html">
+        <li class="chapter " data-level="1.7.1" data-path="1.html">
             
-                <a href="../c5/1.html">
+                <a href="1.html">
             
                     
                     notify
@@ -399,9 +399,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.7.2" data-path="../c5/2.html">
+        <li class="chapter active" data-level="1.7.2" data-path="2.html">
             
-                <a href="../c5/2.html">
+                <a href="2.html">
             
                     
                     timeline
@@ -452,7 +452,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >reqwest</a>
+        <a href=".." >timeline</a>
     </h1>
 </div>
 
@@ -467,134 +467,98 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h3 id="reqwest">reqwest</h3>
-<p>rust&#x306E;<a href="https://github.com/seanmonstar/reqwest" target="_blank">seanmonstar/reqwest</a>&#x3092;&#x89E3;&#x8AAC;&#x3059;&#x308B;&#x524D;&#x306B;&#x3001;&#x4EE5;&#x4E0B;&#x306E;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3092;&#x5B9F;&#x884C;&#x3057;&#x3066;&#x307F;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;</p>
-<pre><code class="lang-sh">$ curl <span class="hljs-_">-s</span>L <span class="hljs-string">&quot;https://bsky.social/xrpc/com.atproto.repo.listRecords?repo=support.bsky.team&amp;collection=app.bsky.feed.post&quot;</span>
-</code></pre>
-<p>&#x3053;&#x308C;&#x306F;<a href="https://bsky.app/profile/did:plc:oc6vwdlmk2kqyida5i74d3p5" target="_blank">support.bsky.social</a>&#x306E;timeline&#x3092;&#x53D6;&#x5F97;&#x3059;&#x308B;api&#x3092;&#x53E9;&#x3044;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;</p>
-<p><code>reqwest</code>&#x306F;&#x4E3B;&#x306B;api&#x3092;&#x53E9;&#x304F;&#x305F;&#x3081;&#x306E;rust&#x306E;lib&#x3060;&#x3068;&#x3044;&#x3046;&#x7406;&#x89E3;&#x3067;&#x69CB;&#x3044;&#x307E;&#x305B;&#x3093;&#x3002;</p>
-<p>&#x3067;&#x306F;&#x3001;&#x5B9F;&#x969B;&#x306B;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x66F8;&#x3044;&#x3066;&#x307F;&#x307E;&#x3059;&#x3002;</p>
-<div><p class="code-filename">Cargo.toml</p></div>
-<pre><code class="lang-toml"><span class="hljs-section">[package]</span>
-<span class="hljs-attr">name</span> = <span class="hljs-string">&quot;rust&quot;</span>
-<span class="hljs-attr">version</span> = <span class="hljs-string">&quot;0.1.0&quot;</span>
-<span class="hljs-attr">edition</span> = <span class="hljs-string">&quot;2021&quot;</span>
-<span class="hljs-section">
-[dependencies]</span>
-<span class="hljs-attr">seahorse</span> = <span class="hljs-string">&quot;*&quot;</span>
-<span class="hljs-attr">reqwest</span> = <span class="hljs-string">&quot;*&quot;</span>
-<span class="hljs-attr">tokio</span> = { version = <span class="hljs-string">&quot;1&quot;</span>, features = [<span class="hljs-string">&quot;full&quot;</span>] }
-</code></pre>
-<pre><code class="lang-src/main.rs">use seahorse::{App, Context, Command};
-use std::env;
-
-fn main() {
-    let args: Vec&lt;String&gt; = env::args().collect();
-    let app = App::new(env!(&quot;CARGO_PKG_NAME&quot;))
-        .action(s)
-        .command(
-                Command::new(&quot;yes&quot;)
-                .alias(&quot;y&quot;)
-                .action(y),
-                )
-        .command(
-                Command::new(&quot;no&quot;)
-                .alias(&quot;n&quot;)
-                .action(n),
-                )
-        .command(
-                Command::new(&quot;test&quot;)
-                .alias(&quot;t&quot;)
-                .action(|c| println!(&quot;Hello, {:?}&quot;, c.args)),
-                )
-        .command(
-                Command::new(&quot;bluesky&quot;)
-                .alias(&quot;b&quot;)
-                .action(c_list_records),
-                )
-
-        ;
-        app.run(args);
+                                <h3 id="timeline">timeline</h3>
+<p><code>timeline</code>&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x306E;&#x8FFD;&#x52A0;&#x306F;&#x3067;&#x304D;&#x307E;&#x3057;&#x305F;&#x304B;&#x3002;</p>
+<p>&#x3053;&#x3053;&#x3067;&#x306F;&#x8FFD;&#x52A0;&#x3067;&#x304D;&#x305F;&#x524D;&#x63D0;&#x3067;&#x8A71;&#x3092;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x4ECA;&#x306E;&#x307E;&#x307E;&#x3067;&#x306F;&#x3059;&#x3054;&#x304F;&#x898B;&#x3065;&#x3089;&#x3044;&#x3067;&#x3059;&#x3088;&#x306D;&#x3002;&#x3053;&#x308C;&#x3092;&#x5F62;&#x6210;&#x3057;&#x3066;&#x8868;&#x793A;&#x3059;&#x308B;&#x5FC5;&#x8981;&#x304C;&#x51FA;&#x3066;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x4ECA;&#x56DE;&#x306F;&#x3001;&#x51FA;&#x529B;&#x7D50;&#x679C;&#x3092;&#x5F62;&#x6210;&#x3059;&#x308B;&#x65B9;&#x6CD5;&#x306E;&#x7D39;&#x4ECB;&#x3067;&#x3059;&#x3002;</p>
+<div><p class="code-filename">src/data.rs</p></div>
+<pre><code class="lang-rust"><span class="hljs-meta">#[derive(Serialize, Deserialize)]</span>
+<span class="hljs-keyword">pub</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Timeline</span></span> {
+    <span class="hljs-keyword">pub</span> feed: <span class="hljs-built_in">Vec</span>&lt;Feed&gt;
 }
 
-fn s(_c: &amp;Context) {
-    println!(&quot;Hello, world!&quot;);
+<span class="hljs-meta">#[derive(Serialize, Deserialize)]</span>
+<span class="hljs-meta">#[allow(non_snake_case)]</span>
+<span class="hljs-keyword">pub</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Feed</span></span> {
+    <span class="hljs-keyword">pub</span> post: Post,
 }
 
-fn y(_c: &amp;Context) {
-    println!(&quot;yes&quot;);
+<span class="hljs-meta">#[derive(Serialize, Deserialize)]</span>
+<span class="hljs-meta">#[allow(non_snake_case)]</span>
+<span class="hljs-keyword">pub</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Post</span></span> {
+    <span class="hljs-keyword">pub</span> did: <span class="hljs-built_in">Option</span>&lt;<span class="hljs-built_in">String</span>&gt;,
+    <span class="hljs-keyword">pub</span> uri: <span class="hljs-built_in">String</span>,
+    <span class="hljs-keyword">pub</span> cid: <span class="hljs-built_in">String</span>,
+    <span class="hljs-keyword">pub</span> collection: <span class="hljs-built_in">Option</span>&lt;<span class="hljs-built_in">String</span>&gt;,
+    <span class="hljs-keyword">pub</span> record: Record,
+    <span class="hljs-keyword">pub</span> author: Author,
+    <span class="hljs-keyword">pub</span> reason: <span class="hljs-built_in">Option</span>&lt;<span class="hljs-built_in">String</span>&gt;,
+    <span class="hljs-keyword">pub</span> indexedAt: <span class="hljs-built_in">String</span>,
+    <span class="hljs-keyword">pub</span> replyCount: <span class="hljs-keyword">i32</span>,
+    <span class="hljs-keyword">pub</span> postCount: <span class="hljs-built_in">Option</span>&lt;<span class="hljs-keyword">i32</span>&gt;,
+    <span class="hljs-keyword">pub</span> repostCount: <span class="hljs-keyword">i32</span>,
+    <span class="hljs-keyword">pub</span> likeCount: <span class="hljs-keyword">i32</span>,
 }
 
-fn n(_c: &amp;Context) {
-    println!(&quot;no&quot;);
+<span class="hljs-meta">#[derive(Serialize, Deserialize)]</span>
+<span class="hljs-meta">#[allow(non_snake_case)]</span>
+<span class="hljs-keyword">pub</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Record</span></span> {
+    <span class="hljs-keyword">pub</span> text: <span class="hljs-built_in">Option</span>&lt;<span class="hljs-built_in">String</span>&gt;,
+    <span class="hljs-keyword">pub</span> createdAt: <span class="hljs-built_in">String</span>,
 }
 
-#[tokio::main]
-async fn list_records() -&gt; reqwest::Result&lt;()&gt; {
-    let client = reqwest::Client::new();
-    let handle= &quot;support.bsky.team&quot;;
-    let col = &quot;app.bsky.feed.post&quot;;
-    let body = client.get(&quot;https://bsky.social/xrpc/com.atproto.repo.listRecords&quot;)
-        .query(&amp;[(&quot;repo&quot;, &amp;handle),(&quot;collection&quot;, &amp;col)])
-        .send()
-        .await?
-        .text()
-        .await?;
-    println!(&quot;{}&quot;, body);
-    Ok(())
-}
-
-fn c_list_records(_c: &amp;Context) {
-    list_records().unwrap();
+<span class="hljs-meta">#[derive(Serialize, Deserialize)]</span>
+<span class="hljs-meta">#[allow(non_snake_case)]</span>
+<span class="hljs-keyword">pub</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Author</span></span> {
+    <span class="hljs-keyword">pub</span> did: <span class="hljs-built_in">String</span>,
+    <span class="hljs-comment">//pub declaration: Declaration,</span>
+    <span class="hljs-keyword">pub</span> description: <span class="hljs-built_in">Option</span>&lt;<span class="hljs-built_in">String</span>&gt;,
+    <span class="hljs-keyword">pub</span> displayName: <span class="hljs-built_in">Option</span>&lt;<span class="hljs-built_in">String</span>&gt;,
+    <span class="hljs-keyword">pub</span> handle: <span class="hljs-built_in">String</span>,
+    <span class="hljs-keyword">pub</span> avatar: <span class="hljs-built_in">Option</span>&lt;<span class="hljs-built_in">String</span>&gt;,
+    <span class="hljs-keyword">pub</span> viewer: Viewer,
+    <span class="hljs-keyword">pub</span> labels: Labels,
 }
 </code></pre>
-<p>&#x3053;&#x308C;&#x3092;<code>cargo build</code>&#x3057;&#x3066;&#x3044;&#x3064;&#x3082;&#x306E;&#x3088;&#x3046;&#x306B;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3092;&#x5B9F;&#x884C;&#x3057;&#x307E;&#x3059;&#x3002;</p>
-<pre><code class="lang-sh">$ ./target/debug/rust b
-</code></pre>
-<p>&#x4EE5;&#x964D;&#x306F;<code>example</code>&#x3001;&#x3064;&#x307E;&#x308A;&#x7121;&#x99C4;&#x306A;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x524A;&#x9664;&#x3057;&#x305F;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x8A18;&#x8FF0;&#x3057;&#x307E;&#x3059;&#x3002;</p>
-<p>&#x30B3;&#x30FC;&#x30C9;&#x306E;&#x8981;&#x70B9;&#x306F;&#x4EE5;&#x4E0B;&#x306E;&#x901A;&#x308A;&#x3002;</p>
-<pre><code class="lang-src/main.rs">.command(
-        Command::new(&quot;bluesky&quot;)
-        .alias(&quot;b&quot;)
-        .action(c_list_records),
-        )
-
-#[tokio::main]
-async fn list_records() -&gt; reqwest::Result&lt;()&gt; {
-    let client = reqwest::Client::new();
-    let handle= &quot;support.bsky.team&quot;;
-    let col = &quot;app.bsky.feed.post&quot;;
-    let body = client.get(&quot;https://bsky.social/xrpc/com.atproto.repo.listRecords&quot;)
-        .query(&amp;[(&quot;repo&quot;, &amp;handle),(&quot;collection&quot;, &amp;col)])
-        .send()
-        .await?
-        .text()
-        .await?;
-    println!(&quot;{}&quot;, body);
-    Ok(())
-}
-
-fn c_list_records(_c: &amp;Context) {
-    list_records().unwrap();
-}
-</code></pre>
-<h4 id="query">query</h4>
-<p><code>query</code>&#x306E;&#x8FFD;&#x52A0;&#x3092;&#x3057;&#x3066;&#x307F;&#x307E;&#x3059;&#x3002;&#x3053;&#x308C;&#x3067;&#x51FA;&#x529B;&#x304C;1&#x884C;&#x306B;&#x306A;&#x308A;&#x3001;&#x53E4;&#x3044;&#x9806;&#x306B;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;</p>
+<p>rust&#x3067;&#x6700;&#x3082;&#x5384;&#x4ECB;&#x306A;&#x306E;&#x304C;<code>struct</code>&#x3068;&#x547C;&#x3070;&#x308C;&#x308B;&#x30C7;&#x30FC;&#x30BF;&#x69CB;&#x9020;&#x4F53;&#x3092;&#x7528;&#x610F;&#x3057;&#x306A;&#x3051;&#x308C;&#x3070;&#x306A;&#x3089;&#x306A;&#x3044;&#x3053;&#x3068;&#x3067;&#x3059;&#x3002;&#x3053;&#x308C;&#x306F;&#x51FA;&#x529B;&#x7D50;&#x679C;&#x3084;<code>openapi</code>&#x304B;&#x3089;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x81EA;&#x52D5;&#x751F;&#x6210;&#x3067;&#x304D;&#x307E;&#x3059;&#x304C;&#x3001;&#x4ECA;&#x56DE;&#x306F;&#x624B;&#x52D5;&#x3067;&#x66F8;&#x3044;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;</p>
 <div><p class="code-filename">src/main.rs</p></div>
-<pre><code class="lang-rust">async <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">list_records</span></span>() -&gt; reqwest::<span class="hljs-built_in">Result</span>&lt;()&gt; {
-    <span class="hljs-keyword">let</span> client = reqwest::Client::new();
-    <span class="hljs-keyword">let</span> handle= <span class="hljs-string">&quot;support.bsky.team&quot;</span>;
-    <span class="hljs-keyword">let</span> col = <span class="hljs-string">&quot;app.bsky.feed.post&quot;</span>;
-    <span class="hljs-keyword">let</span> body = client.get(<span class="hljs-string">&quot;https://bsky.social/xrpc/com.atproto.repo.listRecords&quot;</span>)
-        <span class="hljs-comment">//.query(&amp;[(&quot;repo&quot;, &amp;handle),(&quot;collection&quot;, &amp;col)])</span>
-        .query(&amp;[(<span class="hljs-string">&quot;repo&quot;</span>, &amp;handle),(<span class="hljs-string">&quot;collection&quot;</span>, &amp;col),(<span class="hljs-string">&quot;limit&quot;</span>, &amp;<span class="hljs-string">&quot;1&quot;</span>),(<span class="hljs-string">&quot;revert&quot;</span>, &amp;<span class="hljs-string">&quot;true&quot;</span>)])
-        .send()
-        .await?
-        .text()
-        .await?;
-    <span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;{}&quot;</span>, body);
-    <span class="hljs-literal">Ok</span>(())
+<pre><code class="lang-rust"><span class="hljs-keyword">use</span> crate::data::Timeline;
+
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">timeline</span></span>() {
+    <span class="hljs-keyword">let</span> h = async {
+        <span class="hljs-keyword">let</span> j = timeline::get_request().await;
+        <span class="hljs-keyword">let</span> timeline: Timeline = serde_json::from_str(&amp;j).unwrap();
+        <span class="hljs-keyword">let</span> n = timeline.feed;
+        <span class="hljs-keyword">let</span> length = &amp;n.len();
+        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-number">0</span>..*length {
+            <span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;@{}&quot;</span>, n[i].post.author.handle);
+            <span class="hljs-keyword">if</span> ! n[i].post.record.text.is_none() { 
+                <span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;{}&quot;</span>, n[i].post.record.text.as_ref().unwrap());
+            }
+            <span class="hljs-comment">//println!(&quot;uri : {}&quot;, n[i].post.uri);</span>
+            <span class="hljs-comment">//println!(&quot;cid : {}&quot;, n[i].post.cid);</span>
+            <span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;&#x26A1;&#xFE0F; [{}]\t&#x1F308; [{}]\t&#x2B50;&#xFE0F; [{}]&quot;</span>, n[i].post.replyCount,n[i].post.repostCount, n[i].post.likeCount);
+            <span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;{}&quot;</span>, <span class="hljs-string">&quot;---------&quot;</span>);
+        }
+    };
+    <span class="hljs-keyword">let</span> res = tokio::runtime::Runtime::new().unwrap().block_on(h);
+    <span class="hljs-keyword">return</span> res
 }
+
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">c_timeline</span></span>(_c: &amp;Context) {
+    access_token().unwrap();
+    timeline();
+}
+</code></pre>
+<p>&#x3067;&#x304D;&#x307E;&#x3057;&#x305F;&#x3002;&#x3053;&#x308C;&#x3067;&#x898B;&#x3084;&#x3059;&#x3044;&#x3088;&#x3046;&#x306B;&#x51FA;&#x529B;&#x7D50;&#x679C;&#x304C;&#x5F62;&#x6210;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-sh">$ cargo build
+
+$ ./target/debug/ai t
+@yui.syui.ai
+hello world
+&#x26A1;&#xFE0F; [1]  &#x1F308; [1]  &#x2B50;&#xFE0F; [0]
+---------
 </code></pre>
 
                                 
@@ -623,12 +587,12 @@ fn c_list_records(_c: &amp;Context) {
 
             
                 
-                <a href="2.html" class="navigation navigation-prev " aria-label="Previous page: seahorse">
+                <a href="1.html" class="navigation navigation-prev " aria-label="Previous page: notify">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="../c4/" class="navigation navigation-next " aria-label="Next page: part 4">
+                <a href="../end/" class="navigation navigation-next " aria-label="Next page: end">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -639,7 +603,7 @@ fn c_list_records(_c: &amp;Context) {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"reqwest","level":"1.5.3","depth":2,"next":{"title":"part 4","level":"1.6","depth":1,"path":"c4/README.md","ref":"c4/README.md","articles":[{"title":"ai","level":"1.6.1","depth":2,"path":"c4/0.md","ref":"c4/0.md","articles":[]},{"title":"config","level":"1.6.2","depth":2,"path":"c4/1.md","ref":"c4/1.md","articles":[]},{"title":"mention","level":"1.6.3","depth":2,"path":"c4/2.md","ref":"c4/2.md","articles":[]},{"title":"base64","level":"1.6.4","depth":2,"path":"c4/3.md","ref":"c4/3.md","articles":[]}]},"previous":{"title":"seahorse","level":"1.5.2","depth":2,"path":"c3/2.md","ref":"c3/2.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","codeblock-filename","mermaid-gb3","diff"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"codeblock-filename":{},"mermaid-gb3":{},"diff":{"type":"markdown","method":"diffChars","options":{}},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"syui","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"hello world! bluesky","gitbook":"*","description":"This is a bluesky ai-card example, and first rust"},"file":{"path":"c3/3.md","mtime":"2023-07-28T13:56:09.079Z","type":"markdown"},"gitbook":{"version":"3.3.6","time":"2023-08-15T18:19:05.948Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"timeline","level":"1.7.2","depth":2,"next":{"title":"end","level":"1.8","depth":1,"path":"end/README.md","ref":"end/README.md","articles":[]},"previous":{"title":"notify","level":"1.7.1","depth":2,"path":"c5/1.md","ref":"c5/1.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","codeblock-filename","mermaid-gb3","diff"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"codeblock-filename":{},"mermaid-gb3":{},"diff":{"type":"markdown","method":"diffChars","options":{}},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"syui","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"hello world! bluesky","gitbook":"*","description":"This is a bluesky ai-card example, and first rust"},"file":{"path":"c5/2.md","mtime":"2023-08-15T18:19:00.371Z","type":"markdown"},"gitbook":{"version":"3.3.6","time":"2023-08-15T18:19:05.948Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

@@ -578,22 +578,31 @@
 		},
 		{
 			"id": 45,
-			"h": "夢音",
-			"h_en": "",
-			"p": "夢音",
+			"h": "初音",
+			"h_en": "yume-oto",
+			"p": "初音",
 			"file": "/card/icon_16",
-			"owner": null,
+			"owner": [
+				{
+					"user": "thalachang"
+				},
+				{
+					"user": "tkz"
+				}
+			],
 			"ten_skill": false,
 			"src": "icon_16"
 		},
 		{
 			"id": 46,
-			"h": "歯車",
-			"h_en": "",
-			"p": "歯車",
+			"h": "時機",
+			"h_en": "jiki",
+			"p": "時機",
 			"file": "/card/icon_17",
 			"owner": null,
-			"ten_skill": false,
+			"ten_skill": true,
+			"ten": "IIK",
+			"img":"bafkreibzajk4wermodhxhnrcfl2tor72vrki2aqglrrblth5v6pstp5eye",
 			"src": "icon_17"
 		},
 		{
@@ -738,5 +747,17 @@
 			"ten_skill": false,
 			"src": "chara_11",
 			"img": "bafkreih5vzlju4vaeo2nc5bwyjsn53rs6qepem4xpvvedsgqbz624kzgoy"
+		},
+		{
+			"id": 60,
+			"h": "超天星",
+			"h_en": "supernova",
+			"p": "衝撃の予感",
+			"file": "/card/yui_146",
+			"owner": null,
+			"ten": "ACH",
+			"ten_skill": true,
+			"src": "yui_146",
+			"img": "bafkreideb7vp4y35wn6vtixy3kvoj4isw5ru6gcnw3g46yan6f4ugtxw5u"
 		}
 ]
