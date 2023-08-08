@@ -578,11 +578,15 @@
 		},
 		{
 			"id": 45,
-			"h": "夢音",
+			"h": "初音",
 			"h_en": "yume-oto",
-			"p": "夢音",
+			"p": "初音",
 			"file": "/card/icon_16",
-			"owner": null,
+			"owner": [
+				{
+					"user": "thalachang"
+				}
+			],
 			"ten_skill": false,
 			"src": "icon_16"
 		},
