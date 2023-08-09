@@ -592,9 +592,9 @@
 		},
 		{
 			"id": 46,
-			"h": "歯車",
-			"h_en": "",
-			"p": "歯車",
+			"h": "時計",
+			"h_en": "time",
+			"p": "時計",
 			"file": "/card/icon_17",
 			"owner": null,
 			"ten_skill": false,
