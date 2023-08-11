@@ -595,12 +595,14 @@
 		},
 		{
 			"id": 46,
-			"h": "時計",
-			"h_en": "time",
-			"p": "時計",
+			"h": "時機",
+			"h_en": "jiki",
+			"p": "時機",
 			"file": "/card/icon_17",
 			"owner": null,
-			"ten_skill": false,
+			"ten_skill": true,
+			"ten": "IIK",
+			"img":"",
 			"src": "icon_17"
 		},
 		{
