@@ -747,5 +747,17 @@
 			"ten_skill": false,
 			"src": "chara_11",
 			"img": "bafkreih5vzlju4vaeo2nc5bwyjsn53rs6qepem4xpvvedsgqbz624kzgoy"
+		},
+		{
+			"id": 60,
+			"h": "超天星",
+			"h_en": "supernova",
+			"p": "衝撃の予感",
+			"file": "/card/yui_146",
+			"owner": null,
+			"ten": "ACH",
+			"ten_skill": true,
+			"src": "yui_146",
+			"img": ""
 		}
 ]
