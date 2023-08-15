@@ -484,7 +484,7 @@ curl <span class="hljs-_">-s</span>L -X GET -H <span class="hljs-string">&quot;C
 <p>&#x307E;&#x305A;&#x306F;&#x3001;&#x5148;&#x7A0B;&#x4F5C;&#x3063;&#x305F;&#x30A2;&#x30D7;&#x30EA;&#x306E;<code>profile</code>&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x306E;&#x4F7F;&#x3044;&#x65B9;&#x3092;&#x7D39;&#x4ECB;&#x3057;&#x307E;&#x3059;&#x3002;</p>
 <pre><code class="lang-sh">$ ./target/debug/ai p yui.syui.ai
 </code></pre>
-<p>&#x8ABF;&#x3079;&#x305F;&#x3044;<code>handle</code>&#x3092;&#x5F15;&#x6570;&#x306B;&#x3059;&#x308B;&#x3053;&#x3068;&#x3067;&#x3001;&#x30D7;&#x30ED;&#x30D5;&#x30A3;&#x30FC;&#x30EB;&#x304C;&#x53D6;&#x5F97;&#x3059;&#x308B;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3067;&#x3059;&#x3002;</p>
+<p>&#x8ABF;&#x3079;&#x305F;&#x3044;<code>handle</code>&#x3092;&#x5F15;&#x6570;&#x306B;&#x3059;&#x308B;&#x3053;&#x3068;&#x3067;&#x3001;&#x30D7;&#x30ED;&#x30D5;&#x30A3;&#x30FC;&#x30EB;&#x3092;&#x53D6;&#x5F97;&#x3059;&#x308B;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3067;&#x3059;&#x3002;</p>
 <p>&#x3067;&#x306F;&#x3001;<code>profile</code>&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x306E;&#x30B3;&#x30FC;&#x30C9;&#x306E;&#x4E2D;&#x8EAB;&#x3092;&#x898B;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</p>
 <div><p class="code-filename">src/profile.rs</p></div>
 <pre><code class="lang-rust"><span class="hljs-keyword">extern</span> <span class="hljs-keyword">crate</span> reqwest;
@@ -552,7 +552,7 @@ $ ./target/debug/ai p yui.syui.ai
     <span class="hljs-keyword">return</span> res
 }
 </code></pre>
-<p>&#x9006;&#x306B;&#x8A00;&#x3046;&#x3068;&#x3001;<code>profile</code>&#x3092;&#x30B3;&#x30D4;&#x30FC;&#x3057;&#x3066;&#x4E00;&#x90E8;&#x3092;&#x524A;&#x9664;&#x3059;&#x308B;&#x3053;&#x3068;&#x3067;&#x3001;&#x65B0;&#x305F;&#x306B;&#x901A;&#x77E5;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3092;&#x4F5C;&#x308C;&#x308B;&#x3068;&#x3044;&#x3046;&#x3053;&#x3068;&#x3067;&#x3059;&#x3002;</p>
+<p>&#x9006;&#x306B;&#x8A00;&#x3046;&#x3068;&#x3001;<code>src/profile.rs</code>&#x3092;&#x30B3;&#x30D4;&#x30FC;&#x3057;&#x3066;&#x4E00;&#x90E8;&#x3092;&#x524A;&#x9664;&#x3059;&#x308B;&#x3053;&#x3068;&#x3067;&#x3001;&#x65B0;&#x305F;&#x306B;&#x901A;&#x77E5;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3092;&#x4F5C;&#x308C;&#x308B;&#x3068;&#x3044;&#x3046;&#x3053;&#x3068;&#x3067;&#x3059;&#x3002;</p>
 <p>&#x65B0;&#x3057;&#x304F;<code>notify</code>&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3092;&#x4F5C;&#x6210;&#x3057;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</p>
 <pre><code class="lang-sh">$ cp src/profile.rs src/notify.rs
 </code></pre>
@@ -601,7 +601,6 @@ $ ./target/debug/ai p yui.syui.ai
     <span class="hljs-keyword">let</span> res = tokio::runtime::Runtime::new().unwrap().block_on(h);
     <span class="hljs-keyword">return</span> res
 }
-
 <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">c_notify</span></span>(_c: &amp;Context) {
     access_token().unwrap();
     notify();
@@ -661,7 +660,7 @@ $ ./target/debug/ai n
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"notify","level":"1.7.1","depth":2,"next":{"title":"timeline","level":"1.7.2","depth":2,"path":"c5/2.md","ref":"c5/2.md","articles":[]},"previous":{"title":"part 5","level":"1.7","depth":1,"path":"c5/README.md","ref":"c5/README.md","articles":[{"title":"notify","level":"1.7.1","depth":2,"path":"c5/1.md","ref":"c5/1.md","articles":[]},{"title":"timeline","level":"1.7.2","depth":2,"path":"c5/2.md","ref":"c5/2.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-sharing","codeblock-filename","mermaid-gb3","diff"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"codeblock-filename":{},"mermaid-gb3":{},"diff":{"type":"markdown","method":"diffChars","options":{}},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"syui","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"hello world! bluesky","gitbook":"*","description":"This is a bluesky ai-card example, and first rust"},"file":{"path":"c5/1.md","mtime":"2023-08-15T15:48:18.573Z","type":"markdown"},"gitbook":{"version":"3.3.6","time":"2023-08-15T16:06:59.796Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"notify","level":"1.7.1","depth":2,"next":{"title":"timeline","level":"1.7.2","depth":2,"path":"c5/2.md","ref":"c5/2.md","articles":[]},"previous":{"title":"part 5","level":"1.7","depth":1,"path":"c5/README.md","ref":"c5/README.md","articles":[{"title":"notify","level":"1.7.1","depth":2,"path":"c5/1.md","ref":"c5/1.md","articles":[]},{"title":"timeline","level":"1.7.2","depth":2,"path":"c5/2.md","ref":"c5/2.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-sharing","codeblock-filename","mermaid-gb3","diff"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"codeblock-filename":{},"mermaid-gb3":{},"diff":{"type":"markdown","method":"diffChars","options":{}},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"syui","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"hello world! bluesky","gitbook":"*","description":"This is a bluesky ai-card example, and first rust"},"file":{"path":"c5/1.md","mtime":"2023-08-15T16:16:51.214Z","type":"markdown"},"gitbook":{"version":"3.3.6","time":"2023-08-15T16:16:59.222Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
