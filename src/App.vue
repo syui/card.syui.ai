@@ -130,10 +130,15 @@
 							</tr>
 						</thead>
 
-						<thead v-else-if="ii.card !== null" class="card-fav"><tr>
+						<thead v-else-if="ii.card !== null" class="card-fav">
+							<tr class="author" v-if='ii.author'>
+								<img :src='"/card/card_origin_" + ii.card + ".webp"'>
+							</tr>
+							<tr v-else>
 								<img :src='"/card/card_" + ii.card + ".webp"'>
 							</tr>
 						</thead>
+						<tbody><tr v-if='ii.author'>@{{ ii.author }}</tr></tbody>
 						<tbody><tr><span v-if="ii.skill == 'critical'" class="icon-sandar"></span><span v-if="ii.skill == 'post'" class="icon-moon"></span><span v-if="ii.skill == 'luck'" class="icon-api"></span><span v-if="ii.skill == 'ten'" class="icon-power"></span><span v-if="ii.skill == 'lost'">●</span><span v-if="ii.skill == 'dragon'" class="icon-home"></span><span v-if="ii.skill == 'nyan'">▲</span><span v-if="ii.skill == 'yui'" class="icon-ai"></span> {{ ii.cp }}</tr></tbody>
 						<tbody><tr class="card-fav-status">✧ {{ ii.status }}</tr></tbody>
 						<tbody v-if="info == true"><tr>ID {{ ii.card }}</tr></tbody>
@@ -149,7 +154,15 @@
 				<span v-for="(ii, index) in cards.data">
 					<span v-if="ii.status == 'normal' && ii.card !== null">
 						<thead v-if="ii.card == 43"><td><a href="/book/1/ZGlkOnBsYzo0aHFqZm43bTZuNWhubzNkb2FtdWhnZWY/index.html"><img :src='"/card/card_" + ii.card + ".webp"'></a></td></thead>
-						<thead v-else><td><img :src='"/card/card_" + ii.card + ".webp"'></td></thead>
+						<thead v-else>
+							<td v-if='ii.author' class="author">
+								<span class="author_card">@{{ ii.author }}</span>
+								<img :src='"/card/card_origin_" + ii.card + ".webp"'>
+							</td>
+							<td v-else>
+								<img :src='"/card/card_" + ii.card + ".webp"'>
+							</td>
+						</thead>
 						<tbody><tr><span v-if="ii.skill == 'critical'" class="icon-sandar"></span><span v-if="ii.skill == 'post'" class="icon-moon"></span><span v-if="ii.skill == 'luck'" class="icon-api"></span><span v-if="ii.skill == 'ten'" class="icon-power"></span><span v-if="ii.skill == 'dragon'" class="icon-home"></span><span v-if="ii.skill == 'nyan'">▲</span><span v-if="ii.skill == 'yui'" class="icon-ai"></span> {{ ii.cp }}</tr></tbody>
 						<tbody v-if="info == true"><tr>ID {{ ii.card }}</tr></tbody>
 						<tbody v-if="fav == true"><tr>CID {{ ii.id }}</tr></tbody>
@@ -643,6 +656,8 @@ export default {
 	},
 	mounted() {
 		if (window.location.host === "localhost:8080") {
+			this.api_url = "/api/";
+		} else if (window.location.host === "192.168.11.6:8080"){
 			this.api_url = "/api/";
 		} else {
 			this.api_url = "https://api.syui.ai/";
@@ -1269,8 +1284,8 @@ span.card-black p img {
 }
 
 thead.card-fav tr img {
-    border-radius: 30px;
-    padding: 20px;
+	border-radius: 30px;
+	padding: 20px;
 }
 
 span.book-list {
@@ -1284,19 +1299,32 @@ span.book-list {
 }
 
 p.memo-time {
-    text-align: right;
+	text-align: right;
 }
 
 .card-all-badge-bottom {
-    margin: 0 0 10px 0;
+	margin: 0 0 10px 0;
 }
 
 .memo-body-content p code {
-    background-color: #f1f1f1;
-				/* border: solid 2px #847e007d; */
-    padding: 4px 5px 4px 5px;
-    margin: 2px;
-    border-radius: 4px;
+	background-color: #f1f1f1;
+	padding: 4px 5px 4px 5px;
+	margin: 2px;
+	border-radius: 4px;
+}
+
+span.author_card {
+	position: absolute;
+	font-size: 3px;
+	transform: scale(0.7);
+	width: 200px;
+	bottom: 2%;
+	color:#1f1f1f;
+	-webkit-text-size-adjust: 100%;
+}
+
+td.author {
+	position: relative;
 }
 
 @media screen and (max-width:1000px) { 
@@ -1322,6 +1350,9 @@ p.memo-time {
 	}
 	.book-list {
 		text-align: center;
+	}
+	span.author_card {
+		-webkit-text-size-adjust: 300%;
 	}
 }
 </style>
