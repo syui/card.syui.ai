@@ -170,7 +170,17 @@
 						<tbody v-if="card_status == true"><tr>✧ {{ ii.status }}</tr></tbody>
 					</span>
 					<span v-else-if="ii.card !== null">
-						<thead><td>
+						<thead>
+							<td v-if='ii.author' class="author">
+								<span class="reflection" v-if="ii.card == 43">
+									<a href="/book/1/ZGlkOnBsYzo0aHFqZm43bTZuNWhubzNkb2FtdWhnZWY/index.html"><img :src='"/card/card_" + ii.card + ".webp"'></a>
+								</span>
+								<span class="reflection" v-else>
+									<span class="author_card">@{{ ii.author }}</span>
+									<img :src='"/card/card_origin_" + ii.card + ".webp"'>
+								</span>
+							</td>
+							<td v-else>
 								<span class="reflection" v-if="ii.card == 43">
 									<a href="/book/1/ZGlkOnBsYzo0aHFqZm43bTZuNWhubzNkb2FtdWhnZWY/index.html"><img :src='"/card/card_" + ii.card + ".webp"'></a>
 								</span>
@@ -596,12 +606,24 @@ var loc = window.location.pathname.split('/').slice(-1)[0];
 
 export default {
 	name: "App",
-	metaInfo: {
-		title: "card.syui.ai",
-		titleTemplate: '%s | ' + loc,
-		meta: [
-			{property: 'og:title', content: '%s | ' + loc}
-		]
+	metaInfo() {
+		if (loc) {
+			return {
+				title: "card.syui.ai",
+				titleTemplate: '%s/' + loc,
+				meta: [
+					{property: 'og:title', content: '%s/' + loc}
+				]
+			}
+		} else {
+			return {
+				title: "card.syui.ai",
+				titleTemplate: '%s',
+				meta: [
+					{property: 'og:title', content: '%s'}
+				]
+			}
+		}
 	},
 	data () {
 		return {

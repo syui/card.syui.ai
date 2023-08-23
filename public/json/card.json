@@ -759,5 +759,23 @@
 			"ten_skill": true,
 			"src": "yui_146",
 			"img": "bafkreideb7vp4y35wn6vtixy3kvoj4isw5ru6gcnw3g46yan6f4ugtxw5u"
+		},
+		{
+			"id": 61,
+			"h": "bluesky勉強会2",
+			"h_en": "study meeting 2",
+			"p": "勉強会に参加した記念",
+			"file": "/card/book_2",
+			"owner": null,
+			"src": "book_2"
+		},
+		{
+			"id": 62,
+			"h": "bluesky勉強会2",
+			"h_en": "study meeting 2",
+			"p": "勉強会に参加した記念",
+			"file": "/card/book_3",
+			"owner": null,
+			"src": "book_3"
 		}
 ]
