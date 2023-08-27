@@ -242,6 +242,9 @@
     "p": "存在の花",
     "file": "/card/yui_136",
     "owner": null,
+    "ten_skill": true,
+    "ten": "AIS",
+    "img": "bafkreiatrky4ilyvdt6gib33obof6rdrvqyt363z5wrjg6b5nzn6sgqsge",
     "src": "yui_136"
   },
   {
