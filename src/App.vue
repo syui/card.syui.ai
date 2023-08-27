@@ -2,15 +2,9 @@
 	<div id="app">
 		<link rel="stylesheet" href="https://syui.ai/bower_components/icomoon/css/icomoon.css" />
 		<div class="menu">
-			<a class="menu-link" href="/"><span class="icon-ai"></span></a> <a class="menu-link" href="/docs">docs</a> <a class="menu-link" href="/en">en</a>
-			<span class="menu-right-top">
-				<a class="menu-link" href="https://yui.syui.ai"><span class="icon-ai"></span></a>
-			</span>
-			<div class="menu">
-			<p><a class="menu-link" href="/m">#yui</a> <a class="menu-link" href="/bluesky">#bluesky</a></p>
+			<a href="/"><span class="icon-ai"></span></a> <a class="menu-link" href="/docs">docs</a> <a class="menu-link" href="/en">en</a> <a class="menu-link" href="/m">#yui</a>
 		</div>
 
-			</div>
 			<p v-if="loc === 'te'"><code><a href="https://bsky.app/profile/yui.syui.ai" target="_blank">@yui.syui.ai</a> /ten</code></p>
 			<p v-else-if="loc === 'pr'"><code><a href="https://bsky.app/profile/yui.syui.ai" target="_blank">@yui.syui.ai</a> /fav 1234567</code></p>
 			<p v-else="loc !== 'te'"><code><a href="https://bsky.app/profile/yui.syui.ai" target="_blank">@yui.syui.ai</a> /card</code></p>
@@ -59,7 +53,8 @@
 					</span>
 				</div>
 
-				<div class="card-fav" v-if="user_fav != '0'"><span class="menu-right-top"><button>✧</button></span>
+				<div class="card-fav" v-if="user_fav != '0'"><span class="menu-right-top">
+				</span>
 					<table class="card-fav">
 						<span class="card-fav-su">
 							{{ ii = cards.data.find((v) => v.id == user_fav) }}
@@ -145,6 +140,64 @@
 						<tbody v-if="fav == true"><tr>CID {{ ii.id }}</tr></tbody>
 					</table>
 				</div>
+
+				<span class="card-fav" v-if="card_origin_status">
+					<span class="card-fav" v-for="k in cards.data">
+							<tr class="card-status-first" v-if="k.status == 'first' && k.card !== null" >
+								<span class="card-wrapper">
+									<span class="reflection">
+										<img :src='"/card/card_" + k.card + ".webp"' class="card">
+									</span>
+									<span class="card pattern"></span>
+									<span class="card color"></span>
+									<span class="card highlight"></span>
+								</span>
+							</tr>
+							<tr class="card-status-first" v-else-if="k.status == 'second' && k.card !== null">
+								<span class="card-wrapper">
+									<span class="reflection">
+										<img :src='"/card/card_" + k.card + ".webp"' class="card">
+									</span>
+									<span class="card pattern-s"></span>
+									<span class="card color-s"></span>
+									<span class="card highlight-s"></span>
+								</span>
+							</tr>
+							<tr class="card-status-first" v-else-if="k.status == 'third' && k.card !== null">
+								<span class="card-wrapper">
+									<span class="reflection">
+										<img :src='"/card/card_" + k.card + ".webp"' class="card">
+									</span>
+									<span class="card pattern-t"></span>
+									<span class="card color-t"></span>
+									<span class="card highlight-t"></span>
+								</span>
+							</tr>
+							<tr class="card-status-first" v-else-if="k.status == 'forth' && k.card !== null">
+								<span class="card-wrapper">
+									<span class="reflection">
+										<img :src='"/card/card_" + k.card + ".webp"' class="card">
+									</span>
+									<span class="card pattern-f"></span>
+									<span class="card color-f"></span>
+									<span class="card highlight-f"></span>
+								</span>
+							</tr>
+							<tr class="card-status-first" v-else-if="k.status == 'yui' && k.card !== null">
+								<span class="card-wrapper">
+									<span class="reflection">
+										<img :src='"/card/card_" + k.card + ".webp"' class="card">
+									</span>
+									<span class="card pattern-yui"></span>
+									<span class="card color-yui"></span>
+									<span class="card highlight-yui"></span>
+								</span>
+							</tr>
+					</span>
+				</span>
+				<div class="card_kira_center">
+						<button v-on:click="cardoriginstatus" class="card_origin_status"><span class="icon-ai"></span></button> 
+					</div>
 
 				<div class="card-button">
 					<button v-on:click="cardtime">new</button> <button v-on:click="sort">cp</button> <button v-on:click="sortcard">card</button> <button v-on:click="cardinfo">id</button> <button v-on:click="cardstatus">status</button> <button v-on:click="cardpremium">premium</button> <button v-on:click="cardfav">fav(cid)</button> <button v-on:click="cardskill">skill</button>
@@ -391,7 +444,7 @@
 							<span v-if='ii.owner == "none"' class="card-black">
 								<p><img :src='"/card/card_" + ii.id + ".webp"'></p>
 							</span>
-							<span v-else class="card-black">
+							<span v-else>
 								<p><img :src='"/card/card_" + ii.id + ".webp"'></p>
 							</span>
 							<p v-if="ii.owner">owner : <a :href="'/' + ii.owner">{{ ii.owner }}</a></p>
@@ -414,7 +467,7 @@
 							<span v-if='ii.owner == "none"' class="card-black">
 								<p><img :src='"/card/card_" + ii.id + ".webp"'></p>
 							</span>
-							<span v-else class="card-black">
+							<span v-else>
 							<p><img :src='"/card/card_" + ii.id + ".webp"'></p>
 							</span>
 							<p v-if="ii.owner">owner : <a :href="'/' + ii.owner">{{ ii.owner }}</a></p>
@@ -425,7 +478,7 @@
 							<span v-if='ii.owner == "none"' class="card-black">
 								<p><img :src='"/card/card_" + ii.id + ".webp"'></p>
 							</span>
-							<span v-else class="card-black">
+							<span v-else>
 							<p><img :src='"/card/card_" + ii.id + ".webp"'></p>
 							</span>
 							<p v-if="ii.owner">owner : <a :href="'/' + ii.owner">{{ ii.owner }}</a></p>
@@ -436,7 +489,7 @@
 							<span v-if='ii.owner == "none"' class="card-black">
 								<p><img :src='"/card/card_" + ii.id + ".webp"'></p>
 							</span>
-							<span v-else class="card-black">
+							<span v-else>
 							<p><img :src='"/card/card_" + ii.id + ".webp"'></p>
 							</span>
 							<p v-if="ii.owner">owner : <a :href="'/' + ii.owner">{{ ii.owner }}</a></p>
@@ -447,7 +500,7 @@
 							<span v-if='ii.owner == "none"' class="card-black">
 								<p><img :src='"/card/card_" + ii.id + ".webp"'></p>
 							</span>
-							<span v-else class="card-black">
+							<span v-else>
 							<p><img :src='"/card/card_" + ii.id + ".webp"'></p>
 							</span>
 							<p v-if="ii.owner">owner : <a :href="'/' + ii.owner">{{ ii.owner }}</a></p>
@@ -666,6 +719,7 @@ export default {
 			memos_d: null,
 			memos_api: "https://m.syui.ai/api/v1",
 			memo: [],
+			card_origin_status: false,
 		}
 	},
 	components: {
@@ -860,6 +914,13 @@ export default {
 						a.card = null;
 					}
 				});
+			},
+			cardoriginstatus() {
+				if (this.card_origin_status == false) {
+					this.card_origin_status = true;
+				} else {
+					this.card_origin_status = false;
+				}
 			},
 			cardpremium(){
 				return this.cards.data.sort((a,b) => {
@@ -1347,6 +1408,23 @@ span.author_card {
 
 td.author {
 	position: relative;
+}
+
+.card_kira_center {
+    text-align: center;
+}
+
+button.card_origin_status {
+	font-size: 22px;
+	border-radius: 2px;
+	border: solid 1px #b8af02;
+	background-color: #b8af02;
+}
+
+button.card_origin_status:hover {
+	color:#ffff00;
+	background-color: #343434;
+	border: solid 1px #b8af02;
 }
 
 @media screen and (max-width:1000px) { 
