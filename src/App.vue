@@ -2,12 +2,15 @@
 	<div id="app">
 		<link rel="stylesheet" href="https://syui.ai/bower_components/icomoon/css/icomoon.css" />
 		<div class="menu">
-			<a href="/"><span class="icon-ai"></span></a> <a class="menu-link" href="/docs">docs</a> <a class="menu-link" href="/en">en</a> <a class="menu-link" href="/m">#yui</a>
+			<a href="/" class="top-icon"><span class="icon-ai"></span></a> 
+			
+			<code v-if="loc === 'te'"><a href="https://bsky.app/profile/yui.syui.ai" target="_blank">@yui.syui.ai</a> /ten</code>
+			<code v-else-if="loc === 'pr'"><a href="https://bsky.app/profile/yui.syui.ai" target="_blank">@yui.syui.ai</a> /fav 1234567</code>
+			<code v-else="loc !== 'te'"><a href="https://bsky.app/profile/yui.syui.ai" target="_blank">@yui.syui.ai</a> /card</code>
+
+			<a class="menu-link" href="/docs">docs</a> <a class="menu-link" href="/en">en</a> <a class="menu-link" href="/m">#yui</a>
 		</div>
 
-			<p v-if="loc === 'te'"><code><a href="https://bsky.app/profile/yui.syui.ai" target="_blank">@yui.syui.ai</a> /ten</code></p>
-			<p v-else-if="loc === 'pr'"><code><a href="https://bsky.app/profile/yui.syui.ai" target="_blank">@yui.syui.ai</a> /fav 1234567</code></p>
-			<p v-else="loc !== 'te'"><code><a href="https://bsky.app/profile/yui.syui.ai" target="_blank">@yui.syui.ai</a> /card</code></p>
 			<div v-if="loc.length > 1">
 			<div v-if="cards" class="bluesky-card">
 				<h3>
@@ -33,11 +36,40 @@
 					<img src="/card/badge_3.png" v-if="cards.data.find((v) => v.card == 45)">
 				</div>
 
+				<div class="book-list" v-if="ar_first == true" v-show="card_thd" id="thd">
+					<span v-for="(ii, index) in cards.data.filter((v) => v.status == '3d')" class="book-list" >
+					<button v-if="index == 0" class="thd_button">v{{ ii.card }}</button>
+						<model-viewer class="ar" v-if="ii.card <= 14 && index == 0" :src='"/obj/card_" + ii.card + ".glb"'
+							:skybox-image='"/obj_bg/g" + 11 + ".jpg"'
+							exposure="20"
+							:environment-image='"/obj_bg/g" + 11 + ".avif"'
+							ar
+							camera-controls
+						></model-viewer>
+					</span>
+				</div>
+
+				<div class="book-list" v-else v-show="card_thd">
+					<span class="book-list" >
+					<button class="thd_button">v{{ this.randomNumber = Math.floor(Math.random() * 10) }}</button>
+						<model-viewer class="ar" v-if="ar_first == false && ar_second <= 14" :src='"/obj/card_" + ar_second + ".glb"'
+							:skybox-image='"/obj_bg/g" + randomNumber + ".jpg"'
+							exposure="20"
+							:environment-image='"/obj_bg/g" + randomNumber + ".avif"'
+							ar
+							camera-controls
+						></model-viewer>
+					</span>
+				</div>
+
 				<span class="menu-right-top" v-if="cards.data.find((v) => v.card == 43)">
 					<button v-on:click="book_user = !book_user">book</button>
 				</span>
 				<span class="menu-right-top" v-if="cards.data.find((v) => v.card >= 48 && v.card <= 59)">
 					<button v-on:click="chara_user = !chara_user">chara</button>
+				</span>
+				<span class="menu-right-top" v-if="cards.data.find((v) => v.status == '3d')">
+					<button v-on:click="thd">3d</button>
 				</span>
 				<div class="book-list" v-if="cards.data.find((v) => v.card == 43)" v-show="book_user">
 					<a href="/book/1/ZGlkOnBsYzo0aHFqZm43bTZuNWhubzNkb2FtdWhnZWY/index.html">
@@ -50,6 +82,13 @@
 						<a :href="ii.url">
 							<img :src='"/card/card_" + ii.card + ".webp"'>
 						</a>
+					</span>
+				</div>
+
+				<button v-show="card_thd">3d</button>
+				<div class="book-list" v-if="cards.data.filter((v) => v.status == '3d')" v-show="card_thd">
+					<span v-for="(ii, index) in cards.data.filter((v) => v.status == '3d')" class="book-list" >
+						<img :src='"/card/card_" + ii.card + ".webp"' @click="imageClick(ii.card)">
 					</span>
 				</div>
 
@@ -134,7 +173,7 @@
 							</tr>
 						</thead>
 						<tbody><tr v-if='ii.author'>@{{ ii.author }}</tr></tbody>
-						<tbody><tr><span v-if="ii.skill == 'critical'" class="icon-sandar"></span><span v-if="ii.skill == 'post'" class="icon-moon"></span><span v-if="ii.skill == 'luck'" class="icon-api"></span><span v-if="ii.skill == 'ten'" class="icon-power"></span><span v-if="ii.skill == 'lost'">●</span><span v-if="ii.skill == 'dragon'" class="icon-home"></span><span v-if="ii.skill == 'nyan'">▲</span><span v-if="ii.skill == 'yui'" class="icon-ai"></span> {{ ii.cp }}</tr></tbody>
+						<tbody><tr><span v-if="ii.skill == 'critical'" class="icon-sandar"></span><span v-if="ii.skill == 'post'" class="icon-moon"></span><span v-if="ii.skill == 'luck'" class="icon-api"></span><span v-if="ii.skill == 'ten'" class="icon-power"></span><span v-if="ii.skill == 'lost'">●</span><span v-if="ii.skill == 'dragon'" class="icon-home"></span><span v-if="ii.skill == 'nyan'">▲</span><span v-if="ii.skill == 'yui'" class="icon-ai"></span><span v-if="ii.skill == '3d'">■</span> {{ ii.cp }}</tr></tbody>
 						<tbody><tr class="card-fav-status">✧ {{ ii.status }}</tr></tbody>
 						<tbody v-if="info == true"><tr>ID {{ ii.card }}</tr></tbody>
 						<tbody v-if="fav == true"><tr>CID {{ ii.id }}</tr></tbody>
@@ -173,7 +212,7 @@
 									<span class="card highlight-t"></span>
 								</span>
 							</tr>
-							<tr class="card-status-first" v-else-if="k.status == 'forth' && k.card !== null">
+							<tr class="card-status-first" v-else-if="k.status == 'fourth' && k.card !== null">
 								<span class="card-wrapper">
 									<span class="reflection">
 										<img :src='"/card/card_" + k.card + ".webp"' class="card">
@@ -206,7 +245,15 @@
 			<table>
 				<span v-for="(ii, index) in cards.data">
 					<span v-if="ii.status == 'normal' && ii.card !== null">
-						<thead v-if="ii.card == 43"><td><a href="/book/1/ZGlkOnBsYzo0aHFqZm43bTZuNWhubzNkb2FtdWhnZWY/index.html"><img :src='"/card/card_" + ii.card + ".webp"'></a></td></thead>
+						<thead v-if="ii.card == 43">
+							<td v-if='ii.author' class="author">
+								<span class="author_card">@{{ ii.author }}</span>
+								<img :src='"/card/card_origin_" + ii.card + ".webp"'>
+							</td>
+							<td v-else>
+								<a href="/book/1/ZGlkOnBsYzo0aHFqZm43bTZuNWhubzNkb2FtdWhnZWY/index.html"><img :src='"/card/card_" + ii.card + ".webp"'></a>
+							</td>
+						</thead>
 						<thead v-else>
 							<td v-if='ii.author' class="author">
 								<span class="author_card">@{{ ii.author }}</span>
@@ -216,7 +263,7 @@
 								<img :src='"/card/card_" + ii.card + ".webp"'>
 							</td>
 						</thead>
-						<tbody><tr><span v-if="ii.skill == 'critical'" class="icon-sandar"></span><span v-if="ii.skill == 'post'" class="icon-moon"></span><span v-if="ii.skill == 'luck'" class="icon-api"></span><span v-if="ii.skill == 'ten'" class="icon-power"></span><span v-if="ii.skill == 'dragon'" class="icon-home"></span><span v-if="ii.skill == 'nyan'">▲</span><span v-if="ii.skill == 'yui'" class="icon-ai"></span> {{ ii.cp }}</tr></tbody>
+						<tbody><tr><span v-if="ii.skill == 'critical'" class="icon-sandar"></span><span v-if="ii.skill == 'post'" class="icon-moon"></span><span v-if="ii.skill == 'luck'" class="icon-api"></span><span v-if="ii.skill == 'ten'" class="icon-power"></span><span v-if="ii.skill == 'dragon'" class="icon-home"></span><span v-if="ii.skill == 'nyan'">▲</span><span v-if="ii.skill == 'yui'" class="icon-ai"></span><span v-if="ii.skill == '3d'">■</span> {{ ii.cp }}</tr></tbody>
 						<tbody v-if="info == true"><tr>ID {{ ii.card }}</tr></tbody>
 						<tbody v-if="fav == true"><tr>CID {{ ii.id }}</tr></tbody>
 						<tbody v-if="card_skill == true"><tr>{{ ii.skill }}</tr></tbody>
@@ -226,7 +273,8 @@
 						<thead>
 							<td v-if='ii.author' class="author">
 								<span class="reflection" v-if="ii.card == 43">
-									<a href="/book/1/ZGlkOnBsYzo0aHFqZm43bTZuNWhubzNkb2FtdWhnZWY/index.html"><img :src='"/card/card_" + ii.card + ".webp"'></a>
+									<span class="author_card">@{{ ii.author }}</span>
+									<img :src='"/card/card_origin_" + ii.card + ".webp"'>
 								</span>
 								<span class="reflection" v-else>
 									<span class="author_card">@{{ ii.author }}</span>
@@ -237,12 +285,15 @@
 								<span class="reflection" v-if="ii.card == 43">
 									<a href="/book/1/ZGlkOnBsYzo0aHFqZm43bTZuNWhubzNkb2FtdWhnZWY/index.html"><img :src='"/card/card_" + ii.card + ".webp"'></a>
 								</span>
+								<span class="reflection" v-else-if="ii.status == '3d'">
+									<a href="#thd" class="thd_link"><img :src='"/card/card_" + ii.card + ".webp"' v-on:click="thd"></a>
+								</span>
 								<span class="reflection" v-else>
 									<img :src='"/card/card_" + ii.card + ".webp"'>
 								</span>
 							</td>
 						</thead>
-						<tbody><tr><span v-if="ii.skill == 'critical'" class="icon-sandar"></span><span v-if="ii.skill == 'post'" class="icon-moon"></span><span v-if="ii.skill == 'luck'" class="icon-api"></span><span v-if="ii.skill == 'ten'" class="icon-power"></span><span v-if="ii.skill == 'dragon'" class="icon-home"></span><span v-if="ii.skill == 'nyan'">▲</span><span v-if="ii.skill == 'yui'" class="icon-ai"></span> {{ ii.cp }}</tr></tbody>
+						<tbody><tr><span v-if="ii.skill == 'critical'" class="icon-sandar"></span><span v-if="ii.skill == 'post'" class="icon-moon"></span><span v-if="ii.skill == 'luck'" class="icon-api"></span><span v-if="ii.skill == 'ten'" class="icon-power"></span><span v-if="ii.skill == 'dragon'" class="icon-home"></span><span v-if="ii.skill == 'nyan'">▲</span><span v-if="ii.skill == 'yui'" class="icon-ai"></span><span v-if="ii.skill == '3d'">■</span> {{ ii.cp }}</tr></tbody>
 						<tbody v-if="info == true"><tr>ID {{ ii.card }}</tr></tbody>
 						<tbody v-if="fav == true"><tr>CID {{ ii.id }}</tr></tbody>
 						<tbody v-if="card_skill == true"><tr>{{ ii.skill }}</tr></tbody>
@@ -598,6 +649,10 @@
 			<p>1日のバトルポイントを消費します。</p>
 		</div>
 
+		<div v-if="loc === '3d'">
+			<model-viewer src="/card/card_13.glb" camera-controls></model-viewer>
+		</div>
+
 		<div v-if="loc === 'm'">
 			<div class="card-button">
 			</div>
@@ -641,7 +696,6 @@
 
 <script>
 const CARD = document.querySelector('.card-wrapper')
-
 const UPDATE = ({ x, y }) => {
   const BOUNDS = CARD.getBoundingClientRect()
   const posX = x - BOUNDS.x
@@ -705,6 +759,7 @@ export default {
 			user_fav: null,
 			book_user: null,
 			chara_user: null,
+			card_thd: false,
 			card_status: null,
 			card_skill: null,
 			cors: "https://cors.syui.ai/",
@@ -720,6 +775,9 @@ export default {
 			memos_api: "https://m.syui.ai/api/v1",
 			memo: [],
 			card_origin_status: false,
+			ar_first: true,
+			ar_second: null,
+			randomNumber: 0,
 		}
 	},
 	components: {
@@ -731,6 +789,11 @@ export default {
 		},
 	},
 	mounted() {
+		//this.loadComponent();
+		//this.card_thd = true;
+		if (loc === '3d') {
+    this.loadComponent();
+		}
 		if (window.location.host === "localhost:8080") {
 			this.api_url = "/api/";
 		} else if (window.location.host === "192.168.11.6:8080"){
@@ -811,7 +874,26 @@ export default {
 			})
 			.catch(error => console.log(error));
 		}},
+		computed: {
+			loadComponent() {
+				return () => import('@google/model-viewer');
+			}
+		},
 		methods: {
+			imageClick(index){
+				this.ar_first = false;
+				this.ar_second = index;
+			},
+			thd() {
+				this.randomNumber = Math.floor(Math.random() * 11);
+				this.loadComponent();
+				this.ar_first = true;
+				if (this.card_thd == false) {
+					this.card_thd = true;
+				} else {
+					this.card_thd = false;
+				}
+			},
 			submit() {
 				let url = this.api_url + "users/" + this.id + "/card?itemsPerPage=3000";
 				axios
@@ -995,6 +1077,7 @@ a:hover {
 }
 
 a.menu-link {
+	line-height: 100px;
 	background-color:#fff;
 	padding: 10px;
 }
@@ -1043,10 +1126,12 @@ img {
 }
 
 code {
-	font-size: 15px;
+	line-height: 100px;
 	padding: 10px 15px;
 	background-color: #fff;
+	margin: 0 10px 0 10px;
 }
+
 li {
 	list-style-type: none; 
 	background-color: #fff;
@@ -1312,7 +1397,7 @@ tr.card-status-first {
 	display: grid;
 	margin: 0;
 	position: relative;
-	height: calc(45vh);
+	height: calc(40vh);
 }
 
 span.reflection{
@@ -1427,7 +1512,32 @@ button.card_origin_status:hover {
 	border: solid 1px #b8af02;
 }
 
+a.top-icon {
+	background-color: #343434;
+	padding:15px 3px;
+	margin:10px;
+}
+model-viewer {
+	text-align: center;
+	align-content: center;
+	width: auto;
+	height: 400px;
+}
+
+model-viewer.ar {
+	padding-bottom : 20px;
+}
+
+a.thd_link:hover {
+	background-color:#000;
+	opacity:0.8;
+	transition:0.3s;
+}
+
 @media screen and (max-width:1000px) { 
+	tr.card-status-first {
+		height: calc(45vh);
+	}
 	.card-button {
 		float: none;
 		margin-bottom: 20px;
@@ -1444,15 +1554,27 @@ button.card_origin_status:hover {
 		word-break: break-all;
 	}
 	code {
-		font-size: 15px;
-		padding: 10px 15px;
+		padding: 10px;
 		background-color: #fff;
+		margin: 0 10px 0 10px;
 	}
 	.book-list {
 		text-align: center;
 	}
 	span.author_card {
 		-webkit-text-size-adjust: 300%;
+	}
+}
+
+@media screen and (min-width:1800px) { 
+tr.card-status-first {
+		height: calc(30vh);
+	}
+}
+
+@media screen and (min-width:2000px) { 
+tr.card-status-first {
+		height: calc(25vh);
 	}
 }
 </style>
