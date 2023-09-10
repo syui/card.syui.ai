@@ -798,5 +798,21 @@
 			"file": "/card/yui_147",
 			"owner": null,
 			"src": "yui_147"
+		},
+		{
+			"id": 65,
+			"h": "seclet room",
+			"p": "seclet room",
+			"file": "/card/icon_18",
+			"owner": null,
+			"src": "icon_18"
+		},
+		{
+			"id": 66,
+			"h": "3d",
+			"p": "3d",
+			"file": "/card/icon_19",
+			"owner": null,
+			"src": "icon_19"
 		}
 ]

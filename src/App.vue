@@ -38,16 +38,33 @@
 
 				<div class="book-list" v-if="ar_first == true" v-show="card_thd" id="thd">
 					<span v-for="(ii, index) in cards.data.filter((v) => v.status == '3d')" class="book-list" >
-					<button v-if="index == 0" class="thd_button">v{{ ii.card }}</button>
-						<model-viewer class="ar" v-if="ii.card <= 14 && index == 0" :src='"/obj/card_" + ii.card + ".glb"'
-							:skybox-image='"/obj_bg/g" + 11 + ".jpg"'
-							exposure="20"
-							:environment-image='"/obj_bg/g" + 11 + ".avif"'
-							ar
-							camera-controls
-						></model-viewer>
-					</span>
-				</div>
+						<button v-if="index == 0" class="thd_button">v{{ ii.card }}</button>
+						<span v-if="useragent.indexOf('edge') != -1 || useragent.indexOf('edg') != -1">
+							<model-viewer class="ar" v-if="ii.card <= 14 && index == 0" :src='"/obj/card_" + ii.card + ".glb"'
+								ar
+								camera-controls
+							></model-viewer>
+							</span>
+							<span v-else>
+								<model-viewer class="ar" v-if="ii.card <= 14 && index == 0" :src='"/obj/card_" + ii.card + ".glb"'
+									:skybox-image='"/obj_bg/g" + thd_room + ".jpg"'
+									exposure="20"
+									:environment-image='"/obj_bg/g" + thd_room + ".avif"'
+									ar
+									camera-controls
+								></model-viewer>
+								<!--
+								<model-viewer class="ar" v-if="ii.card <= 14 && index == 0" :src='"/obj/card_" + 3 + ".glb"'
+									:skybox-image='"/obj_bg/g" + 0 + ".jpg"'
+									exposure="20"
+									:environment-image='"/obj_bg/g" + 0 + ".avif"'
+									ar
+									camera-controls
+								></model-viewer>
+								-->
+							</span>
+						</span>
+					</div>
 
 				<div class="book-list" v-else v-show="card_thd">
 					<span class="book-list" >
@@ -778,6 +795,9 @@ export default {
 			ar_first: true,
 			ar_second: null,
 			randomNumber: 0,
+			user_room: 0,
+			thd_room: 0,
+			useragent: window.navigator.userAgent.toLowerCase(),
 		}
 	},
 	components: {
@@ -796,7 +816,7 @@ export default {
 		}
 		if (window.location.host === "localhost:8080") {
 			this.api_url = "/api/";
-		} else if (window.location.host === "192.168.11.6:8080"){
+		} else if (window.location.host === "192.168.11.12:8080"){
 			this.api_url = "/api/";
 		} else {
 			this.api_url = "https://api.syui.ai/";
@@ -809,7 +829,6 @@ export default {
 					axios
 						.get(url,{ crossdomain: true })
 						.then(response => (this.cards = response));
-				
 				}
 		} else if (loc === 'fa'){
 			axios
@@ -853,6 +872,7 @@ export default {
 					this.aiten = this.record.data.find((v) => v.username == loc).aiten;
 					this.bsky_mode = this.record.data.find((v) => v.username == loc).bsky;
 					this.user_fav = this.record.data.find((v) => v.username == loc).fav;
+					this.user_room = this.record.data.find((v) => v.username == loc).room;
 					let url = this.api_url + "users/" + this.id + "/card?itemsPerPage=3000";
 					axios
 					.get("/json/card.json")
@@ -893,6 +913,15 @@ export default {
 				} else {
 					this.card_thd = false;
 				}
+				if (this.user_room == 0) {
+					this.thd_room = new Date().getDay()
+				}
+				if (this.user_room >= 1 && this.user_room <= 3) {
+					this.thd_room = this.user_room
+				}
+				if (this.all === true && this.user_room >= 123 && this.user_room <= 123) {
+					this.thd_room = this.user_room
+				}
 			},
 			submit() {
 				let url = this.api_url + "users/" + this.id + "/card?itemsPerPage=3000";
@@ -902,7 +931,6 @@ export default {
 					axios
 						.get(this.api_url + "users/" + this.id,{ crossdomain: true })
 						.then(response => (this.user = response));
-
 			},
 			page() {
 				this.id = this.record.data.find((v) => v.username == this.userid).id;
@@ -1496,7 +1524,8 @@ td.author {
 }
 
 .card_kira_center {
-    text-align: center;
+	text-align: center;
+	margin: 10px 0 30px 0;
 }
 
 button.card_origin_status {
