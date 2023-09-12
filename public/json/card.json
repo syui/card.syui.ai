@@ -797,6 +797,9 @@
 			"p": "月見と絵本",
 			"file": "/card/yui_147",
 			"owner": null,
+			"ten": "TUY",
+			"ten_skill": true,
+			"img": "bafkreibyal762gysqklmzhy25acmdwyq7zcke44c6b4ubl5l5xhsk5ysca",
 			"src": "yui_147"
 		},
 		{
@@ -813,6 +816,37 @@
 			"p": "3d",
 			"file": "/card/icon_19",
 			"owner": null,
+			"ten_skill": true,
+			"img": "bafkreifbutsqfigepx7ji2vbkzpuywvwvg5wuqfqwjtosc5iu4fzisoo7e",
 			"src": "icon_19"
+		},
+		{
+			"id": 67,
+			"h": "閃光",
+			"p": "senkou",
+			"file": "/card/yui_148",
+			"src": "yui_148",
+			"owner": null,
+			"ten": "EKS",
+			"ten_skill": true,
+			"img": "bafkreiht5cdkujqe5tbg7xxb52iwbutbpie3uctykwczn5gtbnjcjpsilq"
+		},
+		{
+			"id": 68,
+			"h": "満月改",
+			"p": "mangetu-kai",
+			"file": "/card/icon_20",
+			"src": "icon_20",
+			"owner": null
+		},
+		{
+			"id": 69,
+			"h": "ai-gen-2022-09-22",
+			"p": "ai-gen-2022-09-22",
+			"file": "/card/yui_149",
+			"src": "yui_149",
+			"ten": "IOU",
+			"ten_skill": true,
+			"img": ""
 		}
 ]

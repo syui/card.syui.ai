@@ -29,6 +29,10 @@
 					<span v-if="this.all === true" class="card-all-badge">
 						<span class="icon-ai"></span>
 					</span>
+					<span v-if="this.badge_aiten === true" class="card-aiten-badge">
+
+						<span class="icon-power"></span>
+					</span>
 				</h3>
 				<div class="card-all-badge-bottom" >
 					<img src="/card/badge_1.png" v-if="cards.data.find((v) => v.card == 18)">
@@ -44,6 +48,10 @@
 								ar
 								camera-controls
 							></model-viewer>
+							<model-viewer class="ar" v-if="ii.card == 64 && index == 0" :src='"/obj/card_" + ii.card + ".glb"'
+								ar
+								camera-controls
+							></model-viewer>
 							</span>
 							<span v-else>
 								<model-viewer class="ar" v-if="ii.card <= 14 && index == 0" :src='"/obj/card_" + ii.card + ".glb"'
@@ -53,8 +61,15 @@
 									ar
 									camera-controls
 								></model-viewer>
+								<model-viewer class="ar" v-if="ii.card == 64 && index == 0" :src='"/obj/card_" + ii.card + ".glb"'
+									:skybox-image='"/obj_bg/g31.jpg"'
+									exposure="20"
+									:environment-image='"/obj_bg/g31.avif"'
+									ar
+									camera-controls
+								></model-viewer>
 								<!--
-								<model-viewer class="ar" v-if="ii.card <= 14 && index == 0" :src='"/obj/card_" + 3 + ".glb"'
+								<model-viewer class="ar" v-if="ii.card <= 14 && index == 0" :src='"/obj/test.glb"'
 									:skybox-image='"/obj_bg/g" + 0 + ".jpg"'
 									exposure="20"
 									:environment-image='"/obj_bg/g" + 0 + ".avif"'
@@ -73,6 +88,13 @@
 							:skybox-image='"/obj_bg/g" + randomNumber + ".jpg"'
 							exposure="20"
 							:environment-image='"/obj_bg/g" + randomNumber + ".avif"'
+							ar
+							camera-controls
+						></model-viewer>
+						<model-viewer class="ar" v-if="ar_first == false && ar_second == 64" :src='"/obj/card_" + ar_second + ".glb"'
+							:skybox-image='"/obj_bg/g" + 31 + ".jpg"'
+							exposure="20"
+							:environment-image='"/obj_bg/g" + 31 + ".avif"'
 							ar
 							camera-controls
 						></model-viewer>
@@ -753,6 +775,7 @@ export default {
 		return {
 			host: window.location.host,
 			all: null,
+			badge_aiten: null,
 			card: null,
 			cards: null,
 			loc: window.location.pathname.split('/').slice(-1)[0],
@@ -889,6 +912,14 @@ export default {
 																break;
 															}
 													}
+													for (let i = 65; i <= 67; i++) {
+														this.badge_aiten = this.cards.data.some(
+															b => b.card === i,
+															);
+															if (this.badge_aiten === false) {
+																break;
+															}
+													}
 							});
 					}
 			})
@@ -917,6 +948,9 @@ export default {
 					this.thd_room = new Date().getDay()
 				}
 				if (this.user_room >= 1 && this.user_room <= 3) {
+					this.thd_room = this.user_room
+				}
+				if (this.user_room == 124) {
 					this.thd_room = this.user_room
 				}
 				if (this.all === true && this.user_room >= 123 && this.user_room <= 123) {
@@ -1182,6 +1216,10 @@ span.card-bluesky-badge a {
 }
 span.card-all-badge {
 	color: #ff7c00;
+	padding:0 5px;
+}
+span.card-aiten-badge {
+	color: #abae00;
 	padding:0 5px;
 }
 
