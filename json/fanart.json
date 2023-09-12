@@ -538,5 +538,13 @@
 			"img": "https://av-cdn.bsky.app/img/feed_thumbnail/plain/did:plc:uq5fs7nln4auq4m4vgaoctxj/bafkreihgo6ql7h3xedfllpo4i2rqmdpdn2zfohsxivtzy57fcn7pjbs4pe@jpeg",
 			"created_at": "2023-09-09T20:06:50+09:00",
 			"did": "did:plc:uq5fs7nln4auq4m4vgaoctxj"
-		}
+		},
+  {
+    "add": "syui.ai",
+    "link": "https://bsky.app/profile/ebikko.bsky.social/post/3k77eilai5b2d",
+    "author": "syui.ai",
+    "img": "https://av-cdn.bsky.app/img/feed_fullsize/plain/did:plc:uqzpqmrjnptsxezjx4xuh2mn/bafkreifw5oxuc3z7yj636jxim5byswwvjwtvbhgwlwzuiyezmydks2oiqm@jpeg",
+    "created_at": "2023-09-13T08:37:35+09:00",
+    "did": "did:plc:uqzpqmrjnptsxezjx4xuh2mn"
+  }
 ]
