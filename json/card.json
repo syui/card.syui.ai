@@ -813,6 +813,19 @@
 			"p": "3d",
 			"file": "/card/icon_19",
 			"owner": null,
+			"ten_skill": true,
+			"img": "",
 			"src": "icon_19"
+		},
+		{
+			"id": 67,
+			"h": "閃光",
+			"p": "senkou",
+			"file": "/card/yui_148",
+			"src": "yui_148",
+			"owner": null,
+			"ten": "EKS",
+			"ten_skill": true,
+			"img": ""
 		}
 ]
