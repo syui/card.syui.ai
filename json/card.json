@@ -838,5 +838,15 @@
 			"file": "/card/icon_20",
 			"src": "icon_20",
 			"owner": null
+		},
+		{
+			"id": 69,
+			"h": "ai-gen-2022-09-22",
+			"p": "ai-gen-2022-09-22",
+			"file": "/card/yui_149",
+			"src": "yui_149",
+			"ten": "IOU",
+			"ten_skill": true,
+			"img": ""
 		}
 ]
