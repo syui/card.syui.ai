@@ -830,5 +830,13 @@
 			"ten": "EKS",
 			"ten_skill": true,
 			"img": "bafkreiht5cdkujqe5tbg7xxb52iwbutbpie3uctykwczn5gtbnjcjpsilq"
+		},
+		{
+			"id": 68,
+			"h": "満月改",
+			"p": "mangetu-kai",
+			"file": "/card/icon_20",
+			"src": "icon_20",
+			"owner": null
 		}
 ]
