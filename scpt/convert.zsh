@@ -50,6 +50,6 @@ export NVM_DIR="$HOME/.nvm"
 nvm use 17
 nvm i squoosh-cli
 #rm og_*
-squoosh-cli --webp '{"quality":100}' -d ./ --resize '{width:825,height:1080}' card_*.png
+squoosh-cli --webp '{"quality":100}' -d ./ --resize '{width:825,height:1080}' card_7*.png
 #mogrify -resize 1620x2160! *.png 
 #squoosh-cli --webp '{"quality":100}' -d ./ --resize '{width:30,height:30}' badge_*.png

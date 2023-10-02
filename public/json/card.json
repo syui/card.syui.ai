@@ -841,12 +841,37 @@
 		},
 		{
 			"id": 69,
-			"h": "ai-gen-2022-09-22",
-			"p": "ai-gen-2022-09-22",
+			"h": "原始",
+			"p": "genshi",
 			"file": "/card/yui_149",
 			"src": "yui_149",
 			"ten": "IOU",
 			"ten_skill": true,
-			"img": ""
+			"img": "bafkreiejeclapvg23lrrn2tsyz6rvfpnypnvairbyybstaljhdgba36kri"
+		},
+		{
+			"id": 70,
+			"h": "秘密鍵",
+			"p": "公開鍵",
+			"file": "/card/icon_21",
+			"src": "icon_21",
+			"ten_skill": true,
+			"owner": null
+		},
+		{
+			"id": 71,
+			"h": "漫画",
+			"p": "カード編",
+			"file": "/card/book_3",
+			"src": "book_3",
+			"owner": null
+		},
+		{
+			"id": 72,
+			"h": "ドット",
+			"p": "アイ・ドット",
+			"file": "/card/yui_150",
+			"src": "yui_150",
+			"owner": null
 		}
 ]

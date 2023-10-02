@@ -40,6 +40,60 @@
 					<img src="/card/badge_3.png" v-if="cards.data.find((v) => v.card == 45)">
 				</div>
 
+				<div class="book-list" v-show="card_sed" id="sed_skill">
+					<div class="sed_relative">
+						<span v-for="(ii, index) in cards.data.filter((v) => v.skill == 'field').slice().reverse()" class="book-list" >
+							<img :src='"/field/ai_world_fg_" + ii.cp + ".png"' >
+							<span v-if="0 != cards.data.filter((v) => v.card == 72).length">
+								<img :src='"/field/ai_zen.png"' v-if="index == cards.data.filter((v) => v.skill == 'field').length - 1" class="sed_model">
+							</span>
+							<span v-else>
+								<img :src='"/field/ai_n.png"' v-if="index == cards.data.filter((v) => v.skill == 'field').length - 1" class="sed_model">
+							</span>
+						</span>
+					</div>
+				</div>
+				<div class="book-list" v-show="card_thd_skill" id="thd_skill">
+					<span v-for="(ii, index) in cards.data.filter((v) => v.skill == '3d')" class="book-list" >
+						<button v-if="index == 0" class="thd_button">v{{ ii.card }}</button>
+						<span v-if="useragent.indexOf('edge') != -1 || useragent.indexOf('edg') != -1">
+							<model-viewer class="ar" v-if="ii.card <= 14 && index == 0" :src='"/obj/card_" + ii.card + ".glb"'
+								ar
+								camera-controls
+							></model-viewer>
+							<model-viewer class="ar" v-if="ii.card == 64 && index == 0" :src='"/obj/card_" + ii.card + ".glb"'
+								ar
+								camera-controls
+							></model-viewer>
+							</span>
+							<span v-else>
+								<model-viewer class="ar" v-if="ii.card <= 14 && index == 0" :src='"/obj/card_" + ii.card + ".glb"'
+									:skybox-image='"/obj_bg/g" + thd_room + ".jpg"'
+									exposure="20"
+									:environment-image='"/obj_bg/g" + thd_room + ".avif"'
+									ar
+									camera-controls
+								></model-viewer>
+								<model-viewer class="ar" v-if="ii.card == 64 && index == 0" :src='"/obj/card_" + ii.card + ".glb"'
+									:skybox-image='"/obj_bg/g31.jpg"'
+									exposure="20"
+									:environment-image='"/obj_bg/g31.avif"'
+									ar
+									camera-controls
+								></model-viewer>
+								<!--
+								<model-viewer class="ar" v-if="ii.card <= 14 && index == 0" :src='"/obj/test.glb"'
+									:skybox-image='"/obj_bg/g" + 0 + ".jpg"'
+									exposure="20"
+									:environment-image='"/obj_bg/g" + 0 + ".avif"'
+									ar
+									camera-controls
+								></model-viewer>
+								-->
+							</span>
+						</span>
+					</div>
+
 				<div class="book-list" v-if="ar_first == true" v-show="card_thd" id="thd">
 					<span v-for="(ii, index) in cards.data.filter((v) => v.status == '3d')" class="book-list" >
 						<button v-if="index == 0" class="thd_button">v{{ ii.card }}</button>
@@ -106,6 +160,9 @@
 				</span>
 				<span class="menu-right-top" v-if="cards.data.find((v) => v.card >= 48 && v.card <= 59)">
 					<button v-on:click="chara_user = !chara_user">chara</button>
+				</span>
+				<span class="menu-right-top" v-if="cards.data.find((v) => v.status == 'field')">
+					<button v-on:click="sed">2d</button>
 				</span>
 				<span class="menu-right-top" v-if="cards.data.find((v) => v.status == '3d')">
 					<button v-on:click="thd">3d</button>
@@ -324,8 +381,8 @@
 								<span class="reflection" v-if="ii.card == 43">
 									<a href="/book/1/ZGlkOnBsYzo0aHFqZm43bTZuNWhubzNkb2FtdWhnZWY/index.html"><img :src='"/card/card_" + ii.card + ".webp"'></a>
 								</span>
-								<span class="reflection" v-else-if="ii.status == '3d'">
-									<a href="#thd" class="thd_link"><img :src='"/card/card_" + ii.card + ".webp"' v-on:click="thd"></a>
+								<span class="reflection" v-else-if="ii.skill == '3d'">
+									<a href="#thd_skill" class="thd_link"><img :src='"/card/card_" + ii.card + ".webp"' v-on:click="thd_skill"></a>
 								</span>
 								<span class="reflection" v-else>
 									<img :src='"/card/card_" + ii.card + ".webp"'>
@@ -800,6 +857,7 @@ export default {
 			book_user: null,
 			chara_user: null,
 			card_thd: false,
+			card_sed: false,
 			card_status: null,
 			card_skill: null,
 			cors: "https://cors.syui.ai/",
@@ -821,6 +879,7 @@ export default {
 			user_room: 0,
 			thd_room: 0,
 			useragent: window.navigator.userAgent.toLowerCase(),
+			card_thd_skill: false,
 		}
 	},
 	components: {
@@ -935,6 +994,13 @@ export default {
 				this.ar_first = false;
 				this.ar_second = index;
 			},
+			sed() {
+				if (this.card_sed == false) {
+					this.card_sed = true;
+				} else {
+					this.card_sed = false;
+				}
+			},
 			thd() {
 				this.randomNumber = Math.floor(Math.random() * 11);
 				this.loadComponent();
@@ -956,6 +1022,11 @@ export default {
 				if (this.all === true && this.user_room >= 123 && this.user_room <= 123) {
 					this.thd_room = this.user_room
 				}
+			},
+			thd_skill() {
+				this.randomNumber = Math.floor(Math.random() * 11);
+				this.loadComponent();
+				this.card_thd_skill = true;
 			},
 			submit() {
 				let url = this.api_url + "users/" + this.id + "/card?itemsPerPage=3000";
@@ -1599,6 +1670,16 @@ a.thd_link:hover {
 	background-color:#000;
 	opacity:0.8;
 	transition:0.3s;
+}
+
+.sed_relative {
+	position: relative;
+}
+img.sed_model {
+	position: absolute;
+	width: 50px;
+	top: 50px;
+	left: 85px;
 }
 
 @media screen and (max-width:1000px) { 
