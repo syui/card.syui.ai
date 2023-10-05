@@ -865,5 +865,13 @@
 			"file": "/card/book_3",
 			"src": "book_3",
 			"owner": null
+		},
+		{
+			"id": 72,
+			"h": "ドット",
+			"p": "アイ・ドット",
+			"file": "/card/yui_150",
+			"src": "yui_150",
+			"owner": null
 		}
 ]
