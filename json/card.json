@@ -873,5 +873,13 @@
 			"file": "/card/yui_150",
 			"src": "yui_150",
 			"owner": null
+		},
+		{
+			"id": 73,
+			"h": "フィールド",
+			"p": "2d",
+			"file": "/card/icon_22",
+			"src": "icon_22",
+			"owner": null
 		}
 ]
