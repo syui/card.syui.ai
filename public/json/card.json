@@ -761,7 +761,7 @@
 			"ten": "ACH",
 			"ten_skill": true,
 			"src": "yui_146",
-			"img": "bafkreideb7vp4y35wn6vtixy3kvoj4isw5ru6gcnw3g46yan6f4ugtxw5u"
+			"img": "bafkreighntijp47dejknvtrxbqocsy542vgpxcb3zaqxpc2vc52hy7bkw4"
 		},
 		{
 			"id": 61,
@@ -799,7 +799,7 @@
 			"owner": null,
 			"ten": "TUY",
 			"ten_skill": true,
-			"img": "bafkreibyal762gysqklmzhy25acmdwyq7zcke44c6b4ubl5l5xhsk5ysca",
+			"img": "bafkreiawxc3ynmy4leew54vj7mmvh4bfd45bzwawhruy2xts2d5nu5sqha",
 			"src": "yui_147"
 		},
 		{
@@ -829,7 +829,7 @@
 			"owner": null,
 			"ten": "EKS",
 			"ten_skill": true,
-			"img": "bafkreiht5cdkujqe5tbg7xxb52iwbutbpie3uctykwczn5gtbnjcjpsilq"
+			"img": "bafkreif5hcmdpjovl5x37t4hri2l5vfsseu4b52hl2v7xxuzcx2xegtgjm"
 		},
 		{
 			"id": 68,
@@ -868,10 +868,64 @@
 		},
 		{
 			"id": 72,
-			"h": "ドット",
+			"h": "ドット白服",
 			"p": "アイ・ドット",
 			"file": "/card/yui_150",
 			"src": "yui_150",
 			"owner": null
+		},
+		{
+			"id": 73,
+			"h": "フィールド",
+			"p": "2d",
+			"file": "/card/icon_22",
+			"src": "icon_22",
+			"owner": null
+		},
+		{
+			"id": 74,
+			"h": "ドット黒服",
+			"p": "アイ・ドット",
+			"file": "/card/yui_151",
+			"src": "yui_151",
+			"owner": null
+		},
+		{
+			"id": 75,
+			"h": "ドット銀服",
+			"p": "アイ・ドット",
+			"file": "/card/yui_152",
+			"src": "yui_152",
+			"owner": null
+		},
+		{
+			"id": 76,
+			"h": "朱日",
+			"p": "shuu-jitu",
+			"file": "/card/yui_153",
+			"src": "yui_153",
+			"ten": "ACC",
+			"ten_skill": true,
+			"img": "bafkreicmeuljtkl3jx4toudpuxagvjpdcgflhuwhbe3vh4e4fnlruawfyy"
+		},
+		{
+			"id": 77,
+			"h": "天日",
+			"p": "ten-jitu",
+			"file": "/card/yui_154",
+			"src": "yui_154",
+			"ten": "AAC",
+			"ten_skill": true,
+			"img": "bafkreiarpxioqr5ulnwvukin6qrv5gyyymsggv255oc7wmfedsqpah4qcy"
+		},
+		{
+			"id": 78,
+			"h": "星眠",
+			"p": "sei-mei",
+			"file": "/card/yui_155",
+			"src": "yui_155",
+			"ten": "AEK",
+			"ten_skill": true,
+			"img": "bafkreicbiujlv6hiluzc5db25j5phg7u2m2pu5h4qinxnpizq226n4hbae"
 		}
 ]

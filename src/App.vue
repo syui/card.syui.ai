@@ -38,17 +38,24 @@
 					<img src="/card/badge_1.png" v-if="cards.data.find((v) => v.card == 18)">
 					<img src="/card/badge_2.png" v-if="cards.data.find((v) => v.card == 41)">
 					<img src="/card/badge_3.png" v-if="cards.data.find((v) => v.card == 45)">
+					<img src="/card/card_75.png" v-if="cards.data.find((v) => v.card == 75)">
 				</div>
 
 				<div class="book-list" v-show="card_sed" id="sed_skill">
 					<div class="sed_relative">
 						<span v-for="(ii, index) in cards.data.filter((v) => v.skill == 'field').slice().reverse()" class="book-list" >
 							<img :src='"/field/ai_world_fg_" + ii.cp + ".png"' >
-							<span v-if="0 != cards.data.filter((v) => v.card == 72).length">
+							<span v-if="0 != cards.data.filter((v) => v.card == 74).length">
 								<img :src='"/field/ai_zen.png"' v-if="index == cards.data.filter((v) => v.skill == 'field').length - 1" class="sed_model">
 							</span>
+							<span v-else-if="0 != cards.data.filter((v) => v.card == 75).length">
+								<img :src='"/field/ai_zen_silver.png"' v-if="index == cards.data.filter((v) => v.skill == 'field').length - 1" class="sed_model">
+							</span>
+							<span v-else-if="0 != cards.data.filter((v) => v.card == 72).length">
+								<img :src='"/field/ai_zen_kuro.png"' v-if="index == cards.data.filter((v) => v.skill == 'field').length - 1" class="sed_model">
+							</span>
 							<span v-else>
-								<img :src='"/field/ai_n.png"' v-if="index == cards.data.filter((v) => v.skill == 'field').length - 1" class="sed_model">
+								<img :src='"/field/octo.png"' v-if="index == cards.data.filter((v) => v.skill == 'field').length - 1" class="sed_model">
 							</span>
 						</span>
 					</div>
@@ -94,6 +101,9 @@
 						</span>
 					</div>
 
+					<!-- 
+					first(ファースト) second(セカンド) third(サード) fourth(フォース) fifth(フィフス) sixth(スィクスス) seventh(セヴンス) eighth(エイトス) ninth(ナインス) tenth(テンス) eleventh(イレヴンス) twelfth(トウェルフス) thirteenth(サーティーンス) fifteenth(フィフティーンス) sixteenth(スィクスティーンス) seventeenth(セヴンティーンス) eighteenth(エイティーンス) nineteenth(ナインティーンス) twentieth(トウィンティイス)
+					-->
 				<div class="book-list" v-if="ar_first == true" v-show="card_thd" id="thd">
 					<span v-for="(ii, index) in cards.data.filter((v) => v.status == '3d')" class="book-list" >
 						<button v-if="index == 0" class="thd_button">v{{ ii.card }}</button>
@@ -256,6 +266,19 @@
 									<span class="card pattern-f"></span>
 									<span class="card color-f"></span>
 									<span class="card highlight-f"></span>
+								</span>
+							</tr>
+						</thead>
+
+						<thead v-else-if="ii.status == 'fifth' && ii.card !== null" class="card-fav">
+							<tr class="card-status-first">
+								<span class="card-wrapper">
+									<span class="reflection">
+										<img :src='"/card/card_" + ii.card + ".webp"' class="card">
+									</span>
+									<span class="card pattern-fifth"></span>
+									<span class="card color-fifth"></span>
+									<span class="card highlight-fifth"></span>
 								</span>
 							</tr>
 						</thead>
@@ -698,7 +721,7 @@
 							<p :id="ii.id">[{{ ii.ten }}] {{ ii.h }} / {{ ii.id }}00</p>
 							<p><img :src='"/card/card_" + ii.id + ".webp"'></p>
 						</div>
-						<div v-show="ii.id == 29 || ii.id == 33 || ii.id == 36" class="card-owner-one">
+						<div v-show="ii.id == 29 || ii.id == 33 || ii.id == 36 || ii.id == 46 || ii.id == 47 || ii.id == 60 || ii.id == 64 || ii.id == 67 || ii.id == 69 || ii.id == 76 || ii.id == 77 || ii.id == 78" class="card-owner-one">
 							<p :id="ii.id"><button>id:{{ ii.id }}</button></p>
 							<p :id="ii.id">[{{ ii.ten }}] {{ ii.h }} / {{ ii.id }}00 <span class="icon-power"></span></p>
 							<p><img :src='"/card/card_" + ii.id + ".webp"'></p>
@@ -1474,6 +1497,29 @@ span.card-wrapper:hover > span.pattern-f {
 }
 
 span.card-wrapper:hover > span.color-f {
+  background-position: calc(50% + (var(--ratio-x) * -50%)) calc(50% + (var(--ratio-y) * -50%));
+}
+
+span.pattern-fifth {
+  background: repeating-radial-gradient(circle at -150% -25%, #000, #990033 3px, #990033 3px);
+  background-position: 50% 50%;
+  background-size: 120% 120%;
+  mix-blend-mode: color-dodge;
+  opacity: 0.3;
+}
+
+span.color-fifth {
+  background: linear-gradient(115deg, transparent 20%, #FF0000 30%, transparent 48% 52%, #990033 70%, transparent);
+  background-position: 50% 50%;
+  background-size: 200% 200%;
+  mix-blend-mode: overlay;
+}
+
+span.card-wrapper:hover > span.pattern-fifth {
+  background-position: calc(50% + (var(--ratio-x) * -50%)) calc(50% + (var(--ratio-y) * -50%));
+}
+
+span.card-wrapper:hover > span.color-fifth {
   background-position: calc(50% + (var(--ratio-x) * -50%)) calc(50% + (var(--ratio-y) * -50%));
 }
 
