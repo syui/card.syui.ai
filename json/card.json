@@ -889,5 +889,13 @@
 			"file": "/card/yui_151",
 			"src": "yui_151",
 			"owner": null
+		},
+		{
+			"id": 75,
+			"h": "ドット銀服",
+			"p": "アイ・ドット",
+			"file": "/card/yui_152",
+			"src": "yui_152",
+			"owner": null
 		}
 ]
