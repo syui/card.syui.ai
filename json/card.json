@@ -897,5 +897,15 @@
 			"file": "/card/yui_152",
 			"src": "yui_152",
 			"owner": null
+		},
+		{
+			"id": 76,
+			"h": "朱日",
+			"p": "shuu-jitu",
+			"file": "/card/yui_153",
+			"src": "yui_153",
+			"ten": "ACC",
+			"ten_skill": true,
+			"img": "bafkreicogf7dfcskfdumt24ggefbmz6anz6wyfjkroo2zjipvix2nwkyny"
 		}
 ]
