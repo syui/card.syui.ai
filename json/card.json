@@ -829,7 +829,7 @@
 			"owner": null,
 			"ten": "EKS",
 			"ten_skill": true,
-			"img": "bafkreiht5cdkujqe5tbg7xxb52iwbutbpie3uctykwczn5gtbnjcjpsilq"
+			"img": "bafkreid6eb4qysfbjzortrbiey6ytbkrjgtx6wxa76ro4pndcmynnbsxay"
 		},
 		{
 			"id": 68,
@@ -907,5 +907,25 @@
 			"ten": "ACC",
 			"ten_skill": true,
 			"img": "bafkreicmeuljtkl3jx4toudpuxagvjpdcgflhuwhbe3vh4e4fnlruawfyy"
+		},
+		{
+			"id": 77,
+			"h": "天日",
+			"p": "ten-jitu",
+			"file": "/card/yui_154",
+			"src": "yui_154",
+			"ten": "AAC",
+			"ten_skill": true,
+			"img": "bafkreiarpxioqr5ulnwvukin6qrv5gyyymsggv255oc7wmfedsqpah4qcy"
+		},
+		{
+			"id": 78,
+			"h": "星眠",
+			"p": "sei-mei",
+			"file": "/card/yui_155",
+			"src": "yui_155",
+			"ten": "AEK",
+			"ten_skill": true,
+			"img": "bafkreicbiujlv6hiluzc5db25j5phg7u2m2pu5h4qinxnpizq226n4hbae"
 		}
 ]
